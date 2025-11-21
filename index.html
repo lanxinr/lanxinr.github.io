@@ -1,1 +1,1288 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AI-Integrated Physics Lab Scenario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #43545d;
+            background: linear-gradient(135deg, #f9fbff 0%, #f1f7f4 100%);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            gap: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* H1 - 主标题 */
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0;
+            color: #3a6a84;
+            text-align: center;
+        }
+
+        h1::after {
+            display: none;
+        }
+
+        /* H2 - 一级章节 */
+        h2 {
+            margin: -2rem -2rem 1.5rem -2rem;
+            font-size: 1.65rem;
+            color: #5aa6a6;
+            padding: 1rem 2rem;
+            border-left: none;
+            background: linear-gradient(90deg, rgba(213, 237, 234, 0.9) 0%, rgba(255, 255, 255, 0.2) 100%);
+            border-radius: 12px 12px 0 0;
+            border-bottom: 3px solid rgba(150, 206, 197, 0.6);
+        }
+
+        /* Section Card */
+        .section-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(120, 165, 169, 0.15);
+            border: 1px solid rgba(213, 228, 226, 0.9);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 45px rgba(122, 181, 183, 0.25);
+        }
+
+        /* H3 - 二级章节 */
+        h3 {
+            margin-top: 1.75rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: #6d9c8b;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        h3::before {
+            content: '▸';
+            color: #6d9c8b;
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* H4 - 三级章节 */
+        h4 {
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+            color: #486570;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 1rem 0;
+            color: #556671;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin: 0.65rem 0;
+            padding-left: 0.5rem;
+            color: #566670;
+        }
+
+        ul li::marker {
+            color: #8cb9af;
+        }
+
+        ol li::marker {
+            color: #80b9c4;
+            font-weight: 600;
+        }
+
+        strong {
+            color: #384f59;
+            font-weight: 600;
+        }
+
+        .subtle {
+            color: #5e737f;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            text-align: center;
+            font-style: italic;
+            padding: 1rem 2rem;
+            background: rgba(194, 225, 219, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(181, 216, 208, 0.8);
+            margin: 1.5rem 0;
+        }
+
+        .container {
+            background: transparent;
+            border-radius: 0;
+            padding: 2rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            box-shadow: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .page-header {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 30px rgba(142, 188, 190, 0.2);
+            text-align: center;
+            border: 1px solid rgba(186, 214, 210, 0.6);
+        }
+
+        /* 顶部固定标题栏 */
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 110px;
+            background: radial-gradient(circle at top left, #f9fefe 0%, #e4f2f0 35%, #f3f9ff 70%, #e8f5f2 100%);
+            box-shadow: 0 14px 32px rgba(116, 157, 163, 0.28);
+            z-index: 1200;
+            display: flex;
+            align-items: center;
+        }
+
+        .top-header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-header h1 {
+            font-size: 2.1rem;
+            margin: 0;
+            text-align: center;
+            letter-spacing: 0.04em;
+            color: #315f74;
+            text-shadow: 0 2px 6px rgba(118, 162, 170, 0.35);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 12px 26px rgba(130, 171, 178, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(190, 219, 217, 0.8);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #9dd4d1 0%, #a8d8e2 100%);
+            color: #2f4b53;
+        }
+
+        thead th {
+            padding: 1rem;
+            font-weight: 600;
+            text-align: left;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid rgba(213, 228, 226, 0.9);
+            transition: background-color 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(219, 239, 235, 0.6);
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        tbody td {
+            padding: 1rem;
+            color: #4d5f68;
+            vertical-align: top;
+        }
+
+        tbody td:first-child {
+            font-weight: 600;
+            color: #384f59;
+            background-color: rgba(232, 244, 242, 0.7);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 11px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #edf4f2;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #9fd8cf 0%, #7fc3b6 100%);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #7fc3b6 0%, #6ab0a5 100%);
+        }
+
+        /* Improved nested lists */
+        ul ul,
+        ol ul {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+        }
+
+
+        /* Navigation Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 110px;
+            width: 270px;
+            height: calc(100vh - 110px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            box-shadow: 6px 0 25px rgba(125, 163, 169, 0.15);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1000;
+            border-right: 1px solid rgba(209, 225, 223, 0.8);
+        }
+
+        .sidebar-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #3f6c7c;
+            margin-bottom: 1.6rem;
+            padding: 0.55rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(190, 219, 217, 0.9);
+            background: linear-gradient(135deg, rgba(233, 246, 244, 0.95) 0%, rgba(219, 239, 235, 0.95) 50%, rgba(233, 246, 244, 0.95) 100%);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 6px 14px rgba(150, 200, 196, 0.35);
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: #58788a;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border-left: 3px solid transparent;
+            margin-bottom: 0.35rem;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(198, 232, 226, 0.6);
+            color: #3e6b7a;
+            border-left-color: #7ec5b3;
+            transform: translateX(4px);
+        }
+
+        .nav-menu a.active {
+            background: rgba(186, 224, 223, 0.9);
+            color: #3e6b7a;
+            font-weight: 600;
+            border-left-color: #64b0a4;
+        }
+
+        /* Back to Top Button */
+        .back-to-top-item {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .back-to-top-link {
+            background: linear-gradient(135deg, #8fd2b6 0%, #a6e1c8 100%);
+            color: #1f3f46 !important;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 10px;
+            border-left: none !important;
+            box-shadow: 0 10px 20px rgba(143, 210, 182, 0.4);
+        }
+
+        .back-to-top-link:hover {
+            background: linear-gradient(135deg, #7ec5a8 0%, #9fdac4 100%);
+            color: #163437 !important;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 24px rgba(122, 199, 171, 0.5);
+        }
+
+        /* Main content wrapper */
+        .main-wrapper {
+            flex: 1;
+            margin-left: 270px;
+            padding: 2rem 2.5rem 2.5rem 2rem;
+            max-width: calc(100% - 270px);
+            background: transparent;
+            min-height: 100vh;
+            margin-top: 110px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 0.9rem;
+            left: 0.9rem;
+            z-index: 1001;
+            background: #5aa6a6;
+            border: none;
+            border-radius: 10px;
+            padding: 0.6rem;
+            box-shadow: 0 8px 18px rgba(90, 166, 166, 0.35);
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: #ffffff;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Responsive Design Updates */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 240px;
+            }
+
+            .main-wrapper {
+                margin-left: 240px;
+                max-width: calc(100% - 240px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .sidebar {
+                top: 110px;
+                height: calc(100vh - 110px);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-wrapper {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 1rem 0.75rem 1.5rem;
+                margin-top: 110px;
+            }
+
+            body {
+                padding: 0;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            h3 {
+                font-size: 1.15rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            thead th,
+            tbody td {
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Fixed Header -->
+    <header class="top-header">
+        <div class="top-header-inner">
+            <h1>AI-Integrated Physics Lab Scenario</h1>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-title">📚 Table of Contents</div>
+        <ul class="nav-menu">
+            <li><a href="#section-1" onclick="closeMobileMenu()">1. Scenario Description</a></li>
+            <li><a href="#section-2" onclick="closeMobileMenu()">2. Learning Objectives</a></li>
+            <li><a href="#section-3" onclick="closeMobileMenu()">3. AI-Integrated Lab Activities</a></li>
+            <li><a href="#section-4" onclick="closeMobileMenu()">4. Evaluation Description</a></li>
+            <li><a href="#section-5" onclick="closeMobileMenu()">5. Evaluation Method</a></li>
+            <li><a href="#section-6" onclick="closeMobileMenu()">6. Guidelines for Faculty</a></li>
+            <li><a href="#section-7" onclick="closeMobileMenu()">7. Guidelines for Students</a></li>
+            <li><a href="#section-8" onclick="closeMobileMenu()">8. Reference</a></li>
+            <li class="back-to-top-item"><a href="#" onclick="scrollToTop(); closeMobileMenu(); return false;" class="back-to-top-link">⬆ Back to Top</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <div class="container">
+        <div class="section-card">
+        <h2 id="section-1">1. Scenario description</h2>
+
+        <p>
+            The instructor noticed that many students could perform calculations but struggle to explain why their results differ from theoretical predictions. With only limited TA support, providing individualized feedback on reasoning becomes difficult. This challenge motivated the integration of an AI tutor into weekly lab sessions. This case takes place in a <strong>3-credit, calculus-based introductory physics course</strong> for undergraduate students (e.g., engineering or life science majors). The course meets:
+        </p>
+        <ul>
+            <li><strong>Two 75-minute lectures per week</strong>, and</li>
+            <li><strong>One weekly 50–60-minute lab/recitation session</strong>.</li>
+        </ul>
+
+        <h3>Lectures</h3>
+        <p>In lectures, the instructor:</p>
+        <ul>
+            <li>
+                <strong>Delivers core conceptual knowledge</strong>, such as forces and motion,
+                energy and momentum conservation, and simple harmonic motion.
+            </li>
+            <li>
+                <strong>Models problem-solving approaches</strong> by:
+                <ul>
+                    <li>Identifying which principles apply in a given situation,</li>
+                    <li>Demonstrating how to construct diagrams and equations,</li>
+                    <li>Checking units, magnitudes, and physical reasonableness of answers.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            Lectures focus on building students&rsquo; <strong>conceptual understanding</strong> and
+            <strong>general problem-solving frameworks</strong>.
+        </p>
+
+        <h3>Weekly 1-hour lab / recitation</h3>
+        <p>
+            The weekly 1-hour lab provides a <strong>compact, real-context space</strong> to help students:
+        </p>
+        <ul>
+            <li>Apply lecture concepts to concrete situations (e.g., cart collisions, spring–mass systems),</li>
+            <li>Work with simplified or pre-structured experiments,</li>
+            <li>Analyze real or realistic data sets,</li>
+            <li>Practice problem solving in contexts closely aligned with lecture topics.</li>
+        </ul>
+        <p>Because time is limited, labs often use:</p>
+        <ul>
+            <li><strong>Pre-configured setups</strong> (apparatus and sensors already arranged), and/or</li>
+            <li><strong>Pre-collected or simulated data</strong>, so students can focus on interpretation and problem
+                solving.</li>
+        </ul>
+
+        <p>
+            During the <strong>central portion (about 20–25 minutes)</strong> of each lab, students work individually
+            with an <strong>AI tutor (e.g., ChatGPT, Claude, Gemini, Khanmigo)</strong> on laptops, tablets, or lab
+            computers. After this first introduction, the course simply refers to it as <strong>the AI tutor</strong>. Throughout the scenario, the AI tutor functions as a questioning partner rather than an answer generator.
+        </p>
+
+        <p>The AI tutor is designed using <strong>research-based tutoring principles</strong>. It:</p>
+        <ul>
+            <li>Scaffolds multi-step problems into manageable steps,</li>
+            <li>Prompts students to explain their reasoning before providing hints,</li>
+            <li>Manages cognitive load by pacing and chunking information,</li>
+            <li>Uses growth-mindset language and provides targeted, timely feedback.</li>
+        </ul>
+
+        <p>Across the <strong>entire semester</strong>, students:</p>
+        <ul>
+            <li>Use the AI tutor during most weekly lab sessions to analyze data and solve related problems,</li>
+            <li>Take <strong>lab tests without AI</strong> at key points to demonstrate independent problem-solving
+                ability,</li>
+            <li>
+                Complete <strong>mid-semester and end-of-semester reflections</strong> on how AI has supported their
+                learning and
+                what &ldquo;meaningful use of AI&rdquo; looks like in their physics studies.
+            </li>
+        </ul>
+        </div>
+
+        <div class="section-card">
+        <h2 id="section-2">2. Learning objectives</h2>
+
+        <p>
+            By the end of the AI-integrated lab sequence, students will be able to:
+        </p>
+
+        <h3>Physics content and practices</h3>
+        <ol>
+            <li>
+                <strong>Apply</strong> core mechanics concepts (e.g., Newton&rsquo;s laws, conservation of energy,
+                conservation of momentum) to analyze experimental situations and solve multi-step quantitative problems.
+            </li>
+            <li>
+                <strong>Interpret and connect</strong> multiple representations of physical phenomena
+                (graphs, equations, diagrams, and verbal descriptions) derived from lab contexts.
+            </li>
+            <li>
+                <strong>Design and justify</strong> solution strategies for novel physics problems,
+                explaining their reasoning step-by-step.
+            </li>
+        </ol>
+
+        <h3>Use of AI for learning</h3>
+        <ol start="4">
+            <li>
+                <strong>Use the AI tutor strategically</strong> to:
+                <ul>
+                    <li>Ask targeted questions about concepts and procedures,</li>
+                    <li>Request hints rather than full solutions,</li>
+                    <li>Check and refine their own reasoning and calculations.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Critically evaluate</strong> AI-generated explanations and solutions, identifying errors, gaps,
+                or oversimplifications and reconciling them with physics principles and experimental evidence.
+            </li>
+        </ol>
+
+        <h3>Metacognition and reflection</h3>
+        <ol start="6">
+            <li>
+                <strong>Reflect on and articulate</strong> how the AI tutor has supported or hindered their learning
+                over time,
+                including effects on conceptual understanding, problem-solving strategies, motivation, and confidence.
+            </li>
+            <li>
+                <strong>Formulate personal guidelines</strong> for meaningful and ethical use of AI in their own
+                learning,
+                especially in STEM contexts.
+            </li>
+        </ol>
+        </div>
+
+        <div class="section-card">
+        <h2 id="section-3">3. AI-integrated lab activities</h2>
+
+        <p>
+            Labs provide an ideal environment for AI-supported reasoning because students work with real data, encounter inconsistencies, and need immediate feedback that instructors cannot provide to all students at once. Each weekly lab is about <strong>50–60 minutes</strong>, so the design emphasizes <strong>tight structure and depth over breadth</strong>:
+        </p>
+        <ul>
+            <li>5–10 minutes: Brief check-in and setup</li>
+            <li>15–20 minutes: Quick experiment or data exploration (group)</li>
+            <li>20–25 minutes: AI-supported analysis and problem solving (individual)</li>
+            <li>5 minutes: Micro-reflection and wrap-up</li>
+        </ul>
+
+        <h3>3.1 Pre-lab (asynchronous, short)</h3>
+        <p>To maximize lab time, students complete a brief pre-lab online:</p>
+        <ul>
+            <li>
+                <strong>Pre-lab conceptual check</strong><br />
+                3–5 short questions related to the week&rsquo;s lecture topic (e.g., momentum conservation,
+                work–energy),
+                ensuring students arrive with a basic grasp of relevant lecture material.
+            </li>
+            <li>
+                <strong>Optional example of effective AI use</strong><br />
+                A short transcript showing a student sharing their own attempt, asking the AI tutor for feedback on
+                reasoning,
+                and receiving hints rather than a complete solution.
+            </li>
+        </ul>
+
+        <h3>3.2 In-lab Phase 1 (≈15–20 minutes): Quick experiment or data exploration</h3>
+        <p>In small groups (2–3 students), they:</p>
+        <ul>
+            <li>
+                Work with <strong>pre-configured setups</strong> (e.g., carts on a track, spring–mass system)
+                or examine <strong>clean data sets</strong> provided by the instructor.
+            </li>
+            <li>
+                Make a brief prediction, such as:
+                <ul>
+                    <li>&ldquo;Should total momentum be approximately the same before and after this collision?&rdquo;
+                    </li>
+                    <li>&ldquo;How should mechanical energy change over one oscillation?&rdquo;</li>
+                </ul>
+            </li>
+            <li>
+                Run a small number of trials or inspect the provided data:
+                <ul>
+                    <li>Confirm basic behaviors,</li>
+                    <li>Record key values (e.g., velocities, periods, amplitudes).</li>
+                </ul>
+            </li>
+            <li>
+                Connect to lecture by briefly discussing how the observed behavior matches or challenges expectations
+                based on lecture concepts.
+            </li>
+        </ul>
+        <p>
+            The aim is to give a <strong>concrete, real-world anchor</strong> for lecture concepts
+            without consuming the entire lab time on setup and raw data collection.
+        </p>
+
+        <h3>3.3 In-lab Phase 2 (≈20–25 minutes): AI-supported analysis and problem solving (individual)</h3>
+
+        <h4>Activity A – Focused data interpretation with the AI tutor</h4>
+        <p>Each student:</p>
+        <ul>
+            <li>
+                Enters a small set of key values (e.g., masses and velocities for a collision, or amplitude and period
+                for a spring–mass system) into a worksheet or online form.
+            </li>
+            <li>
+                Works through a <strong>short, scaffolded sequence</strong> of tasks, such as:
+                <ul>
+                    <li>
+                        <em>Conceptual recap:</em> &ldquo;According to lecture, what quantity (or quantities)
+                        should be conserved in this system? Explain briefly.&rdquo;
+                    </li>
+                    <li>
+                        <em>Calculation:</em> &ldquo;Use the data to calculate total momentum before and after the
+                        collision.&rdquo;
+                    </li>
+                    <li>
+                        <em>Comparison and explanation:</em> &ldquo;Compare your experimental values with the
+                        theoretical expectation.
+                        Ask the AI tutor to help you reason about possible sources of discrepancy (e.g., friction,
+                        imperfect collisions,
+                        measurement issues).&rdquo;
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>The AI tutor:</p>
+        <ul>
+            <li>Prompts students to <strong>show their reasoning first</strong>,</li>
+            <li>Provides <strong>targeted hints</strong> (&ldquo;Check the sign of this velocity,&rdquo; &ldquo;Are you
+                including all objects in your system?&rdquo;),</li>
+            <li>Helps students connect <strong>lecture principles</strong> to <strong>lab realities</strong> such as
+                uncertainty and non-ideal conditions.</li>
+        </ul>
+
+        <h4>Activity B – Single transfer problem with AI support</h4>
+        <p>Time allows for <strong>one well-designed transfer problem</strong> per lab:</p>
+        <ul>
+            <li>
+                Uses the same core concept as the lab/lecture (e.g., conservation of momentum or energy) but in a
+                <strong>new context</strong> (different parameters, modified setup, or an everyday scenario).
+            </li>
+        </ul>
+        <p>Students:</p>
+        <ul>
+            <li>
+                <strong>Outline a solution plan</strong> in their own words (1–3 bullet points):
+                <ul>
+                    <li>Which principle(s) they will use,</li>
+                    <li>What diagrams or representations they will construct,</li>
+                    <li>What they need to solve for.</li>
+                </ul>
+            </li>
+            <li>
+                Show this plan to the AI tutor and ask it to <strong>evaluate the plan</strong> (e.g., &ldquo;Does this
+                plan correctly apply conservation of momentum?&rdquo;).
+            </li>
+            <li>
+                Execute the plan, then ask the AI tutor to:
+                <ul>
+                    <li>Check the logic of their steps,</li>
+                    <li>Help interpret the result (e.g., &ldquo;Is this speed physically reasonable?&rdquo;),</li>
+                    <li>Suggest alternative approaches or ways to think about the problem.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            This gives each student <strong>individualized, immediate feedback</strong> closely tied to lecture ideas,
+            but in a context where they can pause, re-try, and ask questions.
+        </p>
+
+        <h3>3.4 Micro-reflection (≈5 minutes)</h3>
+        <p>At the end of lab, students complete a very short reflection, such as:</p>
+        <ul>
+            <li>&ldquo;Name one idea from lecture that became clearer after today&rsquo;s lab and AI work.&rdquo;</li>
+            <li>&ldquo;In one or two sentences, describe a way the AI tutor helped—or did not help—your understanding
+                today.&rdquo;</li>
+        </ul>
+        <p>
+            These micro-reflections are quick to complete and review, provide students with accumulated notes
+            for later reflections, and give instructors ongoing feedback about how the AI tutor is being used and
+            perceived.
+        </p>
+        </div>
+
+        <div class="section-card">
+        <h2 id="section-4">4. Evaluation description (lab test and reflection)</h2>
+
+        <h3>4.1 Lab test (problem-solving assessment)</h3>
+        <p>
+            To determine whether AI-supported lab work improves <strong>independent</strong> problem-solving,
+            students complete lab tests (e.g., at midterm and end-of-semester) <strong>without the AI tutor</strong>.
+            These tests can be given during lecture time, in a scheduled exam block, or via a proctored online system.
+        </p>
+        <p>Each lab test includes:</p>
+        <ul>
+            <li>
+                <strong>Conceptual items</strong>:
+                <ul>
+                    <li>Multiple-choice and short-answer questions about lab-like contexts,</li>
+                    <li>
+                        Tasks that ask students to interpret graphs, explain phenomena, and predict qualitative outcomes
+                        based on
+                        principles discussed in lecture and experienced in lab.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Multi-step quantitative problems</strong>:
+                <ul>
+                    <li>
+                        Structurally similar to AI-supported lab problems but with new parameters or contexts (e.g., a
+                        novel collision
+                        or mass–spring configuration),
+                    </li>
+                    <li>
+                        Requiring students to identify relevant principles, set up diagrams and equations, perform
+                        calculations,
+                        and interpret results.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            The lab test provides evidence of <strong>AI-free mastery</strong> of the types of problems students
+            practiced with AI support.
+        </p>
+
+        <h3>4.2 Reflection assignment</h3>
+        <p>
+            Students also complete a <strong>mid-semester reflection</strong> after several weeks of AI-integrated labs
+            and an <strong>end-of-semester reflection</strong> synthesizing their overall experience.
+        </p>
+        <p>Sample prompts include:</p>
+        <ul>
+            <li>
+                <strong>Learning with AI in lab</strong>: Describe two specific moments when the AI tutor helped you
+                overcome a
+                conceptual or problem-solving difficulty in lab. How did your understanding or strategy change?
+            </li>
+            <li>
+                <strong>Critical stance toward AI</strong>: Describe a time when the AI tutor&rsquo;s response was
+                confusing,
+                incomplete, or incorrect. How did you recognize this, and what did you do to resolve it?
+            </li>
+            <li>
+                <strong>Strategy development over time</strong>: How has your strategy for using the AI tutor changed
+                from the
+                first few labs to now? Provide concrete examples.
+            </li>
+            <li>
+                <strong>Meaningful use of AI in your learning</strong>: Based on your semester-long experience, what
+                does
+                &ldquo;meaningful use of AI&rdquo; in physics learning mean to you? Give at least two examples from lab.
+            </li>
+            <li>
+                <strong>Personal guidelines for future AI use</strong>: List 2–3 personal rules you plan to follow when
+                using AI
+                to support your learning in future courses.
+            </li>
+        </ul>
+        </div>
+
+        <div class="section-card">
+        <h2 id="section-5">5. Evaluation method for lab test and reflection</h2>
+
+        <h3>5.1 Lab test scoring (example scheme)</h3>
+        <p><strong>Section A: Conceptual understanding (40%)</strong></p>
+        <p>Each conceptual item is scored on:</p>
+        <ul>
+            <li><strong>Correctness</strong> of the answer (e.g., 0–2 points),</li>
+            <li>
+                <strong>Quality of explanation</strong> (e.g., 0–2 points), considering appropriate use of physics
+                principles,
+                clear reasoning, and effective diagrams or graphs when relevant.
+            </li>
+        </ul>
+
+        <p><strong>Section B: Quantitative problem solving (60%)</strong></p>
+        <p>Each multi-step problem is scored using three criteria (e.g., 0–3 points each):</p>
+        <ul>
+            <li>
+                <strong>Problem representation and setup</strong>:
+                <ul>
+                    <li>Correct diagrams and identification of the system,</li>
+                    <li>Proper choice of relevant laws (e.g., Newton&rsquo;s laws, conservation of energy or momentum).
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Procedural accuracy</strong>:
+                <ul>
+                    <li>Correct algebraic manipulation,</li>
+                    <li>Correct and consistent units,</li>
+                    <li>Reasonable intermediate and final numerical results.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Interpretation and sense-making</strong>:
+                <ul>
+                    <li>Checks whether results are physically plausible,</li>
+                    <li>
+                        Connects results back to the physical context and, where appropriate, similar lab experiences,
+                    </li>
+                    <li>Explains what the result means in plain language.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            Scores are combined into a total percentage and mapped onto performance categories such as
+            <em>Excellent</em>, <em>Proficient</em>, <em>Developing</em>, and <em>Beginning</em>.
+        </p>
+
+        <h3>5.2 Reflection rubric (4-point scale per dimension)</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dimension</th>
+                    <th>4 &ndash; Exemplary</th>
+                    <th>3 &ndash; Proficient</th>
+                    <th>2 &ndash; Developing</th>
+                    <th>1 &ndash; Beginning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Depth of reflection on learning with AI tutor</strong></td>
+                    <td>Rich, specific examples; clearly explains how AI interactions changed understanding or
+                        strategies.</td>
+                    <td>Some specific examples; learning explained reasonably clearly.</td>
+                    <td>Mostly general statements; few or vague examples; limited explanation of learning.</td>
+                    <td>Very general or superficial; little or no evidence of learning.</td>
+                </tr>
+                <tr>
+                    <td><strong>Critical evaluation of AI</strong></td>
+                    <td>Identifies strengths and limitations of AI responses with clear evidence; shows nuanced
+                        judgment.</td>
+                    <td>Recognizes some limitations and strengths; at least one clear example.</td>
+                    <td>Mentions limitations or strengths with minimal detail.</td>
+                    <td>Little or no critical stance; treats AI as always right or always wrong.</td>
+                </tr>
+                <tr>
+                    <td><strong>Use of evidence from lab experiences</strong></td>
+                    <td>Integrates multiple concrete references to specific lab tasks, data, or problems.</td>
+                    <td>Includes at least one concrete reference to lab experiences.</td>
+                    <td>References to lab experiences are vague or minimal.</td>
+                    <td>No clear connection to specific lab activities.</td>
+                </tr>
+                <tr>
+                    <td><strong>Metacognitive insight / strategy development</strong></td>
+                    <td>Articulates clear, evolving strategies for using AI; connects strategies to personal learning
+                        goals.</td>
+                    <td>Describes some strategies for using AI and how they help.</td>
+                    <td>Mentions strategies but does not explain why they matter.</td>
+                    <td>Little or no discussion of strategies; mainly describes what AI did.</td>
+                </tr>
+                <tr>
+                    <td><strong>Clarity and organization</strong></td>
+                    <td>Well-organized, coherent, and polished; language/mechanics do not hinder understanding.</td>
+                    <td>Mostly clear and organized; minor issues only.</td>
+                    <td>Organization uneven; some parts hard to follow; noticeable mechanical issues.</td>
+                    <td>Disorganized or difficult to follow; frequent errors hinder understanding.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="section-card">
+        <h2 id="section-6">6. Guidelines for faculty</h2>
+
+        <h3>Design and setup</h3>
+        <ul>
+            <li>
+                <strong>Align AI-supported lab tasks with lecture content.</strong><br />
+                Use lab topics and problems that give students a chance to apply the specific concepts and
+                problem-solving
+                approaches modeled in lecture.
+            </li>
+            <li>
+                <strong>Align AI tutor prompts with learning goals.</strong><br />
+                Design or model prompts that ask students to share their reasoning first, emphasize hints and
+                explanations
+                over full solutions, and encourage connections between AI feedback, lecture ideas, and lab observations.
+            </li>
+            <li>
+                <strong>Structure lab for a short time window.</strong><br />
+                Use pre-configured setups or pre-collected data, limit labs to a small number of focused tasks plus one
+                transfer
+                problem, and keep instructions clear to leave time for thinking and reflection.
+            </li>
+        </ul>
+
+        <h3>Implementation in lab</h3>
+        <ul>
+            <li>
+                <strong>Clarify when AI is allowed vs. not allowed.</strong><br />
+                Explicitly specify lab activities where AI is encouraged (analysis, practice problems, sense-making)
+                and assessments where AI is not allowed (lab tests, exams, certain graded tasks).
+            </li>
+            <li>
+                <strong>Model meaningful AI use.</strong><br />
+                Show examples of good questions that deepen understanding, less productive &ldquo;answer-only&rdquo;
+                questions,
+                and how to respond when AI provides an incorrect or confusing answer.
+            </li>
+            <li>
+                <strong>Monitor and coach student–AI interactions.</strong><br />
+                Walk around during AI use, ask what students asked the AI and how the response changed their thinking,
+                encourage refined prompts, and address over-reliance on AI solutions.
+            </li>
+        </ul>
+
+        <h3>Ethics, equity, and access</h3>
+        <ul>
+            <li>
+                <strong>Ensure equitable access.</strong><br />
+                Provide appropriate hardware and software access in the lab and make sure all students can use the AI
+                tutor reliably.
+            </li>
+            <li>
+                <strong>Discuss academic integrity and responsible AI use.</strong><br />
+                Co-create norms about appropriate vs. inappropriate uses of AI, when and how to acknowledge AI
+                assistance,
+                and expectations for independent work on tests and certain assignments.
+            </li>
+            <li>
+                <strong>Use reflection data to improve teaching.</strong><br />
+                Read a sample of reflections mid-semester to identify patterns of productive and unproductive AI use,
+                adjust lab activities and guidance accordingly, and share anonymized examples of effective AI use with
+                the class.
+            </li>
+        </ul>
+        </div>
+
+        <div class="section-card">
+        <h2 id="section-7">7. Guidelines for students</h2>
+
+        <h3>Using AI to learn physics (not just get answers)</h3>
+        <ul>
+            <li>
+                <strong>Begin with your own thinking.</strong><br />
+                Before using the AI tutor, quickly jot down which concept from lecture you think applies, a diagram or
+                representation,
+                and your first attempt at a solution or plan. Then show this to the AI tutor and ask it to check or
+                refine your reasoning.
+            </li>
+            <li>
+                <strong>Ask focused, learning-oriented questions.</strong><br />
+                For example: &ldquo;Can you help me see if I used conservation of momentum correctly in this
+                step?&rdquo; or
+                &ldquo;I&rsquo;m confused why kinetic energy changes even though momentum is conserved. Can you
+                explain?&rdquo;
+            </li>
+            <li>
+                <strong>Request hints, reasoning, and explanations before answers.</strong><br />
+                Ask for next-step hints, clarification of specific parts you don&rsquo;t understand, and alternative
+                ways
+                to think about the same problem.
+            </li>
+        </ul>
+
+        <h3>Thinking critically about AI responses</h3>
+        <ul>
+            <li>
+                <strong>Always verify with physics.</strong><br />
+                Check AI responses against lecture notes, textbook explanations, equations and methods you&rsquo;ve been
+                taught,
+                units and magnitudes, and your lab data where relevant.
+            </li>
+            <li>
+                <strong>Challenge confusing or suspicious output.</strong><br />
+                If something doesn&rsquo;t make sense, ask the AI tutor to restate or reconsider, compare with your own
+                understanding or ask your partner/TA, and treat the AI tutor as a helpful but imperfect tool.
+            </li>
+        </ul>
+
+        <h3>Habits over the semester</h3>
+        <ul>
+            <li>
+                <strong>Track your use of the AI tutor.</strong><br />
+                After each lab, note briefly one way the AI tutor helped you understand lecture material better and
+                one limitation or problem you noticed. Use these notes for your mid-semester and final reflections.
+            </li>
+            <li>
+                <strong>Develop personal AI-use guidelines.</strong><br />
+                Over time, decide on 2–3 personal rules, such as:
+                &ldquo;I will attempt each problem by myself for at least 5–10 minutes before asking the AI
+                tutor,&rdquo;
+                &ldquo;I will not copy AI text directly into any graded work,&rdquo; or
+                &ldquo;I will use AI to understand why a solution works, not just to get an answer.&rdquo;
+            </li>
+        </ul>
+
+        <h3>Integrity and professionalism</h3>
+        <ul>
+            <li>
+                <strong>Be honest about AI use.</strong><br />
+                Follow the course rules about where and when AI is allowed. If you used AI to help with wording
+                or to check reasoning, be transparent and make sure the underlying physics is your own.
+            </li>
+            <li>
+                <strong>Use AI to become a stronger problem solver.</strong><br />
+                Regularly ask yourself: &ldquo;If AI disappeared tomorrow, could I solve a similar problem on my
+                own?&rdquo;
+                Aim to use the AI tutor as a support for your learning, not a substitute for your thinking.
+            </li>
+        </ul>
+        </div>
+
+        <div class="section-card">
+        <h2 id="section-8">8. Reference</h2>
+        <p>
+            Kestin, G., Miller, K., Klales, A., Milbourne, T., &amp; Ponti, G. (2025).
+            AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting.
+            <em>Scientific Reports, 15</em>, 17458. <a href="https://doi.org/10.1038/s41598-025-97652-6">https://doi.org/10.1038/s41598-025-97652-6</a>
+        </p>
+        </div>
+
+        </div>
+    </div>
+
+    <script>
+        const HEADER_HEIGHT = 110; // fixed header height + spacing
+
+        // Toggle mobile menu
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            if (window.innerWidth <= 768) {
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.remove('active');
+            }
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // 设置左侧导航 active 状态
+        function setActiveNavLink(sectionId) {
+            const navLinks = document.querySelectorAll('.nav-menu a:not(.back-to-top-link)');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href') || '';
+                if (href === '#' + sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // 使用 IntersectionObserver 监听 h2 出现在视口中
+        function setupSectionObserver() {
+            const sections = document.querySelectorAll('h2[id^="section-"]');
+            if (!('IntersectionObserver' in window) || sections.length === 0) {
+                // 兼容性或意外情况，降级为滚动监听
+                window.addEventListener('scroll', fallbackHighlightOnScroll);
+                fallbackHighlightOnScroll();
+                return;
+            }
+
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${HEADER_HEIGHT + 20}px 0px -55% 0px`,
+                threshold: 0.25
+            };
+
+            let activeId = '';
+
+            const observer = new IntersectionObserver((entries) => {
+                let bestEntry = null;
+
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
+                            bestEntry = entry;
+                        }
+                    }
+                });
+
+                if (bestEntry && bestEntry.target && bestEntry.target.id !== activeId) {
+                    activeId = bestEntry.target.id;
+                    setActiveNavLink(activeId);
+                }
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // 备用：不支持 IntersectionObserver 时的滚动监听
+        function fallbackHighlightOnScroll() {
+            const sections = document.querySelectorAll('h2[id^="section-"]');
+            let currentSection = '';
+            const scrollPosition = window.scrollY + HEADER_HEIGHT + 30;
+
+            sections.forEach(section => {
+                const rectTop = section.offsetTop;
+                const rectHeight = section.offsetHeight;
+                if (scrollPosition >= rectTop && scrollPosition < rectTop + rectHeight) {
+                    currentSection = section.id;
+                }
+            });
+
+            if (currentSection) {
+                setActiveNavLink(currentSection);
+            }
+        }
+
+        // Smooth scroll for sidebar links (account for fixed header)
+        function setupSmoothScroll() {
+            const navLinks = document.querySelectorAll('.nav-menu a:not(.back-to-top-link)');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    const href = this.getAttribute('href');
+                    if (!href || !href.startsWith('#')) return;
+
+                    event.preventDefault();
+                    const targetId = href.substring(1);
+                    const target = document.getElementById(targetId);
+                    if (!target) return;
+
+                    const targetTop = target.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT - 10;
+
+                    window.scrollTo({
+                        top: targetTop,
+                        behavior: 'smooth'
+                    });
+
+                    closeMobileMenu();
+                });
+            });
+        }
+
+        // 初始化：高亮 & 平滑滚动 & 观察器
+        window.addEventListener('load', function () {
+            setupSmoothScroll();
+            setupSectionObserver();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+            if (window.innerWidth <= 768 &&
+                sidebar.classList.contains('active') &&
+                !sidebar.contains(event.target) &&
+                !menuToggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
