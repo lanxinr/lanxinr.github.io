@@ -1,24 +1,45 @@
+<!-- layout: hero -->
 # Learning Theories
 
 **Knowledge Base prepared by Zhen Li**
 
+<!-- layout: grid-3 -->
 ## Three Learning Theories
 
 ### Behaviorism
-
 **Keywords:** Classical Conditioning/Operant Conditioning
 
 [View Behaviorism Details](../behaviorism/)
 
 ### Cognitivism
-
 **Keywords:** Schema, Scaffolding, Advance Organizers
 
 [View Cognitivism Details](../cognitivism/)
 
 ### Social Learning
-
 **Keywords:** Modeling, Self-efficacy, Reciprocal Learning
+
+[View Social Learning Details](../social-learning/)
+
+---
+
+![Three Theories](assets/images/three-theories.png)
+
+<!-- layout: grid-3 -->
+## Theory Details
+
+### Behaviorism
+PDF Preview: [Behaviorism_Inspired_Instructional_Theories.pdf](../behaviorism/assets/Behaviorism_Inspired_Instructional_Theories.pdf)
+
+[View Behaviorism Details](../behaviorism/)
+
+### Cognitivism
+PDF Preview: [Cognitive_Inspired_Instructional_Theories.pdf](../cognitivism/assets/Cognitive_Inspired_Instructional_Theories.pdf)
+
+[View Cognitivism Details](../cognitivism/)
+
+### Social Learning
+PDF Preview: [SLT_Inspired_Instructional_Theories.pdf](../social-learning/assets/SLT_Inspired_Instructional_Theories.pdf)
 
 [View Social Learning Details](../social-learning/)
 
@@ -33,6 +54,8 @@
 | **Social Learning Theory** | • Learning is defined as "constructing behavior patterns society expects."<br>• Through interaction with environment & people. | • Reciprocal causation (B-E-P affect each other).<br>• Modeling (observing others).<br>• Vicarious reinforcement & social interaction. |
 
 ---
+
+![From Roots to Practice](assets/images/from-roots-to-practice.png)
 
 ## Knowledge Base Grading Rubric
 
@@ -83,4 +106,3 @@ PDF Preview: [KBGradingRubric_2025_CkList.pdf](assets/KBGradingRubric_2025_CkLis
 ---
 
 *IDE621_Fall 2025_Zhen Li*
-

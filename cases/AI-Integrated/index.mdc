@@ -1,3 +1,4 @@
+<!-- layout: hero -->
 # AI-Integrated Physics Lab Scenario
 
 ## 1. Scenario description
@@ -214,7 +215,7 @@ Scores are combined into a total percentage and mapped onto performance categori
 **Table 1. Reflection Rubric for AI-Supported Physics Lab Learning**
 
 | Dimension | 4 – Exemplary | 3 – Proficient | 2 – Developing | 1 – Beginning |
-|-----------|---------------|----------------|-----------------|----------------|
+|-----------|--------------|---------------|----------------|----------------|
 | **Depth of reflection on learning with AI tutor** | Rich, specific examples; clearly explains how AI interactions changed understanding or strategies. | Some specific examples; learning explained reasonably clearly. | Mostly general statements; few or vague examples; limited explanation of learning. | Very general or superficial; little or no evidence of learning. |
 | **Critical evaluation of AI** | Identifies strengths and limitations of AI responses with clear evidence; shows nuanced judgment. | Recognizes some limitations and strengths; at least one clear example. | Mentions limitations or strengths with minimal detail. | Little or no critical stance; treats AI as always right or always wrong. |
 | **Use of evidence from lab experiences** | Integrates multiple concrete references to specific lab tasks, data, or problems. | Includes at least one concrete reference to lab experiences. | References to lab experiences are vague or minimal. | No clear connection to specific lab activities. |
@@ -286,5 +287,8 @@ Scores are combined into a total percentage and mapped onto performance categori
 
 Kestin, G., Miller, K., Klales, A., Milbourne, T., & Ponti, G. (2025).  
 AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting.  
-*Scientific Reports, 15*, 17458. https://doi.org/10.1038/s41598-025-97652-6
+*Scientific Reports, 15*, 17458. [https://doi.org/10.1038/s41598-025-97652-6](https://doi.org/10.1038/s41598-025-97652-6)
 
+---
+
+*IDE621_Fall 2025_Zhen Li*
