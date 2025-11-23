@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About - Zhen Li (Lisa)</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Gentium Basic", serif;
+        line-height: 1.8;
+        color: #212121;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header Section */
+      .hero-section {
+        background-color: #226e93;
+        background-image: url("../home/images/hero-background.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 400px;
+        padding: 80px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(33, 33, 33, 0.5);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .hero-content h1 {
+        font-family: "Lora", serif;
+        font-size: 56pt;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 20px 0;
+        line-height: 1.2;
+      }
+
+      .hero-content .subtitle {
+        font-family: "Gentium Basic", serif;
+        font-size: 20pt;
+        font-weight: 400;
+        color: #ffffff;
+        margin-bottom: 30px;
+      }
+
+      .hero-content .contact-info {
+        font-family: "Gentium Basic", serif;
+        font-size: 14pt;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 20px;
+      }
+
+      .hero-content .contact-info a {
+        color: #ff9900;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .hero-content .contact-info a:hover {
+        color: #ffcc66;
+      }
+
+      /* Navigation */
+      .nav-container {
+        background-color: #212121;
+        padding: 0;
+      }
+
+      .nav-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-menu li {
+        margin: 0;
+      }
+
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.87);
+        text-decoration: none;
+        font-family: "Lora", serif;
+        font-size: 15pt;
+        padding: 11.5px 16px;
+        display: block;
+        transition: color 0.2s;
+      }
+
+      .nav-menu a:hover {
+        color: #49aad4;
+      }
+
+      .nav-menu a.active {
+        color: #49aad4;
+      }
+
+      /* Main Content */
+      .main-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 24px;
+      }
+
+      .section {
+        margin: 50px 0;
+      }
+
+      .section h2 {
+        font-family: "Lora", serif;
+        font-size: 32pt;
+        font-weight: 400;
+        color: #226e93;
+        margin-bottom: 30px;
+        border-bottom: 3px solid #226e93;
+        padding-bottom: 15px;
+      }
+
+      .section h3 {
+        font-family: "Lora", serif;
+        font-size: 22pt;
+        font-weight: 400;
+        color: #226e93;
+        margin: 35px 0 20px;
+      }
+
+      .section h4 {
+        font-family: "Lora", serif;
+        font-size: 18pt;
+        font-weight: 600;
+        color: #226e93;
+        margin: 25px 0 15px;
+      }
+
+      .section p {
+        font-family: "Gentium Basic", serif;
+        font-size: 13pt;
+        line-height: 1.9;
+        margin: 18px 0;
+        text-align: justify;
+      }
+
+      .section ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .section ul li {
+        margin: 15px 0;
+        padding-left: 30px;
+        position: relative;
+        font-size: 13pt;
+        line-height: 1.8;
+      }
+
+      .section ul li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #226e93;
+        font-weight: bold;
+        font-size: 16pt;
+      }
+
+      .education-item,
+      .experience-item,
+      .publication-item {
+        margin: 25px 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-left: 4px solid #226e93;
+        border-radius: 4px;
+      }
+
+      .education-item h4,
+      .experience-item h4,
+      .publication-item h4 {
+        margin-top: 0;
+        color: #226e93;
+      }
+
+      .education-item .meta,
+      .experience-item .meta {
+        font-style: italic;
+        color: #666;
+        margin: 8px 0;
+        font-size: 12pt;
+      }
+
+      .publication-item .authors {
+        font-weight: 600;
+        color: #333;
+      }
+
+      .publication-item .venue {
+        font-style: italic;
+        color: #666;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 6px 14px;
+        background-color: #226e93;
+        color: #ffffff;
+        border-radius: 20px;
+        font-size: 11pt;
+        margin: 5px 5px 5px 0;
+        font-weight: 600;
+      }
+
+      .badge-award {
+        background-color: #ff9900;
+      }
+
+      .badge-cert {
+        background-color: #5aa6a6;
+      }
+
+      .intro-text {
+        font-size: 15pt;
+        line-height: 2;
+        color: #333;
+        background-color: #f5f5f5;
+        padding: 30px;
+        border-radius: 8px;
+        margin: 30px 0;
+        border-left: 5px solid #226e93;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #212121;
+        padding: 40px 24px;
+        text-align: center;
+        margin-top: 80px;
+      }
+
+      .footer-text {
+        font-family: "Gentium Basic", serif;
+        font-size: 11pt;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-section {
+          height: 300px;
+          padding: 40px 24px;
+        }
+
+        .hero-content h1 {
+          font-size: 42pt;
+        }
+
+        .hero-content .subtitle {
+          font-size: 16pt;
+        }
+
+        .section h2 {
+          font-size: 26pt;
+        }
+
+        .section h3 {
+          font-size: 20pt;
+        }
+
+        .nav-menu {
+          flex-direction: column;
+        }
+
+        .main-container {
+          padding: 40px 20px;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .hero-content h1 {
+          font-size: 32pt;
+        }
+
+        .section h2 {
+          font-size: 22pt;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Zhen Li</h1>
+        <div class="subtitle">(Lisa)</div>
+        <div class="contact-info">
+          <a href="mailto:zli479@syr.edu">zli479@syr.edu</a> | 
+          <span>Phone: [3153950445]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+      <div class="nav-wrapper">
+        <ul class="nav-menu">
+          <li><a href="../home/">Home</a></li>
+          <li><a href="../behaviorism/">Behaviorism</a></li>
+          <li><a href="../cognitivism/">Cognitivism</a></li>
+          <li><a href="../social-learning/">Social Learning</a></li>
+          <li><a href="#" class="active">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <!-- Introduction -->
+      <section class="section">
+        <div class="intro-text">
+          <p>
+            I am a graduate student in Instructional Design, Development & Evaluation at Syracuse University, 
+            with a passion for inclusive and practice-oriented instructional design. My research focuses on 
+            connecting farm-based experiential learning with multilingual student engagement, and exploring 
+            cultural and AI-integrated pedagogy in heritage language education.
+          </p>
+          <p>
+            With over two decades of professional experience in corporate training, program design, and 
+            cross-sector collaboration, I bring a unique perspective to educational research. My work spans 
+            from designing nationwide training programs in eldercare and health services to teaching heritage 
+            Chinese learners, always with a focus on creating meaningful, accessible learning experiences.
+          </p>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <h2>Education</h2>
+        
+        <div class="education-item">
+          <h4>Master of Science in Instructional Design, Development & Evaluation</h4>
+          <div class="meta">Syracuse University (2025-present)</div>
+          <p>Completed 5 courses with grades of A; additional courses in progress</p>
+        </div>
+
+        <div class="education-item">
+          <h4>Master of Finance</h4>
+          <div class="meta">University of International Business and Economics, Beijing (2007)</div>
+          <p>GPA: 3.66 / 4.0</p>
+        </div>
+
+        <div class="education-item">
+          <h4>Bachelor of Finance</h4>
+          <div class="meta">University of International Business and Economics, Beijing (2002)</div>
+        </div>
+      </section>
+
+      <!-- Research Experience & Publications -->
+      <section class="section">
+        <h2>Research Experience & Publications</h2>
+        
+        <div class="experience-item">
+          <h4>Graduate Assistant, Seeds of Story (NSF ITEST Project)</h4>
+          <div class="meta">Syracuse University (2025-present)</div>
+          <ul>
+            <li>Coordinated instructional activities and prepared observation notes for immigrant and refugee youth programs</li>
+            <li>Assisted with project management and contributed to research design connecting farm-based experiential learning with multilingual student engagement</li>
+            <li>Documented and analyzed student participation to strengthen the link between field observations and educational research</li>
+          </ul>
+        </div>
+
+        <h3>Publications in Chinese Core Journals and Edited Volumes</h3>
+        <p>Authored and co-authored more than ten academic articles, including several peer-reviewed papers in national core journals. Contributed to six edited academic books on life, health, and cultural education.</p>
+
+        <h4>Selected Publications:</h4>
+        
+        <div class="publication-item">
+          <div class="authors">Li, Z. (2019).</div>
+          <div class="venue">Family life culture: Interdisciplinary perspectives.</div>
+          <p>Beijing Union Medical College Press. (Committee member)</p>
+        </div>
+
+        <div class="publication-item">
+          <div class="authors">Li, Z. (2018).</div>
+          <div class="venue">Core concepts of life culture analysis.</div>
+          <p>China Overseas Chinese Press. (Committee member)</p>
+        </div>
+
+        <div class="publication-item">
+          <div class="authors">Li, Z. (2018).</div>
+          <div class="venue">Life culture, life and death accompany each other.</div>
+          <p>In Core Concepts of Life Culture Analysis. China Overseas Chinese Press. (Solo author)</p>
+        </div>
+
+        <div class="publication-item">
+          <div class="authors">Li, Z. (2017).</div>
+          <div class="venue">Maternal love, with virtue and wisdom, cultural heritage.</div>
+          <p>In Anthology of Life Culture. China Overseas Chinese Press. (Solo author)</p>
+        </div>
+
+        <div class="publication-item">
+          <div class="authors">Li, Z. (2015).</div>
+          <div class="venue">The golden decade: Smart choices.</div>
+          <p>China Commercial Press. (Chief editor; funded by Beijing Federation of Social Sciences)</p>
+        </div>
+
+        <div class="publication-item">
+          <div class="authors">Li, Z. (2015).</div>
+          <div class="venue">Golden years, wise life; Love and companionship.</div>
+          <p>In The Golden Decade: Smart Choices. China Commercial Press. (Solo author)</p>
+        </div>
+
+        <p style="margin-top: 20px; font-style: italic; color: #666;">
+          These early contributions in life, health, and cultural education laid the foundation for my current 
+          research trajectory in inclusive and practice-oriented instructional design.
+        </p>
+      </section>
+
+      <!-- Conference Papers -->
+      <section class="section">
+        <h2>Conference Papers</h2>
+        <ul>
+          <li>Generative AI in Heritage Language Learning - EITT 2025 (Full paper under double-blind peer review)</li>
+          <li>Cultural and AI-Integrated Pedagogy in Heritage Chinese Education - CSAUS 2025 (full paper submitted and under peer review)</li>
+        </ul>
+      </section>
+
+      <!-- Conference Presentations & Invited Talks -->
+      <section class="section">
+        <h2>Conference Presentations & Invited Talks</h2>
+        <div class="experience-item">
+          <h4>Data Management Strategies and Quality Issues in the Insurance Industry</h4>
+          <div class="meta">First IDMA Insurance Data Management Forum, Beijing, China (May 2009)</div>
+        </div>
+        <div class="experience-item">
+          <h4>Developing the First Standardized System for Health and Eldercare Services within China Life Group</h4>
+          <div class="meta">China Life National Health and Eldercare Services Forum (October 2022)</div>
+        </div>
+      </section>
+
+      <!-- Teaching & Instructional Experience -->
+      <section class="section">
+        <h2>Teaching & Instructional Experience</h2>
+        
+        <div class="experience-item">
+          <h4>Volunteer Lead Teacher, Grade 2 Chinese</h4>
+          <div class="meta">Central New York Chinese School (2025-present)</div>
+          <ul>
+            <li>Teach literacy, sentence patterns, and storytelling for heritage learners</li>
+            <li>Design lesson plans, assess student learning, manage classroom routines, and maintain communication with families</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h4>Volunteer Teaching Assistant</h4>
+          <div class="meta">Enders Road Elementary School, Fayetteville-Manlius School District, NY (2025)</div>
+          <ul>
+            <li>Assisted classroom teachers with extracurricular and art activities</li>
+            <li>Supported inclusive learning by providing individualized help to students with varied needs</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h4>Graduate Assistant, Seeds of Story Project</h4>
+          <div class="meta">Syracuse University (2025-present)</div>
+          <ul>
+            <li>Supported curriculum implementation and student activities in immersive STEM and storytelling programs</li>
+            <li>Observed classroom interaction and facilitated activity coordination for immigrant and refugee youth</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h4>Corporate Trainer & Program Designer</h4>
+          <div class="meta">China Life Healthcare / Funde Sino Life (2010-2024)</div>
+          <ul>
+            <li>Designed and delivered professional training programs in eldercare, health services, and financial literacy for participants across regions, age groups, and professional backgrounds</li>
+            <li>Developed blended workshops for staff in different roles, incorporating case-based learning, evaluation tools, and applied practice, which sharpened my skills in adult learning design and evaluation</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Professional Experience -->
+      <section class="section">
+        <h2>Professional Experience (2002-2024)</h2>
+        
+        <div class="experience-item">
+          <h4>Department Senior Manager</h4>
+          <div class="meta">China Life Healthcare (September 2021 - December 2024)</div>
+          <ul>
+            <li>Directed the design and evaluation of nationwide training programs in eldercare, health services, and customer education</li>
+            <li>Built cross-sector partnerships to integrate cultural education into public health initiatives</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h4>Consulting Director</h4>
+          <div class="meta">Funde Sino Life (August 2010 - September 2021)</div>
+          <ul>
+            <li>Led professional development and client education programs serving diverse regional populations</li>
+            <li>Supervised instructional projects that connected financial literacy with community-based service training</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h4>Executive Coordinator</h4>
+          <div class="meta">SYSNET Tech (December 2006 - August 2010)</div>
+          <ul>
+            <li>Oversaw IT system development and enterprise data projects, strengthening staff readiness to adopt new technologies</li>
+            <li>Applied project-based learning and technology-enhanced instruction to improve system usability and organizational efficiency</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h4>HR & Claims Specialist</h4>
+          <div class="meta">New China Life (April 2002 - August 2005)</div>
+          <ul>
+            <li>Supervised personnel development and conducted claims analysis, implementing quality control measures to improve accuracy</li>
+            <li>Built foundational expertise in evaluation, applied research, and performance improvement within insurance services</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 25px; font-style: italic; color: #666;">
+          Through these roles, I gained experience in program design, staff development, and cross-sector collaboration, 
+          experiences that have shaped my preparation and aspiration for doctoral research in inclusive instructional 
+          design and cross-cultural learning.
+        </p>
+      </section>
+
+      <!-- Certifications -->
+      <section class="section">
+        <h2>Certifications</h2>
+        
+        <h3>Research & Teaching Certifications</h3>
+        <p>
+          <span class="badge badge-cert">Higher Education Teaching Certificate</span>
+          <span class="badge badge-cert">Ministry of Education, China (2021)</span>
+        </p>
+        <p>
+          <span class="badge badge-cert">CITI Program Certification in Human Subjects Research</span>
+          <span class="badge badge-cert">2025-2028</span>
+        </p>
+
+        <h3>Professional Certifications</h3>
+        <p>
+          <span class="badge badge-cert">Certified Insurance Data Manager (CIDM, Advanced)</span>
+          <span class="badge badge-cert">IDMA, USA - the first professional in China to earn this credential</span>
+        </p>
+        <p>
+          <span class="badge badge-cert">Senior System Architect</span>
+          <span class="badge badge-cert">Ministry of Industry and Information Technology, China</span>
+        </p>
+        <p>
+          <span class="badge badge-cert">Fellow, Life Management Institute (FLMI)</span>
+        </p>
+      </section>
+
+      <!-- Honors & Awards -->
+      <section class="section">
+        <h2>Honors & Awards</h2>
+        <ul>
+          <li>
+            <span class="badge badge-award">Pioneer of Retirement Services Award</span>
+            <strong>China Life (2022)</strong> — awarded for contributions to eldercare program innovation and service standardization
+          </li>
+          <li>
+            <span class="badge badge-award">Outstanding Lecturer</span>
+            <strong>China Life Care Association (2018, 2019)</strong> — awarded for excellence in professional training delivery
+          </li>
+          <li>
+            <span class="badge badge-award">Ranked first in cohort</span>
+            <strong>Graduate Studies, University of International Business and Economics (2007)</strong>
+          </li>
+          <li>
+            <span class="badge badge-award">Outstanding Student Leader</span>
+            <strong>University of International Business and Economics (2007)</strong>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-text">IDE621_Fall 2025_Zhen Li</div>
+    </footer>
+  </body>
+</html>
+

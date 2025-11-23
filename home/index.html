@@ -274,6 +274,165 @@
         font-size: 14pt;
       }
 
+      /* PDF Preview Section */
+      .pdf-preview-section {
+        margin: 60px 0;
+        padding: 40px 0;
+      }
+
+      .pdf-preview-section h2 {
+        font-family: "Lora", serif;
+        font-size: 28pt;
+        font-weight: 400;
+        color: #226e93;
+        margin-bottom: 30px;
+        text-align: center;
+        border-bottom: 2px solid #226e93;
+        padding-bottom: 15px;
+      }
+
+      .pdf-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: #f5f5f5;
+        position: relative;
+      }
+
+      .pdf-container iframe,
+      .pdf-container object {
+        width: 100%;
+        height: 800px;
+        border: none;
+        display: block;
+      }
+
+      .pdf-fallback {
+        padding: 40px;
+        text-align: center;
+        color: #666;
+      }
+
+      .pdf-fallback a {
+        color: #226e93;
+        text-decoration: underline;
+      }
+
+      /* Reference Section */
+      .reference-section {
+        margin: 80px 0;
+        padding: 40px 0;
+      }
+
+      .reference-section h2 {
+        font-family: "Lora", serif;
+        font-size: 32pt;
+        font-weight: 400;
+        color: #226e93;
+        margin-bottom: 40px;
+        text-align: center;
+        border-bottom: 3px solid #226e93;
+        padding-bottom: 15px;
+      }
+
+      .reference-diagram {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .diagram-circle {
+        border: 3px dashed #226e93;
+        border-radius: 50%;
+        padding: 30px;
+        background-color: rgba(34, 110, 147, 0.05);
+        text-align: center;
+        position: relative;
+        min-width: 200px;
+      }
+
+      .diagram-circle.large {
+        width: 280px;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diagram-circle.medium {
+        width: 240px;
+        height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diagram-circle.small {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diagram-circle p {
+        font-family: "Lora", serif;
+        font-size: 13pt;
+        font-weight: 600;
+        color: #226e93;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      .diagram-arrow {
+        font-size: 32pt;
+        color: #226e93;
+        font-weight: bold;
+      }
+
+      .reference-list {
+        margin: 50px 0;
+      }
+
+      .reference-list ol {
+        list-style: decimal;
+        padding-left: 30px;
+        margin: 20px 0;
+      }
+
+      .reference-list li {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        line-height: 1.8;
+        margin: 15px 0;
+        padding-left: 10px;
+        text-align: left;
+      }
+
+      .reference-list li strong {
+        font-weight: 700;
+        color: #226e93;
+      }
+
+      .reference-group {
+        margin: 30px 0;
+      }
+
+      .reference-group h3 {
+        font-family: "Lora", serif;
+        font-size: 18pt;
+        font-weight: 600;
+        color: #226e93;
+        margin: 25px 0 15px;
+      }
+
       /* Responsive */
       @media (max-width: 1024px) {
         .theories-grid {
@@ -324,6 +483,37 @@
         .comparison-table td:first-child {
           font-size: 12pt;
         }
+
+        .reference-section h2 {
+          font-size: 26pt;
+        }
+
+        .reference-diagram {
+          flex-direction: column;
+        }
+
+        .diagram-arrow {
+          transform: rotate(90deg);
+          margin: 10px 0;
+        }
+
+        .diagram-circle.large,
+        .diagram-circle.medium,
+        .diagram-circle.small {
+          width: 90%;
+          max-width: 280px;
+          height: auto;
+          min-height: 200px;
+        }
+
+        .pdf-container iframe,
+        .pdf-container object {
+          height: 600px;
+        }
+
+        .pdf-preview-section h2 {
+          font-size: 24pt;
+        }
       }
 
       @media (max-width: 479px) {
@@ -348,9 +538,10 @@
       <div class="nav-wrapper">
         <ul class="nav-menu">
           <li><a href="#" class="active">Home</a></li>
-          <li><a href="/behaviorism">Behaviorism</a></li>
-          <li><a href="/cognitivism">Cognitivism</a></li>
-          <li><a href="/social-learning">Social Learning</a></li>
+          <li><a href="../behaviorism/">Behaviorism</a></li>
+          <li><a href="../cognitivism/">Cognitivism</a></li>
+          <li><a href="../social-learning/">Social Learning</a></li>
+          <li><a href="../about/">About</a></li>
         </ul>
       </div>
     </nav>
@@ -361,7 +552,7 @@
       <div class="theories-grid">
         <!-- Behaviorism -->
         <div class="theory-item">
-          <a href="/behaviorism" class="theory-image">
+          <a href="../behaviorism/" class="theory-image">
             <img src="images/behaviorism.jpg" alt="Behaviorism" />
           </a>
           <div class="theory-keywords">
@@ -371,7 +562,7 @@
 
         <!-- Cognitivism -->
         <div class="theory-item">
-          <a href="/cognitivism" class="theory-image">
+          <a href="../cognitivism/" class="theory-image">
             <img src="images/cognitivism.jpg" alt="Cognitivism" />
           </a>
           <div class="theory-keywords">
@@ -381,7 +572,7 @@
 
         <!-- Social Learning -->
         <div class="theory-item">
-          <a href="/social-learning" class="theory-image">
+          <a href="../social-learning/" class="theory-image">
             <img src="images/social-learning.png" alt="Social Learning" />
           </a>
           <div class="theory-keywords">
@@ -390,23 +581,21 @@
         </div>
       </div>
 
-      
-
       <div class="theory-details">
         <!-- Section Headers -->
         <div class="section-header">
           <img src="images/behaviorism-details.png" alt="Behaviorism" />
-          <h2><a href="/behaviorism">Behaviorism</a></h2>
+          <h2><a href="../behaviorism/">Behaviorism</a></h2>
         </div>
 
         <div class="section-header">
           <img src="images/cognitivism-details.png" alt="Cognitivism" />
-          <h2><a href="/cognitivism">Cognitivism</a></h2>
+          <h2><a href="../cognitivism/">Cognitivism</a></h2>
         </div>
 
         <div class="section-header">
           <img src="images/social-learning-details.png" alt="Social Learning" />
-          <h2><a href="/social-learning">Social Learning</a></h2>
+          <h2><a href="../social-learning/">Social Learning</a></h2>
         </div>
       </div>
 
@@ -479,6 +668,158 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- PDF Preview Section -->
+      <section class="pdf-preview-section">
+        <h2>Knowledge Base Grading Rubric</h2>
+        <div class="pdf-container">
+          <iframe
+            src="images/KBGradingRubric_2025_CkList-zhenli.pdf#toolbar=1&navpanes=1&scrollbar=1"
+            type="application/pdf"
+          >
+            <object
+              data="images/KBGradingRubric_2025_CkList.pdf"
+              type="application/pdf"
+              width="100%"
+              height="800px"
+            >
+              <div class="pdf-fallback">
+                <p>Your browser does not support PDF preview.</p>
+                <p>
+                  Please
+                  <a
+                    href="images/KBGradingRubric_2025_CkList.pdf"
+                    target="_blank"
+                    >click here to download</a
+                  >
+                  the PDF file.
+                </p>
+              </div>
+            </object>
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Reference Section -->
+      <section class="reference-section">
+        <h2>Reference</h2>
+
+        <!-- Diagram -->
+        <div class="reference-diagram">
+          <div class="diagram-circle large">
+            <p>Behaviorism &<br />Behavioral Instructional Design</p>
+          </div>
+          <div class="diagram-arrow">→</div>
+          <div class="diagram-circle medium">
+            <p>Cognitivism, Cognitive Psychology &<br />Cognitivist ID</p>
+          </div>
+          <div class="diagram-arrow">→</div>
+          <div class="diagram-circle small">
+            <p>
+              Social Learning Theory,<br />SLT-Inspired ID,<br />Apprenticeship
+            </p>
+          </div>
+        </div>
+
+        <!-- Reference List -->
+        <div class="reference-list">
+          <ol>
+            <li>
+              <strong>Pusch, R. S. (2025).</strong>
+              <em
+                >IDE621: All-unit summaries and definitions [Unpublished course
+                handout].</em
+              >
+              Instructional Design, Development & Evaluation Program, Syracuse
+              University.
+            </li>
+          </ol>
+
+          <div class="reference-group">
+            <h3>Behaviorism & Behavioral Instructional Design</h3>
+            <ol start="2">
+              <li>
+                <strong>Skinner, B. F. (1954).</strong>
+                <em>The science of learning and the art of teaching.</em>
+                Harvard Educational Review, 24(2), 86-97.
+              </li>
+              <li>
+                <strong>Skinner, B. F. (1968).</strong>
+                <em>The technology of teaching.</em> Appleton-Century-Crofts.
+              </li>
+              <li>
+                <strong>Bloom, B. S. (1971).</strong>
+                <em>Mastery learning.</em> Holt, Rinehart & Winston.
+              </li>
+              <li>
+                <strong>Mager, R. F. (1997).</strong>
+                <em>Preparing instructional objectives (3rd ed.).</em> Center
+                for Effective Performance.
+              </li>
+            </ol>
+          </div>
+
+          <div class="reference-group">
+            <h3>Cognitivism, Cognitive Psychology & Cognitivist ID</h3>
+            <ol start="6">
+              <li>
+                <strong
+                  >Gagné, R. M., Wager, W. W., Golas, K. C., & Keller, J. M.
+                  (2005).</strong
+                >
+                <em>Principles of instructional design (5th ed.).</em>
+                Wadsworth.
+              </li>
+              <li>
+                <strong>Sweller, J. (1988).</strong> Cognitive load during
+                problem solving: Effects on learning.
+                <em>Cognitive Science</em>, 12(2), 257-285.
+              </li>
+              <li>
+                <strong>Merrill, M. D. (2002).</strong> First principles of
+                instruction.
+                <em>Educational Technology Research and Development</em>, 50(3),
+                43-59.
+              </li>
+              <li>
+                <strong>Bruner, J. S. (1960).</strong>
+                <em>The process of education.</em> Harvard University Press.
+              </li>
+            </ol>
+          </div>
+
+          <div class="reference-group">
+            <h3>Social Learning Theory, SLT-Inspired ID, Apprenticeship</h3>
+            <ol start="10">
+              <li>
+                <strong>Bandura, A. (1977).</strong>
+                <em>Social learning theory.</em> Prentice-Hall.
+              </li>
+              <li>
+                <strong>Bandura, A. (1986).</strong>
+                <em
+                  >Social foundations of thought and action: A social cognitive
+                  theory.</em
+                >
+                Prentice-Hall.
+              </li>
+              <li>
+                <strong>Rogoff, B. (1990).</strong>
+                <em
+                  >Apprenticeship in thinking: Cognitive development in social
+                  context.</em
+                >
+                Oxford University Press.
+              </li>
+              <li>
+                <strong>Lave, J., & Wenger, E. (1991).</strong>
+                <em>Situated learning: Legitimate peripheral participation.</em>
+                Cambridge University Press.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
