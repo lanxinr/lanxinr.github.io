@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Behaviorism - IDE621 Knowledge Base</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Gentium Basic", serif;
+        line-height: 1.6667;
+        color: #212121;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header Section */
+      .hero-section {
+        background-color: #226e93;
+        background-image: url("../home/images/hero-background.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 340px;
+        padding: 60px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(33, 33, 33, 0.4);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .hero-content h1 {
+        font-family: "Lora", serif;
+        font-size: 52pt;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        font-weight: 700;
+        color: #ff9900;
+        margin-top: 20px;
+      }
+
+      /* Navigation */
+      .nav-container {
+        background-color: #212121;
+        padding: 0;
+      }
+
+      .nav-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-menu li {
+        margin: 0;
+      }
+
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.87);
+        text-decoration: none;
+        font-family: "Lora", serif;
+        font-size: 15pt;
+        padding: 11.5px 16px;
+        display: block;
+        transition: color 0.2s;
+      }
+
+      .nav-menu a:hover {
+        color: #49aad4;
+      }
+
+      .nav-menu a.active {
+        color: #49aad4;
+      }
+
+      /* Main Content */
+      .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px;
+      }
+
+      .page-title {
+        font-family: "Lora", serif;
+        font-size: 48pt;
+        font-weight: 700;
+        color: #226e93;
+        margin: 40px 0 20px;
+        text-align: center;
+      }
+
+      .page-subtitle {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        font-weight: 700;
+        color: #ff9900;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section {
+        margin: 60px 0;
+      }
+
+      .section h2 {
+        font-family: "Lora", serif;
+        font-size: 28pt;
+        font-weight: 400;
+        color: #226e93;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #226e93;
+        padding-bottom: 10px;
+      }
+
+      .section h3 {
+        font-family: "Lora", serif;
+        font-size: 20pt;
+        font-weight: 400;
+        color: #226e93;
+        margin: 30px 0 20px;
+      }
+
+      .section p {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        line-height: 1.8;
+        margin: 16px 0;
+        text-align: justify;
+      }
+
+      .section ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .section ul li {
+        margin: 12px 0;
+        padding-left: 24px;
+        position: relative;
+      }
+
+      .section ul li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #226e93;
+        font-weight: bold;
+      }
+
+      .section a {
+        color: #226e93;
+        text-decoration: underline;
+        transition: color 0.2s;
+      }
+
+      .section a:hover {
+        color: #49aad4;
+      }
+
+      .pdf-link {
+        display: inline-block;
+        margin: 10px 10px 10px 0;
+        padding: 12px 24px;
+        background-color: #226e93;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: background-color 0.2s;
+      }
+
+      .pdf-link:hover {
+        background-color: #49aad4;
+        color: #ffffff;
+      }
+
+      .reflection {
+        background-color: #f5f5f5;
+        padding: 30px;
+        border-left: 4px solid #226e93;
+        margin: 30px 0;
+        border-radius: 4px;
+      }
+
+      .reflection p {
+        margin: 16px 0;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #ffffff;
+        padding: 40px 24px;
+        text-align: center;
+        margin-top: 60px;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .footer-text {
+        font-family: "Gentium Basic", serif;
+        font-size: 11pt;
+        color: #212121;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-section {
+          height: 250px;
+          padding: 30px 24px;
+        }
+
+        .hero-content h1 {
+          font-size: 40pt;
+        }
+
+        .page-title {
+          font-size: 36pt;
+        }
+
+        .section h2 {
+          font-size: 24pt;
+        }
+
+        .nav-menu {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .hero-content h1 {
+          font-size: 35pt;
+        }
+
+        .page-title {
+          font-size: 28pt;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>IDE621 Knowledge Base</h1>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+      <div class="nav-wrapper">
+        <ul class="nav-menu">
+          <li><a href="../home/">Home</a></li>
+          <li><a href="#" class="active">Behaviorism</a></li>
+          <li><a href="../cognitivism/">Cognitivism</a></li>
+          <li><a href="../social-learning/">Social Learning</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <h1 class="page-title">Behaviorism</h1>
+      <div class="page-subtitle">Knowledge Base prepared by Zhen Li</div>
+
+      <!-- Infographics Section -->
+      <section class="section">
+        <h2>Infographics of Behaviorist Learning Theories & Behaviorism-Inspired Instructional Design Theories</h2>
+        <a href="#" class="pdf-link">BLT_Learning Theory.pdf</a>
+        <a href="#" class="pdf-link">Behavioral_Inspired Instructional Theories.pdf</a>
+      </section>
+
+      <!-- Examples Section -->
+      <section class="section">
+        <h2>Examples of Behaviorism-Inspired Instructional Theories</h2>
+        
+        <h3>Criterion-Referenced Instruction (Robert Mager)</h3>
+        <ul>
+          <li><a href="https://techiweek.com/criterion-referenced-instruction-robert-mager/" target="_blank">https://techiweek.com/criterion-referenced-instruction-robert-mager/</a></li>
+        </ul>
+
+        <h3>Computer-Based Instruction</h3>
+        <ul>
+          <li><a href="https://elearningindustry.com/computer-based-instruction-theory" target="_blank">https://elearningindustry.com/computer-based-instruction-theory</a></li>
+        </ul>
+
+        <h3>Mastery Learning</h3>
+        <ul>
+          <li><a href="https://tea.dtei.uci.edu/resources/mastery-learning/" target="_blank">https://tea.dtei.uci.edu/resources/mastery-learning/</a></li>
+        </ul>
+
+        <h3>Programmed Instruction</h3>
+        <ul>
+          <li><a href="https://elearningindustry.com/programmed-instruction-educational-model" target="_blank">https://elearningindustry.com/programmed-instruction-educational-model</a></li>
+        </ul>
+
+        <h3>Direct Instruction</h3>
+        <ul>
+          <li><a href="https://www.theeducationhub.org.nz/wp-content/uploads/2019/08/Direct-Instruction.pdf" target="_blank">https://www.theeducationhub.org.nz/wp-content/uploads/2019/08/Direct-Instruction.pdf</a></li>
+        </ul>
+      </section>
+
+      <!-- Learning Scenario Section -->
+      <section class="section">
+        <h2>Learning Scenario</h2>
+        <p>Content for learning scenario goes here...</p>
+      </section>
+
+      <!-- Observation Checklist Section -->
+      <section class="section">
+        <h2>Observation Checklist</h2>
+        <p>Content for observation checklist goes here...</p>
+      </section>
+
+      <!-- Reflection Section -->
+      <section class="section">
+        <h2>Reflection</h2>
+        <div class="reflection">
+          <p>
+            Studying behaviorism again at this stage of my academic journey feels both familiar and refreshing. Much of my professional career before joining the IDDE program was devoted to designing and managing large-scale corporate training. In those contexts, I often relied on strategies that, looking back now, align closely with behaviorist principles. Breaking complex skills into smaller, observable tasks, offering timely feedback, and using structured practice were part of my daily work, even though I did not always name them as "shaping" or "reinforcement."
+          </p>
+          <p>
+            My recent coursework and projects have allowed me to revisit behaviorism with new eyes. In Seeds of Story, for example, I observed how young learners responded when their actions were reinforced with encouragement or with visible results like the display of their work. The sequence of activities—preparing the soil, planting seeds, documenting growth with iPads, and presenting their findings—was in many ways a chain of behaviors, each step serving as a cue for the next. Seeing how small reinforcements built confidence reminded me that observable progress can be as powerful as abstract explanation, especially for students who are just beginning to explore STEM.
+          </p>
+          <p>
+            Writing about learning theories in my recent papers also pushed me to reflect on my own habits as a learner. I noticed that I respond well to frequent low-stakes quizzes and clear criteria for success. These simple tools reduce distractions and give me tangible evidence of progress. At times they feel mechanical, yet they help me stay on track in the middle of a demanding graduate schedule. It makes me appreciate why programmed instruction and criterion-referenced design, though rooted in behaviorism, remain influential in instructional development today.
+          </p>
+          <p>
+            Of course, I am also aware of behaviorism's limits. In corporate projects and now in educational research, I have seen how motivation, identity, and culture shape learning in ways that reinforcement alone cannot explain. Still, I find value in remembering that every theory highlights one side of a complex process. For me, behaviorism serves as a reminder to pay attention to what learners actually do, to design learning in steps that can be practiced, and to provide reinforcement that is both immediate and meaningful.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-text">IDE621_Fall 2025_Zhen Li</div>
+    </footer>
+  </body>
+</html>
+

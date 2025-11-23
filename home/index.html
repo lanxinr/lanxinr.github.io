@@ -1,297 +1,489 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>IDE621 Knowledge Base</title>
-    <link href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Gentium Basic", serif;
+        line-height: 1.6667;
+        color: #212121;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header Section */
+      .hero-section {
+        background-color: #226e93;
+        background-image: url("images/hero-background.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 340px;
+        padding: 60px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(33, 33, 33, 0.4);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .hero-content h1 {
+        font-family: "Lora", serif;
+        font-size: 52pt;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        font-weight: 700;
+        color: #ff9900;
+        margin-top: 20px;
+      }
+
+      /* Navigation */
+      .nav-container {
+        background-color: #212121;
+        padding: 0;
+      }
+
+      .nav-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-menu li {
+        margin: 0;
+      }
+
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.87);
+        text-decoration: none;
+        font-family: "Lora", serif;
+        font-size: 15pt;
+        padding: 11.5px 16px;
+        display: block;
+        transition: color 0.2s;
+      }
+
+      .nav-menu a:hover {
+        color: #49aad4;
+      }
+
+      .nav-menu a.active {
+        color: #49aad4;
+      }
+
+      /* Main Content */
+      .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px;
+      }
+
+      /* Three Column Grid */
+      .theories-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 40px 0;
+      }
+
+      .theory-item {
+        text-align: center;
+      }
+
+      .theory-image {
+        width: 100%;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        transition: transform 0.2s;
+      }
+
+      .theory-image:hover {
+        transform: scale(1.02);
+      }
+
+      .theory-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .theory-keywords {
+        font-family: "Gentium Basic", serif;
+        font-size: 10pt;
+        color: #212121;
+        margin-top: 8px;
+      }
+
+      /* Theory Details Grid */
+      .theory-details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 60px 0 40px;
+      }
+
+      /* Section Headers */
+      .section-header {
+        text-align: center;
+      }
+
+      .section-header img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 16px;
+        border-radius: 4px;
+      }
+
+      .section-header h2 {
+        font-family: "Lora", serif;
+        font-size: 19pt;
+        font-weight: 400;
+        color: #226e93;
+        text-decoration: underline;
+        margin-top: 0;
+      }
+
+      .section-header a {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #ffffff;
+        padding: 40px 24px;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .footer-text {
+        font-family: "Gentium Basic", serif;
+        font-size: 11pt;
+        color: #212121;
+      }
+
+      /* Comparison Table */
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 60px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .comparison-table thead {
+        background-color: #2d5016;
+        color: #ffffff;
+      }
+
+      .comparison-table th {
+        font-family: "Lora", serif;
+        font-size: 16pt;
+        font-weight: 700;
+        padding: 20px;
+        text-align: left;
+        border: 1px solid #1a3009;
+      }
+
+      .comparison-table tbody tr:nth-child(odd) {
+        background-color: #e8f5e9;
+      }
+
+      .comparison-table tbody tr:nth-child(even) {
+        background-color: #c8e6c9;
+      }
+
+      .comparison-table td {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        padding: 20px;
+        vertical-align: top;
+        border: 1px solid #a5d6a7;
+      }
+
+      .comparison-table td:first-child {
+        font-weight: 700;
+        color: #1b5e20;
+        font-size: 14pt;
+      }
+
+      .comparison-table ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .comparison-table li {
+        margin: 8px 0;
+        padding-left: 24px;
+        position: relative;
+      }
+
+      .comparison-table li::before {
+        content: "📖";
+        position: absolute;
+        left: 0;
+      }
+
+      .comparison-table .how-learning li::before {
+        content: "→";
+        font-size: 14pt;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .theories-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
 
-        body {
-            font-family: 'Gentium Basic', serif;
-            line-height: 1.6667;
-            color: #212121;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
+        .theory-details {
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
 
-        /* Header Section */
+      @media (max-width: 768px) {
         .hero-section {
-            background-color: #226e93;
-            background-image: url('images/hero-background.jpg');
-            background-size: cover;
-            background-position: center center;
-            height: 340px;
-            padding: 60px 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(33, 33, 33, 0.4);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            color: #ffffff;
+          height: 250px;
+          padding: 30px 24px;
         }
 
         .hero-content h1 {
-            font-family: 'Lora', serif;
-            font-size: 52pt;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0;
-            line-height: 1.2;
+          font-size: 40pt;
         }
 
-        .hero-subtitle {
-            font-family: 'Gentium Basic', serif;
-            font-size: 12pt;
-            font-weight: 700;
-            color: #ff9900;
-            margin-top: 20px;
+        .theories-grid {
+          grid-template-columns: 1fr;
         }
 
-        /* Navigation */
-        .nav-container {
-            background-color: #212121;
-            padding: 0;
-        }
-
-        .nav-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+        .theory-details {
+          grid-template-columns: 1fr;
         }
 
         .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 0;
-            flex-wrap: wrap;
+          flex-direction: column;
         }
 
-        .nav-menu li {
-            margin: 0;
+        .comparison-table {
+          font-size: 10pt;
         }
 
-        .nav-menu a {
-            color: rgba(255, 255, 255, 0.87);
-            text-decoration: none;
-            font-family: 'Lora', serif;
-            font-size: 15pt;
-            padding: 11.5px 16px;
-            display: block;
-            transition: color 0.2s;
+        .comparison-table th {
+          font-size: 12pt;
+          padding: 12px;
         }
 
-        .nav-menu a:hover {
-            color: #49aad4;
+        .comparison-table td {
+          font-size: 10pt;
+          padding: 12px;
         }
 
-        .nav-menu a.active {
-            color: #49aad4;
+        .comparison-table td:first-child {
+          font-size: 12pt;
         }
+      }
 
-        /* Main Content */
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 24px;
+      @media (max-width: 479px) {
+        .hero-content h1 {
+          font-size: 35pt;
         }
-
-        /* Three Column Grid */
-        .theories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin: 40px 0;
-        }
-
-        .theory-item {
-            text-align: center;
-        }
-
-        .theory-image {
-            width: 100%;
-            margin-bottom: 16px;
-            border-radius: 4px;
-            transition: transform 0.2s;
-        }
-
-        .theory-image:hover {
-            transform: scale(1.02);
-        }
-
-        .theory-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .theory-keywords {
-            font-family: 'Gentium Basic', serif;
-            font-size: 10pt;
-            color: #212121;
-            margin-top: 8px;
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin: 60px 0 40px;
-        }
-
-        .section-header h2 {
-            font-family: 'Lora', serif;
-            font-size: 19pt;
-            font-weight: 400;
-            color: #226e93;
-            text-decoration: underline;
-        }
-
-        .section-header a {
-            color: inherit;
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #ffffff;
-            padding: 40px 24px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .footer-text {
-            font-family: 'Gentium Basic', serif;
-            font-size: 11pt;
-            color: #212121;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .theories-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                height: 250px;
-                padding: 30px 24px;
-            }
-
-            .hero-content h1 {
-                font-size: 40pt;
-            }
-
-            .theories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-menu {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 479px) {
-            .hero-content h1 {
-                font-size: 35pt;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-content">
-            <h1>Learning Theories</h1>
-            <div class="hero-subtitle">Knowledge Base prepared by Zhen Li</div>
-        </div>
+      <div class="hero-content">
+        <h1>Learning Theories</h1>
+        <div class="hero-subtitle">Knowledge Base prepared by Zhen Li</div>
+      </div>
     </section>
 
     <!-- Navigation -->
     <nav class="nav-container">
-        <div class="nav-wrapper">
-            <ul class="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="/behaviorism">Behaviorism</a></li>
-                <li><a href="/cognitivism">Cognitivism</a></li>
-                <li><a href="/social-learning">Social Learning</a></li>
-            </ul>
-        </div>
+      <div class="nav-wrapper">
+        <ul class="nav-menu">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="/behaviorism">Behaviorism</a></li>
+          <li><a href="/cognitivism">Cognitivism</a></li>
+          <li><a href="/social-learning">Social Learning</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-container">
-        <!-- Three Theory Cards -->
-        <div class="theories-grid">
-            <!-- Behaviorism -->
-            <div class="theory-item">
-                <a href="/behaviorism" class="theory-image">
-                    <img src="images/behaviorism.jpg" alt="Behaviorism" />
-                </a>
-                <div class="theory-keywords">Classical Conditioning/Operant Conditioning</div>
-            </div>
-
-            <!-- Cognitivism -->
-            <div class="theory-item">
-                <a href="/cognitivism" class="theory-image">
-                    <img src="images/cognitivism.jpg" alt="Cognitivism" />
-                </a>
-                <div class="theory-keywords">Schema, Scaffolding, Advance Organizers</div>
-            </div>
-
-            <!-- Social Learning -->
-            <div class="theory-item">
-                <a href="/social-learning" class="theory-image">
-                    <img src="images/social-learning.png" alt="Social Learning" />
-                </a>
-                <div class="theory-keywords">Modeling, Self-efficacy, Reciprocal Learning</div>
-            </div>
+      <!-- Three Theory Cards -->
+      <div class="theories-grid">
+        <!-- Behaviorism -->
+        <div class="theory-item">
+          <a href="/behaviorism" class="theory-image">
+            <img src="images/behaviorism.jpg" alt="Behaviorism" />
+          </a>
+          <div class="theory-keywords">
+            Classical Conditioning/Operant Conditioning
+          </div>
         </div>
 
+        <!-- Cognitivism -->
+        <div class="theory-item">
+          <a href="/cognitivism" class="theory-image">
+            <img src="images/cognitivism.jpg" alt="Cognitivism" />
+          </a>
+          <div class="theory-keywords">
+            Schema, Scaffolding, Advance Organizers
+          </div>
+        </div>
+
+        <!-- Social Learning -->
+        <div class="theory-item">
+          <a href="/social-learning" class="theory-image">
+            <img src="images/social-learning.png" alt="Social Learning" />
+          </a>
+          <div class="theory-keywords">
+            Modeling, Self-efficacy, Reciprocal Learning
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="theory-details">
         <!-- Section Headers -->
         <div class="section-header">
-            <h2><a href="/behaviorism">Behaviorism</a></h2>
+          <img src="images/behaviorism-details.png" alt="Behaviorism" />
+          <h2><a href="/behaviorism">Behaviorism</a></h2>
         </div>
 
         <div class="section-header">
-            <h2><a href="/cognitivism">Cognitivism</a></h2>
+          <img src="images/cognitivism-details.png" alt="Cognitivism" />
+          <h2><a href="/cognitivism">Cognitivism</a></h2>
         </div>
 
         <div class="section-header">
-            <h2><a href="/social-learning">Social Learning</a></h2>
+          <img src="images/social-learning-details.png" alt="Social Learning" />
+          <h2><a href="/social-learning">Social Learning</a></h2>
         </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Learning Theory</th>
+            <th>What is Learning?</th>
+            <th>How Learning Occurs?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Behaviorism</td>
+            <td>
+              <ul>
+                <li>
+                  Learning is defined as "a change in observable behavior."
+                </li>
+                <li>Equipotentiality: organisms learn similarly.</li>
+              </ul>
+            </td>
+            <td class="how-learning">
+              <ul>
+                <li>Stimulus → Response conditioning.</li>
+                <li>Reinforcement (positive/negative) strengthens behavior.</li>
+                <li>Removing distractions to support S-R formation.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Cognitivism</td>
+            <td>
+              <ul>
+                <li>
+                  Learning is defined as "change in mental structures(schema)."
+                </li>
+                <li>Assimilation & Accommodation.</li>
+              </ul>
+            </td>
+            <td class="how-learning">
+              <ul>
+                <li>
+                  Information processing (attention → encoding → retrieval).
+                </li>
+                <li>Schema construction & meaningful organization.</li>
+                <li>Use of prior knowledge.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Social Learning Theory</td>
+            <td>
+              <ul>
+                <li>
+                  Learning is defined as "constructing behavior patterns society
+                  expects."
+                </li>
+                <li>Through interaction with environment & people.</li>
+              </ul>
+            </td>
+            <td class="how-learning">
+              <ul>
+                <li>Reciprocal causation (B-E-P affect each other).</li>
+                <li>Modeling (observing others).</li>
+                <li>Vicarious reinforcement & social interaction.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-text">
-            IDE621_Fall 2025_Zhen Li
-        </div>
+      <div class="footer-text">IDE621_Fall 2025_Zhen Li</div>
     </footer>
-</body>
-
+  </body>
 </html>
-
