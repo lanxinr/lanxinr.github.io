@@ -115,13 +115,13 @@ lanxinr.github.io/
   - Honors & awards
 
 ### Image Rules
-- All images should be placed in `home/images/` directory
-- Use relative paths: `images/filename.png` or `../home/images/filename.png`
+- All images should be placed in `home/assets/images/` directory
+- Use relative paths: `assets/images/filename.png` or `../home/assets/images/filename.png`
 - Images should be optimized for web (reasonable file size)
 - Alt text must be provided for all images
 
 ### PDF Handling
-- PDF files should be placed in `home/images/` directory
+- PDF files should be placed in `home/assets/` directory
 - Use iframe for PDF preview with fallback to object tag
 - Include proper error handling for browsers that don't support PDF preview
 
@@ -146,7 +146,7 @@ Then visit: http://localhost:8000/home/
 
 ### File Organization
 - Keep HTML files in their respective directories
-- Shared images go in `home/images/`
+- Shared images go in `home/assets/images/`
 - Each page should be self-contained with its own styles
 
 ## Content Guidelines

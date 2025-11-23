@@ -27,7 +27,7 @@
       /* Header Section */
       .hero-section {
         background-color: #226e93;
-        background-image: url("../home/images/hero-background.jpg");
+        background-image: url("../home/assets/images/hero-background.jpg");
         background-size: cover;
         background-position: center center;
         height: 340px;
@@ -215,6 +215,35 @@
         color: #ffffff;
       }
 
+      /* PDF Preview Embedded */
+      .pdf-preview-container {
+        margin: 30px 0;
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .pdf-preview-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 141.42%; /* A4比例 (297/210 = 1.4142) */
+        overflow: hidden;
+      }
+
+      .pdf-preview-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
       .reflection {
         background-color: #f5f5f5;
         padding: 30px;
@@ -225,6 +254,249 @@
 
       .reflection p {
         margin: 16px 0;
+      }
+
+      /* Learning Scenario Section */
+      article {
+        display: flex;
+        gap: 30px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      sidebar {
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      sidebar img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      main {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      main img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      .scenario-content {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        line-height: 1.8;
+        color: #212121;
+        text-align: justify;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .scenario-content p {
+        margin: 0;
+        padding: 20px;
+        border-radius: 4px;
+        background-color: #f5f5f5;
+      }
+
+      .p-purple {
+        background-color: rgba(156, 39, 176, 0.15);
+        border-left-color: #9c27b0;
+      }
+
+      .p-yellow {
+        background-color: rgba(255, 235, 59, 0.3);
+        border-left-color: #ffeb3b;
+      }
+
+      .p-light-green {
+        background-color: rgba(139, 195, 74, 0.2);
+        border-left-color: #8bc34a;
+      }
+
+      .p-light-blue {
+        background-color: rgba(3, 169, 244, 0.15);
+        border-left-color: #03a9f4;
+      }
+
+      .p-red {
+        background-color: rgba(244, 67, 54, 0.15);
+        border-left-color: #f44336;
+      }
+
+      .p-dark-blue {
+        background-color: rgba(25, 118, 210, 0.15);
+        border-left-color: #1976d2;
+      }
+
+      .p-teal {
+        background-color: rgba(0, 150, 136, 0.15);
+        border-left-color: #009688;
+      }
+
+      .p-dark-green {
+        background-color: rgba(56, 142, 60, 0.15);
+        border-left-color: #388e3c;
+      }
+
+      .p-olive {
+        background-color: rgba(104, 159, 56, 0.15);
+        border-left-color: #689f38;
+      }
+
+      .p-magenta {
+        background-color: rgba(233, 30, 99, 0.15);
+        border-left-color: #e91e63;
+      }
+
+      /* Observation Checklist Table */
+      .checklist-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .checklist-table thead {
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+
+      .checklist-table thead th {
+        padding: 15px;
+        text-align: left;
+        font-weight: 600;
+        border: 1px solid #1565c0;
+      }
+
+      .checklist-table tbody tr:nth-child(even) {
+        background-color: #e3f2fd;
+      }
+
+      .checklist-table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+
+      .checklist-table tbody td {
+        padding: 12px 15px;
+        border: 1px solid #e0e0e0;
+        vertical-align: top;
+      }
+
+      .checklist-table tbody td:first-child {
+        font-weight: 500;
+        width: 50%;
+      }
+
+      .checklist-table tbody td:nth-child(2),
+      .checklist-table tbody td:nth-child(3) {
+        width: 10%;
+        text-align: center;
+      }
+
+      .checklist-table thead th:first-child {
+        width: 50%;
+      }
+
+      .checklist-table thead th:nth-child(2),
+      .checklist-table thead th:nth-child(3) {
+        width: 10%;
+        text-align: center;
+      }
+
+      .checklist-section {
+        margin: 40px 0;
+      }
+
+      .checklist-section-title {
+        font-family: "Lora", serif;
+        font-size: 18pt;
+        font-weight: 600;
+        color: #226e93;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #226e93;
+      }
+
+      .tags-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 4px;
+      }
+
+      .tag {
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        font-weight: 600;
+        color: #212121;
+        text-align: center;
+      }
+
+      .tag-purple {
+        background-color: #9c27b0;
+        color: #ffffff;
+      }
+
+      .tag-yellow {
+        background-color: #ffeb3b;
+        color: #212121;
+      }
+
+      .tag-light-green {
+        background-color: #8bc34a;
+        color: #212121;
+      }
+
+      .tag-light-blue {
+        background-color: #03a9f4;
+        color: #ffffff;
+      }
+
+      .tag-red {
+        background-color: #f44336;
+        color: #ffffff;
+      }
+
+      .tag-dark-blue {
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+
+      .tag-teal {
+        background-color: #009688;
+        color: #ffffff;
+      }
+
+      .tag-dark-green {
+        background-color: #388e3c;
+        color: #ffffff;
+      }
+
+      .tag-olive {
+        background-color: #689f38;
+        color: #ffffff;
+      }
+
+      .tag-magenta {
+        background-color: #e91e63;
+        color: #ffffff;
       }
 
       /* Footer */
@@ -306,51 +578,312 @@
 
       <!-- Infographics Section -->
       <section class="section">
-        <h2>Infographics of Behaviorist Learning Theories & Behaviorism-Inspired Instructional Design Theories</h2>
-        <a href="#" class="pdf-link">BLT_Learning Theory.pdf</a>
-        <a href="#" class="pdf-link">Behavioral_Inspired Instructional Theories.pdf</a>
+        <h2>
+          Infographics of Behaviorist Learning Theories & Behaviorism-Inspired
+          Instructional Design Theories
+        </h2>
+        <div>
+          <div class="pdf-preview-container">
+            <div class="pdf-preview-wrapper">
+              <iframe
+                class="pdf-preview-iframe"
+                src="assets/BLT_Learning_Theory.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 30px;">
+          <div class="pdf-preview-container">
+            <div class="pdf-preview-wrapper">
+              <iframe
+                class="pdf-preview-iframe"
+                src="assets/Behaviorism_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Examples Section -->
       <section class="section">
         <h2>Examples of Behaviorism-Inspired Instructional Theories</h2>
-        
+
         <h3>Criterion-Referenced Instruction (Robert Mager)</h3>
         <ul>
-          <li><a href="https://techiweek.com/criterion-referenced-instruction-robert-mager/" target="_blank">https://techiweek.com/criterion-referenced-instruction-robert-mager/</a></li>
+          <li>
+            <a
+              href="https://techiweek.com/criterion-referenced-instruction-robert-mager/"
+              target="_blank"
+              >https://techiweek.com/criterion-referenced-instruction-robert-mager/</a
+            >
+          </li>
         </ul>
 
         <h3>Computer-Based Instruction</h3>
         <ul>
-          <li><a href="https://elearningindustry.com/computer-based-instruction-theory" target="_blank">https://elearningindustry.com/computer-based-instruction-theory</a></li>
+          <li>
+            <a
+              href="https://elearningindustry.com/computer-based-instruction-theory"
+              target="_blank"
+              >https://elearningindustry.com/computer-based-instruction-theory</a
+            >
+          </li>
         </ul>
 
         <h3>Mastery Learning</h3>
         <ul>
-          <li><a href="https://tea.dtei.uci.edu/resources/mastery-learning/" target="_blank">https://tea.dtei.uci.edu/resources/mastery-learning/</a></li>
+          <li>
+            <a
+              href="https://tea.dtei.uci.edu/resources/mastery-learning/"
+              target="_blank"
+              >https://tea.dtei.uci.edu/resources/mastery-learning/</a
+            >
+          </li>
         </ul>
 
         <h3>Programmed Instruction</h3>
         <ul>
-          <li><a href="https://elearningindustry.com/programmed-instruction-educational-model" target="_blank">https://elearningindustry.com/programmed-instruction-educational-model</a></li>
+          <li>
+            <a
+              href="https://elearningindustry.com/programmed-instruction-educational-model"
+              target="_blank"
+              >https://elearningindustry.com/programmed-instruction-educational-model</a
+            >
+          </li>
         </ul>
 
         <h3>Direct Instruction</h3>
         <ul>
-          <li><a href="https://www.theeducationhub.org.nz/wp-content/uploads/2019/08/Direct-Instruction.pdf" target="_blank">https://www.theeducationhub.org.nz/wp-content/uploads/2019/08/Direct-Instruction.pdf</a></li>
+          <li>
+            <a
+              href="https://www.theeducationhub.org.nz/wp-content/uploads/2019/08/Direct-Instruction.pdf"
+              target="_blank"
+              >https://www.theeducationhub.org.nz/wp-content/uploads/2019/08/Direct-Instruction.pdf</a
+            >
+          </li>
         </ul>
       </section>
 
       <!-- Learning Scenario Section -->
       <section class="section">
         <h2>Learning Scenario</h2>
-        <p>Content for learning scenario goes here...</p>
+        <article>
+          <sidebar>
+            <img
+              src="assets/images/learning-scenario.png"
+              alt="Behaviorism Learning Scenario"
+            />
+            <div class="tags-container">
+              <div class="tag tag-purple">Stimulus (S)</div>
+              <div class="tag tag-yellow">Neutral Stimulus (NS)</div>
+              <div class="tag tag-light-green">Unconditioned Stimulus (US)</div>
+              <div class="tag tag-light-blue">Expected Response (ER)</div>
+              <div class="tag tag-red">Terminal Behavior (TB)</div>
+              <div class="tag tag-dark-blue">Not Expected Response (NER)</div>
+              <div class="tag tag-teal">
+                Shaping (with Positive Reinforcement)
+              </div>
+              <div class="tag tag-dark-green">
+                Shaping (with Constructive Feedback)
+              </div>
+              <div class="tag tag-olive">Shaping (Removing Distractions)</div>
+              <div class="tag tag-magenta">Chaining</div>
+            </div>
+          </sidebar>
+          <main>
+            <div class="scenario-content">
+              <p>
+                In an art class, the teacher stands beside the front table while
+                22 students sit in pairs at their benches. On the interactive
+                whiteboard behind her,
+                <span class="tag-yellow"
+                  >a picture of three girls dancing gracefully under
+                  rainbow-colored lights is displayed.</span
+                >
+                <span class="tag-light-green"
+                  >The beams reflect like sparkles on water. </span
+                >She taps the screen gently andasks, “'Can anyone tell me what
+                kind of feeling this picture gives you?” Little hands shoot up.
+                “Itlooks magical!" says one student, Another adds, “'It feels
+                like a dream," The teacher smiles and釓迟ods, saying,“Exactly.
+                That's the power of color and movement in art.”She then holds up
+                threestrips of tissue paper-red, blue, and yellow-and explains,
+                “Today, we are going to create ourown rainbow light effect by
+                layering tissue paper. lmagine your dancers moving under the
+                lightsyou design." Students eagerly begin cutting and arranging
+                tissue paper. Some whisper ideas to eachother, while others work
+                silently, absorbed in their designs. The classroom hums with the
+                rustlingof paper and soft conversationsAs the activity
+                continues, the teacher stops to encourage a shystudent, kneels
+                to help another reposition a tricky layer, and praises one group
+                for blending colorsinto a glowing sunset effect. Near the
+                end.she invites everyone to place their collages on the
+                displayboard titled “Dancing with Light.’ Students gather
+                around, pointing and admiring. Excited voicessay, “It looks like
+                they're all dancing together on one big stage.” Smiling,the
+                teacher concludes bysummarizing the class's creative outcomes.
+                continues, the teacher stops to encourage a shystudent, kneels
+                to help another reposition a tricky layer, and praises one group
+                for blending colorsinto a glowing sunset effect. Near the
+                end.she invites everyone to place their collages on the
+                displayboard titled “Dancing with Light.’ Students gather
+                around, pointing and admiring. Excited voicessay, “It looks like
+                they're all dancing together on one big stage.” Smiling,the
+                teacher concludes bysummarizing the class's creative outcomes.
+              </p>
+            </div>
+          </main>
+        </article>
       </section>
 
       <!-- Observation Checklist Section -->
       <section class="section">
         <h2>Observation Checklist</h2>
-        <p>Content for observation checklist goes here...</p>
+
+        <div class="checklist-section">
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th>Observed Behaviors</th>
+                <th>Yes</th>
+                <th>No</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Instructor presents neutral stimulus</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Instructor provides unconditioned Stimulus</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners give expected response</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners show not expected response</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Instructor applies shaping with positive reinforcement</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Instructor applies shaping with constructive feedback</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  Instructor reduces barriers: shaping by removing distractions
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Instructor creates positive reinforcement</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners engage in chaining sequence</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th>Observed Materials / Evidence</th>
+                <th>Yes</th>
+                <th>No</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Neutral Stimuli (e.g., displayed image on Smart Board)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  Unconditioned Stimuli (e.g., vivid colors, movement, sounds)
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Student Responses (e.g., verbal comments, gestures)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  Off-task behaviors (e.g., distractions, irrelevant actions)
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Reinforcement Tools (e.g., praise, tokens)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Feedback Tools (e.g., teacher guidance, modeling)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Support Tools (e.g., encouragement, scaffolds)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  Positive reinforcement creating Tools (e.g., praise, display
+                  board)
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  Stepwise Learning Materials (e.g., image → feelings → layering
+                  tissue → collage → display → reflection)
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- Reflection Section -->
@@ -358,16 +891,50 @@
         <h2>Reflection</h2>
         <div class="reflection">
           <p>
-            Studying behaviorism again at this stage of my academic journey feels both familiar and refreshing. Much of my professional career before joining the IDDE program was devoted to designing and managing large-scale corporate training. In those contexts, I often relied on strategies that, looking back now, align closely with behaviorist principles. Breaking complex skills into smaller, observable tasks, offering timely feedback, and using structured practice were part of my daily work, even though I did not always name them as "shaping" or "reinforcement."
+            Studying behaviorism again at this stage of my academic journey
+            feels both familiar and refreshing. Much of my professional career
+            before joining the IDDE program was devoted to designing and
+            managing large-scale corporate training. In those contexts, I often
+            relied on strategies that, looking back now, align closely with
+            behaviorist principles. Breaking complex skills into smaller,
+            observable tasks, offering timely feedback, and using structured
+            practice were part of my daily work, even though I did not always
+            name them as "shaping" or "reinforcement."
           </p>
           <p>
-            My recent coursework and projects have allowed me to revisit behaviorism with new eyes. In Seeds of Story, for example, I observed how young learners responded when their actions were reinforced with encouragement or with visible results like the display of their work. The sequence of activities—preparing the soil, planting seeds, documenting growth with iPads, and presenting their findings—was in many ways a chain of behaviors, each step serving as a cue for the next. Seeing how small reinforcements built confidence reminded me that observable progress can be as powerful as abstract explanation, especially for students who are just beginning to explore STEM.
+            My recent coursework and projects have allowed me to revisit
+            behaviorism with new eyes. In Seeds of Story, for example, I
+            observed how young learners responded when their actions were
+            reinforced with encouragement or with visible results like the
+            display of their work. The sequence of activities—preparing the
+            soil, planting seeds, documenting growth with iPads, and presenting
+            their findings—was in many ways a chain of behaviors, each step
+            serving as a cue for the next. Seeing how small reinforcements built
+            confidence reminded me that observable progress can be as powerful
+            as abstract explanation, especially for students who are just
+            beginning to explore STEM.
           </p>
           <p>
-            Writing about learning theories in my recent papers also pushed me to reflect on my own habits as a learner. I noticed that I respond well to frequent low-stakes quizzes and clear criteria for success. These simple tools reduce distractions and give me tangible evidence of progress. At times they feel mechanical, yet they help me stay on track in the middle of a demanding graduate schedule. It makes me appreciate why programmed instruction and criterion-referenced design, though rooted in behaviorism, remain influential in instructional development today.
+            Writing about learning theories in my recent papers also pushed me
+            to reflect on my own habits as a learner. I noticed that I respond
+            well to frequent low-stakes quizzes and clear criteria for success.
+            These simple tools reduce distractions and give me tangible evidence
+            of progress. At times they feel mechanical, yet they help me stay on
+            track in the middle of a demanding graduate schedule. It makes me
+            appreciate why programmed instruction and criterion-referenced
+            design, though rooted in behaviorism, remain influential in
+            instructional development today.
           </p>
           <p>
-            Of course, I am also aware of behaviorism's limits. In corporate projects and now in educational research, I have seen how motivation, identity, and culture shape learning in ways that reinforcement alone cannot explain. Still, I find value in remembering that every theory highlights one side of a complex process. For me, behaviorism serves as a reminder to pay attention to what learners actually do, to design learning in steps that can be practiced, and to provide reinforcement that is both immediate and meaningful.
+            Of course, I am also aware of behaviorism's limits. In corporate
+            projects and now in educational research, I have seen how
+            motivation, identity, and culture shape learning in ways that
+            reinforcement alone cannot explain. Still, I find value in
+            remembering that every theory highlights one side of a complex
+            process. For me, behaviorism serves as a reminder to pay attention
+            to what learners actually do, to design learning in steps that can
+            be practiced, and to provide reinforcement that is both immediate
+            and meaningful.
           </p>
         </div>
       </section>
@@ -379,4 +946,3 @@
     </footer>
   </body>
 </html>
-

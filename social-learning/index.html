@@ -27,7 +27,7 @@
       /* Header Section */
       .hero-section {
         background-color: #226e93;
-        background-image: url("../home/images/hero-background.jpg");
+        background-image: url("../home/assets/images/hero-background.jpg");
         background-size: cover;
         background-position: center center;
         height: 340px;
@@ -223,6 +223,35 @@
         color: #ffffff;
       }
 
+      /* PDF Preview Embedded */
+      .pdf-preview-container {
+        margin: 30px 0;
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .pdf-preview-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 141.42%; /* A4比例 (297/210 = 1.4142) */
+        overflow: hidden;
+      }
+
+      .pdf-preview-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
       .reflection {
         background-color: #f5f5f5;
         padding: 30px;
@@ -242,6 +271,198 @@
 
       .reflection h4:first-of-type {
         margin-top: 0;
+      }
+
+      /* Learning Scenario Section */
+      article {
+        display: flex;
+        gap: 30px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      sidebar {
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      sidebar img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      main {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .scenario-content {
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        line-height: 1.8;
+        color: #212121;
+        text-align: justify;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .scenario-content p {
+        margin: 16px 0;
+        padding: 15px 20px;
+        border-radius: 4px;
+        border-left: 4px solid;
+      }
+
+      .p-yellow {
+        background-color: rgba(255, 235, 59, 0.3);
+        border-left-color: #ffeb3b;
+      }
+
+      .p-light-green {
+        background-color: rgba(139, 195, 74, 0.2);
+        border-left-color: #8bc34a;
+      }
+
+      .p-light-blue {
+        background-color: rgba(3, 169, 244, 0.15);
+        border-left-color: #03a9f4;
+      }
+
+      .tags-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 4px;
+      }
+
+      .tag {
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        font-weight: 600;
+        color: #212121;
+        text-align: center;
+      }
+
+      .tag-purple {
+        background-color: #9c27b0;
+        color: #ffffff;
+      }
+
+      .tag-yellow {
+        background-color: #ffeb3b;
+        color: #212121;
+      }
+
+      .tag-light-green {
+        background-color: #8bc34a;
+        color: #212121;
+      }
+
+      .tag-light-blue {
+        background-color: #03a9f4;
+        color: #ffffff;
+      }
+
+      .tag-red {
+        background-color: #f44336;
+        color: #ffffff;
+      }
+
+      .tag-dark-blue {
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+
+      .tag-teal {
+        background-color: #009688;
+        color: #ffffff;
+      }
+
+      .tag-dark-green {
+        background-color: #388e3c;
+        color: #ffffff;
+      }
+
+      .tag-olive {
+        background-color: #689f38;
+        color: #ffffff;
+      }
+
+      .tag-magenta {
+        background-color: #e91e63;
+        color: #ffffff;
+      }
+
+      /* Observation Checklist Table */
+      .checklist-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        font-family: "Gentium Basic", serif;
+        font-size: 12pt;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .checklist-table thead {
+        background-color: #1976d2;
+        color: #ffffff;
+      }
+
+      .checklist-table thead th {
+        padding: 15px;
+        text-align: left;
+        font-weight: 600;
+        border: 1px solid #1565c0;
+      }
+
+      .checklist-table tbody tr:nth-child(even) {
+        background-color: #e3f2fd;
+      }
+
+      .checklist-table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+
+      .checklist-table tbody td {
+        padding: 12px 15px;
+        border: 1px solid #e0e0e0;
+        vertical-align: top;
+      }
+
+      .checklist-table tbody td:first-child {
+        font-weight: 500;
+        width: 50%;
+      }
+
+      .checklist-table tbody td:nth-child(2),
+      .checklist-table tbody td:nth-child(3) {
+        width: 10%;
+        text-align: center;
+      }
+
+      .checklist-table thead th:first-child {
+        width: 50%;
+      }
+
+      .checklist-table thead th:nth-child(2),
+      .checklist-table thead th:nth-child(3) {
+        width: 10%;
+        text-align: center;
+      }
+
+      .checklist-section {
+        margin: 40px 0;
       }
 
       /* Footer */
@@ -324,8 +545,26 @@
       <!-- Infographics Section -->
       <section class="section">
         <h2>Infographics of Social Learning Theories & Social Learning Theory-Inspired Instructional Design Theories</h2>
-        <a href="#" class="pdf-link">SOCIAL LEARNING THEORIES.pdf</a>
-        <a href="#" class="pdf-link">SLT_Inspired Instructional Theories.pdf</a>
+        <div>
+          <div class="pdf-preview-container">
+            <div class="pdf-preview-wrapper">
+              <iframe
+                class="pdf-preview-iframe"
+                src="assets/Social_Learning_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 30px;">
+          <div class="pdf-preview-container">
+            <div class="pdf-preview-wrapper">
+              <iframe
+                class="pdf-preview-iframe"
+                src="assets/SLT_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Examples Section -->
@@ -361,13 +600,250 @@
       <!-- Learning Scenario Section -->
       <section class="section">
         <h2>Learning Scenario</h2>
-        <p>Content for learning scenario goes here...</p>
+        <article>
+          <sidebar>
+            <img
+              src="assets/images/learning-scenario.png"
+              alt="Social Learning Learning Scenario"
+            />
+            <div class="tags-container">
+              <div class="tag tag-purple">Attention (A)</div>
+              <div class="tag tag-yellow">Retention (R)</div>
+              <div class="tag tag-light-green">Reproduction (P)</div>
+              <div class="tag tag-light-blue">Motivation (M)</div>
+              <div class="tag tag-red">Self-efficacy (SE)</div>
+              <div class="tag tag-dark-blue">Vicarious Reinforcement (VR)</div>
+              <div class="tag tag-teal">Direct Reinforcement (DR)</div>
+              <div class="tag tag-dark-green">Self-Reinforcement (SR)</div>
+              <div class="tag tag-olive">Modeling (M)</div>
+              <div class="tag tag-magenta">Reciprocal Determinism (RD)</div>
+            </div>
+          </sidebar>
+          <main>
+            <div class="scenario-content">
+              <p class="p-yellow">
+                In an art class, the teacher stands beside the front table while
+                22 students sit in pairs at their benches. On the interactive
+                whiteboard behind her, a picture of three girls dancing gracefully under
+                rainbow-colored lights is displayed. The beams reflect like sparkles on water.
+                She taps the screen gently and asks, "Can anyone tell me what
+                kind of feeling this picture gives you?" Little hands shoot up.
+                "It looks magical!" says one student. Another adds, "It feels
+                like a dream." The teacher smiles and nods, saying, "Exactly.
+                That's the power of color and movement in art."
+              </p>
+              <p class="p-light-green">
+                She then holds up three strips of tissue paper—red, blue, and yellow—and explains,
+                "Today, we are going to create our own rainbow light effect by
+                layering tissue paper. Imagine your dancers moving under the
+                lights you design." Students eagerly begin cutting and arranging
+                tissue paper. Some whisper ideas to each other, while others work
+                silently, absorbed in their designs. The classroom hums with the
+                rustling of paper and soft conversations.
+              </p>
+              <p class="p-light-blue">
+                As the activity continues, the teacher stops to encourage a shy
+                student, kneels to help another reposition a tricky layer, and praises one group
+                for blending colors into a glowing sunset effect. Near the
+                end, she invites everyone to place their collages on the
+                display board titled "Dancing with Light." Students gather
+                around, pointing and admiring. Excited voices say, "It looks like
+                they're all dancing together on one big stage." Smiling, the
+                teacher concludes by summarizing the class's creative outcomes.
+              </p>
+            </div>
+          </main>
+        </article>
       </section>
 
       <!-- Observation Checklist Section -->
       <section class="section">
         <h2>Observation Checklist</h2>
-        <p>Content for observation checklist goes here...</p>
+        <div class="checklist-section">
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th>Observed Behaviors</th>
+                <th>Yes</th>
+                <th>No</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Instructor models a target behavior or thinking process.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners attend to and observe the model.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners imitate or attempt to reproduce the modeled behavior.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners compare their performance with peers or model.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Instructor provides vicarious reinforcement by praising an observed peer behavior.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners adjust behavior after seeing peer success or correction.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners engage in collaborative meaning-making during tasks.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners seek social cues or guidance from peers.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Instructor encourages guided participation or joint activity.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners show increased self-efficacy as they gain skill.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Instructor gradually releases responsibility to learners.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learners participate in a community-like learning environment.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Reciprocal causation observed among person-behavior-environment.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="checklist-section">
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th>Observed Materials / Evidence</th>
+                <th>Yes</th>
+                <th>No</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Demonstration tools (e.g., teacher think-aloud, sample work, live demonstration)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Visual cues (e.g., projected example, gestures that direct attention)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Student artifacts (e.g., attempted work, practice samples)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Peer work displays, comparison charts, group outputs</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public praise, verbal feedback highlighting peer success, "look at how ...... solved it."</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Revised student work, changed strategy after observing peers</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Group discussion notes, shared graphic organizers, co-constructed posters</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Peer explanations, partner discussion scripts</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Structured group roles, teacher-led small groups, shared-task templates</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Verbal indicators ("I think I can do this"), confident participation, willingness to try</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Transition from teacher-led to peer-led dialogue, reciprocal teaching roles</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Learning centers, co-created norms, discussion boards, shared routines</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Evidence of environment shaping behavior (e.g., displays, seating) + behavior shaping participation</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- Reflection Section -->
