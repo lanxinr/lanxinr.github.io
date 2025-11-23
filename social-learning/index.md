@@ -4,8 +4,8 @@
 
 ## Infographics of Social Learning Theories & Social Learning Theory-Inspired Instructional Design Theories
 
-- [SOCIAL LEARNING THEORIES.pdf](#)
-- [SLT_Inspired Instructional Theories.pdf](#)
+- [SOCIAL LEARNING THEORIES.pdf](assets/Social_Learning_Theories.pdf)
+- [SLT_Inspired Instructional Theories.pdf](assets/SLT_Inspired_Instructional_Theories.pdf)
 
 ## Examples of Social Learning Theories-Inspired Instructional Theories
 
@@ -31,11 +31,51 @@ Link: [https://blog.acceleratelearning.com/cooperative-learning-strategies-in-st
 
 ## Learning Scenario
 
-Content for learning scenario goes here...
+**Tags:** Attention (A), Retention (R), Reproduction (P), Motivation (M), Self-efficacy (SE), Vicarious Reinforcement (VR), Direct Reinforcement (DR), Self-Reinforcement (SR), Modeling (M), Reciprocal Determinism (RD)
+
+In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, a picture of three girls dancing gracefully under rainbow-colored lights is displayed. The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art."
+
+She then holds up three strips of tissue paper—red, blue, and yellow—and explains, "Today, we are going to create our own rainbow light effect by layering tissue paper. Imagine your dancers moving under the lights you design." Students eagerly begin cutting and arranging tissue paper. Some whisper ideas to each other, while others work silently, absorbed in their designs. The classroom hums with the rustling of paper and soft conversations.
+
+As the activity continues, the teacher stops to encourage a shy student, kneels to help another reposition a tricky layer, and praises one group for blending colors into a glowing sunset effect. Near the end, she invites everyone to place their collages on the display board titled "Dancing with Light." Students gather around, pointing and admiring. Excited voices say, "It looks like they're all dancing together on one big stage." Smiling, the teacher concludes by summarizing the class's creative outcomes.
 
 ## Observation Checklist
 
-Content for observation checklist goes here...
+### Observed Behaviors
+
+| Observed Behaviors | Yes | No | Comments |
+|-------------------|-----|-----|----------|
+| Instructor models a target behavior or thinking process. | | | |
+| Learners attend to and observe the model. | | | |
+| Learners imitate or attempt to reproduce the modeled behavior. | | | |
+| Learners compare their performance with peers or model. | | | |
+| Instructor provides vicarious reinforcement by praising an observed peer behavior. | | | |
+| Learners adjust behavior after seeing peer success or correction. | | | |
+| Learners engage in collaborative meaning-making during tasks. | | | |
+| Learners seek social cues or guidance from peers. | | | |
+| Instructor encourages guided participation or joint activity. | | | |
+| Learners show increased self-efficacy as they gain skill. | | | |
+| Instructor gradually releases responsibility to learners. | | | |
+| Learners participate in a community-like learning environment. | | | |
+| Reciprocal causation observed among person-behavior-environment. | | | |
+
+### Observed Materials / Evidence
+
+| Observed Materials / Evidence | Yes | No | Comments |
+|------------------------------|-----|-----|----------|
+| Demonstration tools (e.g., teacher think-aloud, sample work, live demonstration) | | | |
+| Visual cues (e.g., projected example, gestures that direct attention) | | | |
+| Student artifacts (e.g., attempted work, practice samples) | | | |
+| Peer work displays, comparison charts, group outputs | | | |
+| Public praise, verbal feedback highlighting peer success, "look at how ...... solved it." | | | |
+| Revised student work, changed strategy after observing peers | | | |
+| Group discussion notes, shared graphic organizers, co-constructed posters | | | |
+| Peer explanations, partner discussion scripts | | | |
+| Structured group roles, teacher-led small groups, shared-task templates | | | |
+| Verbal indicators ("I think I can do this"), confident participation, willingness to try | | | |
+| Transition from teacher-led to peer-led dialogue, reciprocal teaching roles | | | |
+| Learning centers, co-created norms, discussion boards, shared routines | | | |
+| Evidence of environment shaping behavior (e.g., displays, seating) + behavior shaping participation | | | |
 
 ## Reflection
 
@@ -78,4 +118,3 @@ Studying SLT has helped me connect the theory with my real life, think more care
 ---
 
 *IDE621_Fall 2025_Zhen Li*
-

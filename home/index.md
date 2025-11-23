@@ -36,7 +36,7 @@
 
 ## Knowledge Base Grading Rubric
 
-PDF Preview: [KBGradingRubric_2025_CkList.pdf](images/KBGradingRubric_2025_CkList.pdf)
+PDF Preview: [KBGradingRubric_2025_CkList.pdf](assets/KBGradingRubric_2025_CkList.pdf)
 
 ---
 

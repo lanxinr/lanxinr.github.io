@@ -4,8 +4,8 @@
 
 ## Infographics of Cognitive Learning Theories & Cognitivism-Inspired Instructional Design Theories
 
-- [CLT_Learning Theory.pdf](#)
-- [Cognitive_Inspired Instructional Theories.pdf](#)
+- [CLT_Learning Theory.pdf](assets/CLT_Learning_Theory.pdf)
+- [Cognitive_Inspired Instructional Theories.pdf](assets/Cognitive_Inspired_Instructional_Theories.pdf)
 
 ## Examples of Cognitive-Inspired Instructional Theories
 
@@ -23,11 +23,45 @@ Link: [https://educationlibrary.org/gagnes-nine-events-of-instruction/](https://
 
 ## Learning Scenario
 
-Content for learning scenario goes here...
+**Tags:** Attention, Prior knowledge Activation, Advance Organizer, Meaning Making, Chunking/Multimodal Encoding, Guided Practice, Feedback, Organization of Knowledge, Metacognition
+
+In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, a picture of three girls dancing gracefully under rainbow-colored lights is displayed. The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art."
+
+She then holds up three strips of tissue paper—red, blue, and yellow—and explains, "Today, we are going to create our own rainbow light effect by layering tissue paper. Imagine your dancers moving under the lights you design." Students eagerly begin cutting and arranging tissue paper. Some whisper ideas to each other, while others work silently, absorbed in their designs. The classroom hums with the rustling of paper and soft conversations.
+
+As the activity continues, the teacher stops to encourage a shy student, kneels to help another reposition a tricky layer, and praises one group for blending colors into a glowing sunset effect. Near the end, she invites everyone to place their collages on the display board titled "Dancing with Light." Students gather around, pointing and admiring. Excited voices say, "It looks like they're all dancing together on one big stage." Smiling, the teacher concludes by summarizing the class's creative outcomes.
 
 ## Observation Checklist
 
-Content for observation checklist goes here...
+### Observed Behaviors
+
+| Observed Behaviors | Yes | No | Comments |
+|-------------------|-----|-----|----------|
+| Learners activate prior knowledge before starting a new task. | | | |
+| Students attend to key features highlighted by the teacher. | | | |
+| Learners interpret information and construct meaning from visuals or explanations. | | | |
+| Students follow multi-step instructions using internal processing. | | | |
+| Learners categorize, compare, or classify information to build mental structures. | | | |
+| Students plan steps or strategies before performing a task. | | | |
+| Learners verbalize thinking through explanation or think-aloud. | | | |
+| Students monitor their progress and self-correct when noticing errors. | | | |
+| Learners use visual references to guide understanding or performance. | | | |
+| Students reflect on learning outcomes and integrate new ideas. | | | |
+
+### Observed Materials / Evidence
+
+| Observed Materials / Evidence | Yes | No | Comments |
+|------------------------------|-----|-----|----------|
+| Advance organizers, warm-up prompts, KWL charts. | | | |
+| Teacher cues, pointing gestures, guiding questions. | | | |
+| Diagrams, concept images, charts supporting encoding. | | | |
+| Step-by-step guides, worked examples, procedural notes. | | | |
+| Sorting cards, comparison charts, classification visuals. | | | |
+| Graphic organizers, planning templates, note-taking tools. | | | |
+| Sentence stems, discussion prompts, think-aloud frames. | | | |
+| Checklists, self-monitoring tools, teacher feedback cues. | | | |
+| Reference models, sample solutions, anchor charts. | | | |
+| Reflection journals, exit tickets, summary prompts. | | | |
 
 ## Reflection
 
@@ -50,4 +84,3 @@ I expect Cognitivism will appear again in my final reflection paper. Not because
 ---
 
 *IDE621_Fall 2025_Zhen Li*
-

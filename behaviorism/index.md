@@ -4,8 +4,8 @@
 
 ## Infographics of Behaviorist Learning Theories & Behaviorism-Inspired Instructional Design Theories
 
-- [BLT_Learning Theory.pdf](#)
-- [Behavioral_Inspired Instructional Theories.pdf](#)
+- [BLT_Learning Theory.pdf](assets/BLT_Learning_Theory.pdf)
+- [Behavioral_Inspired Instructional Theories.pdf](assets/Behaviorism_Inspired_Instructional_Theories.pdf)
 
 ## Examples of Behaviorism-Inspired Instructional Theories
 
@@ -31,11 +31,39 @@
 
 ## Learning Scenario
 
-Content for learning scenario goes here...
+**Tags:** Stimulus (S), Neutral Stimulus (NS), Unconditioned Stimulus (US), Expected Response (ER), Terminal Behavior (TB), Not Expected Response (NER), Shaping (with Positive Reinforcement), Shaping (with Constructive Feedback), Shaping (Removing Distractions), Chaining
+
+In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, a picture of three girls dancing gracefully under rainbow-colored lights is displayed. The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art." She then holds up three strips of tissue paper—red, blue, and yellow—and explains, "Today, we are going to create our own rainbow light effect by layering tissue paper. Imagine your dancers moving under the lights you design." Students eagerly begin cutting and arranging tissue paper. Some whisper ideas to each other, while others work silently, absorbed in their designs. The classroom hums with the rustling of paper and soft conversations. As the activity continues, the teacher stops to encourage a shy student, kneels to help another reposition a tricky layer, and praises one group for blending colors into a glowing sunset effect. Near the end, she invites everyone to place their collages on the display board titled "Dancing with Light." Students gather around, pointing and admiring. Excited voices say, "It looks like they're all dancing together on one big stage." Smiling, the teacher concludes by summarizing the class's creative outcomes.
 
 ## Observation Checklist
 
-Content for observation checklist goes here...
+### Observed Behaviors
+
+| Observed Behaviors | Yes | No | Comments |
+|-------------------|-----|-----|----------|
+| Instructor presents neutral stimulus | | | |
+| Instructor provides unconditioned Stimulus | | | |
+| Learners give expected response | | | |
+| Learners show not expected response | | | |
+| Instructor applies shaping with positive reinforcement | | | |
+| Instructor applies shaping with constructive feedback | | | |
+| Instructor reduces barriers: shaping by removing distractions | | | |
+| Instructor creates positive reinforcement | | | |
+| Learners engage in chaining sequence | | | |
+
+### Observed Materials / Evidence
+
+| Observed Materials / Evidence | Yes | No | Comments |
+|------------------------------|-----|-----|----------|
+| Neutral Stimuli (e.g., displayed image on Smart Board) | | | |
+| Unconditioned Stimuli (e.g., vivid colors, movement, sounds) | | | |
+| Student Responses (e.g., verbal comments, gestures) | | | |
+| Off-task behaviors (e.g., distractions, irrelevant actions) | | | |
+| Reinforcement Tools (e.g., praise, tokens) | | | |
+| Feedback Tools (e.g., teacher guidance, modeling) | | | |
+| Support Tools (e.g., encouragement, scaffolds) | | | |
+| Positive reinforcement creating Tools (e.g., praise, display board) | | | |
+| Stepwise Learning Materials (e.g., image → feelings → layering tissue → collage → display → reflection) | | | |
 
 ## Reflection
 
@@ -50,4 +78,3 @@ Of course, I am also aware of behaviorism's limits. In corporate projects and no
 ---
 
 *IDE621_Fall 2025_Zhen Li*
-
