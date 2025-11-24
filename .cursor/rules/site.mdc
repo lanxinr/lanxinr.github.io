@@ -58,7 +58,7 @@ alwaysApply: true
     - **完成显示第一页**，无需展示工具栏（toolbar）。
     - 使用 `<iframe src="./../**pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH">`，只要能完整呈现第一页且无任何控件。
     - PDF 文件路径必须保持不变。
-    - 仅仅展示预览即可，不需要下载，预览链接
+    - 仅仅展示预览即可，不需要下载，预览链接。
 
 14. **忽略 `cases` 目录规则：**
     - 在进行 HTML 生成时，必须**跳过名为 `cases` 的目录**。
@@ -73,3 +73,29 @@ alwaysApply: true
       - 所有单元格（`<th>` 与 `<td>`）都必须添加边框，边框颜色为浅灰色（如 `#e5e7eb`）。
       - 表格必须使用 `border-collapse: collapse;`。
       - 表格必须全宽度（`width: 100%`），并在页面中自动适应布局。
+  
+16. **color 解析规则（Color Tag Parsing Rules）：**
+    - 在 `.mdc` 文件中，若出现如下自定义标记：
+      - `<color="purple">Stimulus (S)</color>`
+    - 在生成 HTML 时，必须解析为一个 `<span>` 元素，并保留其中的文本内容，例如：
+      - `<span class="color-purple">Stimulus (S)</span>`
+    - 一般形式为：
+      - 源：`<color="COLOR_NAME">...内容...</color>`
+      - 目标：`<span class="color-COLOR_NAME">...内容...</span>`
+    - `COLOR_NAME` 为颜色名（如 `purple`、`yellow`、`cyan` 等），在最终页面中通过 `/style.css` 中的 `.color-COLOR_NAME` 类来控制具体的文字或背景颜色。
+    - 在 `/style.css` 中添加对应的颜色样式。
+    - 解析时仅替换标签，不改变原有 Markdown 结构与文本顺序。
+
+17. **顶部导航菜单规则（Top Navigation Menu Rules）：**
+    - 所有生成的 `index.html` 页面顶部必须包含一个统一的导航菜单（Top Nav Bar），菜单内容根据**目录结构自动生成**。
+    - 仅对包含 `index.mdc` 的目录生成导航项；名为 `cases` 的目录及其子目录**不出现在导航中**。
+    - 导航层级规则：
+      - 站点根目录下的一级目录（例如 `A/`、`B/`）作为**一级菜单项**。
+      - 若某一级目录下存在子目录（例如 `A/B/`、`A/C/`），则：
+        - 顶部导航中生成一个名为 `A` 的一级菜单。
+        - 在 `A` 下生成子菜单项 `B`、`C`，对应路径分别为 `/A/B/index.html`、`/A/C/index.html`。
+      - 若目录本身也有页面（如 `/A/index.html`），则点击一级菜单 `A` 时应跳转到 `/A/index.html`。
+    - 链接路径规则：
+      - 顶部导航中的所有链接使用**从站点根目录开始的绝对路径**，例如：`/A/index.html`、`/A/B/index.html`。
+    - 导航样式与交互（如水平排列、下拉菜单）由 `/style.css` 中的样式与必要的 HTML 结构实现，但所有结构必须保持纯静态，不依赖外部 JS/CSS 框架。
+    - 每个页面上的导航菜单内容必须一致（全站共享同一导航结构），以保证在任意页面都能访问其他目录。

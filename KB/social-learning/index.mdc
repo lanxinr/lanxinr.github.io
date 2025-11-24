@@ -32,12 +32,13 @@ Link: [https://blog.acceleratelearning.com/cooperative-learning-strategies-in-st
 Link: [https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem](https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem)
 
 <!-- layout: two-column -->
-<!-- 图片和tags在左边，内容在右边，占1/3。给每个tag添加不同的背景色 -->
+<!-- 图片和tags在左边，内容在右边，占1/3。 -->
 ## Learning Scenario
 
 ![Learning Scenario](assets/images/learning-scenario.png)
 
-**Tags:** Attention (A), Retention (R), Reproduction (P), Motivation (M), Self-efficacy (SE), Vicarious Reinforcement (VR), Direct Reinforcement (DR), Self-Reinforcement (SR), Modeling (M), Reciprocal Determinism (RD)
+<!-- 不需要显示Tags作为标题 -->
+**Tags:** <color="hot-pink">Attention (A)</color>, <color="blue">Retention (R)</color>, <color="bright-yellow">Reproduction (P)</color>, <color="dark-yellow">Motivation (M)</color>, <color="cyan">Self-efficacy (SE)</color>, <color="dark-green">Vicarious Reinforcement (VR)</color>, <color="blue">Direct Reinforcement (DR)</color>, <color="red">Self-Reinforcement (SR)</color>, <color="green">Modeling (M)</color>, <color="pink">Reciprocal Determinism (RD)</color>
 
 In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, a picture of three girls dancing gracefully under rainbow-colored lights is displayed. The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art."
 

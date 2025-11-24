@@ -14,21 +14,36 @@
             font-size: 0.875rem;
             font-weight: 500;
         }
-        .tag:nth-child(1) { background-color: #dbeafe; color: #1e40af; }
-        .tag:nth-child(2) { background-color: #fef3c7; color: #92400e; }
-        .tag:nth-child(3) { background-color: #d1fae5; color: #065f46; }
-        .tag:nth-child(4) { background-color: #fce7f3; color: #831843; }
-        .tag:nth-child(5) { background-color: #e0e7ff; color: #3730a3; }
-        .tag:nth-child(6) { background-color: #fed7aa; color: #7c2d12; }
-        .tag:nth-child(7) { background-color: #fecdd3; color: #991b1b; }
-        .tag:nth-child(8) { background-color: #cffafe; color: #164e63; }
-        .tag:nth-child(9) { background-color: #e9d5ff; color: #581c87; }
+        /* Specific background colors for tags */
+        .tag.color-hot-pink { background-color: #fce7f3; color: #831843; }
+        .tag.color-blue { background-color: #dbeafe; color: #1e40af; }
+        .tag.color-bright-yellow { background-color: #fef3c7; color: #92400e; }
+        .tag.color-dark-yellow { background-color: #fef3c7; color: #92400e; }
+        .tag.color-cyan { background-color: #cffafe; color: #164e63; }
+        .tag.color-dark-green { background-color: #d1fae5; color: #065f46; }
+        .tag.color-yellow-green { background-color: #dcfce7; color: #166534; }
+        .tag.color-deep-purple { background-color: #e9d5ff; color: #581c87; }
+        .tag.color-cyan-blue { background-color: #cffafe; color: #164e63; }
         .learning-scenario-columns {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: var(--spacing-2xl);
             margin: var(--spacing-2xl) 0;
             align-items: start;
+        }
+        .scenario-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scenario-left img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .scenario-left p strong {
+            display: none; /* Hide "Tags:" heading */
         }
         @media (max-width: 768px) {
             .learning-scenario-columns {
@@ -43,10 +58,20 @@
         <div class="nav-wrapper">
             <ul class="nav-menu">
                 <li><a href="/home/">Home</a></li>
-                <li><a href="/behaviorism/">Behaviorism</a></li>
-                <li><a href="/cognitivism/" class="active">Cognitivism</a></li>
-                <li><a href="/social-learning/">Social Learning</a></li>
-                <li><a href="/about/">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="/KB/">KB</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/KB/behaviorism/">Behaviorism</a></li>
+                        <li><a href="/KB/cognitivism/" class="active">Cognitivism</a></li>
+                        <li><a href="/KB/social-learning/">Social Learning</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/about/">About</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/about/contact/">Contact</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
@@ -90,19 +115,19 @@
         <section class="section">
             <h2>Learning Scenario</h2>
             <div class="learning-scenario-columns">
-                <div>
+                <div class="scenario-left">
                     <img src="assets/images/learning-scenario.png" alt="Learning Scenario">
-                    <p><strong>Tags:</strong></p>
+                    <p><strong>Tags:</strong></p> <!-- This strong tag is hidden by CSS -->
                     <div>
-                        <span class="tag">Attention</span>
-                        <span class="tag">Prior knowledge Activation</span>
-                        <span class="tag">Advance Organizer</span>
-                        <span class="tag">Meaning Making</span>
-                        <span class="tag">Chunking/Multimodal Encoding</span>
-                        <span class="tag">Guided Practice</span>
-                        <span class="tag">Feedback</span>
-                        <span class="tag">Organization of Knowledge</span>
-                        <span class="tag">Metacognition</span>
+                        <span class="tag color-hot-pink">Attention</span>
+                        <span class="tag color-blue">Prior knowledge Activation</span>
+                        <span class="tag color-bright-yellow">Advance Organizer</span>
+                        <span class="tag color-dark-yellow">Meaning Making</span>
+                        <span class="tag color-cyan">Chunking/Multimodal Encoding</span>
+                        <span class="tag color-dark-green">Guided Practice</span>
+                        <span class="tag color-yellow-green">Feedback</span>
+                        <span class="tag color-deep-purple">Organization of Knowledge</span>
+                        <span class="tag color-cyan-blue">Metacognition</span>
                     </div>
                 </div>
                 <div>

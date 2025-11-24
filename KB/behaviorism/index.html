@@ -14,16 +14,17 @@
             font-size: 0.875rem;
             font-weight: 500;
         }
-        .tag:nth-child(1) { background-color: #dbeafe; color: #1e40af; }
-        .tag:nth-child(2) { background-color: #fef3c7; color: #92400e; }
-        .tag:nth-child(3) { background-color: #d1fae5; color: #065f46; }
-        .tag:nth-child(4) { background-color: #fce7f3; color: #831843; }
-        .tag:nth-child(5) { background-color: #e0e7ff; color: #3730a3; }
-        .tag:nth-child(6) { background-color: #fed7aa; color: #7c2d12; }
-        .tag:nth-child(7) { background-color: #fecdd3; color: #991b1b; }
-        .tag:nth-child(8) { background-color: #cffafe; color: #164e63; }
-        .tag:nth-child(9) { background-color: #e9d5ff; color: #581c87; }
-        .tag:nth-child(10) { background-color: #fef3c7; color: #92400e; }
+        /* Specific background colors for tags */
+        .tag.color-purple { background-color: #e9d5ff; color: #581c87; }
+        .tag.color-bright-yellow { background-color: #fef3c7; color: #92400e; }
+        .tag.color-lime-green { background-color: #d1fae5; color: #065f46; }
+        .tag.color-cyan { background-color: #cffafe; color: #164e63; }
+        .tag.color-bright-red { background-color: #fecdd3; color: #991b1b; }
+        .tag.color-bright-blue { background-color: #dbeafe; color: #1e40af; }
+        .tag.color-aqua-green { background-color: #d1fae5; color: #065f46; }
+        .tag.color-olive-green { background-color: #dcfce7; color: #166534; }
+        .tag.color-dark-olive-yellow-Green { background-color: #f0fdf4; color: #1e3a8a; }
+        .tag.color-hot-pink { background-color: #fce7f3; color: #831843; }
         .learning-scenario-columns {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -31,11 +32,27 @@
             margin: var(--spacing-2xl) 0;
             align-items: start;
         }
+        .scenario-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scenario-left img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .scenario-left p strong {
+            display: none; /* Hide "Tags:" heading */
+        }
         @media (max-width: 768px) {
             .learning-scenario-columns {
                 grid-template-columns: 1fr;
             }
         }
+        /* Text highlighting for content */
+        .color-bright-yellow { background-color: #fef3c7; color: #92400e; padding: 0.1em 0.3em; border-radius: 0.2em; }
     </style>
 </head>
 <body>
@@ -44,10 +61,20 @@
         <div class="nav-wrapper">
             <ul class="nav-menu">
                 <li><a href="/home/">Home</a></li>
-                <li><a href="/behaviorism/" class="active">Behaviorism</a></li>
-                <li><a href="/cognitivism/">Cognitivism</a></li>
-                <li><a href="/social-learning/">Social Learning</a></li>
-                <li><a href="/about/">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="/KB/">KB</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/KB/behaviorism/" class="active">Behaviorism</a></li>
+                        <li><a href="/KB/cognitivism/">Cognitivism</a></li>
+                        <li><a href="/KB/social-learning/">Social Learning</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/about/">About</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/about/contact/">Contact</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
@@ -107,24 +134,24 @@
         <section class="section">
             <h2>Learning Scenario</h2>
             <div class="learning-scenario-columns">
-                <div>
+                <div class="scenario-left">
                     <img src="assets/images/learning-scenario.png" alt="Learning Scenario">
-                    <p><strong>Tags:</strong></p>
+                    <p><strong>Tags:</strong></p> <!-- This strong tag is hidden by CSS -->
                     <div>
-                        <span class="tag">Stimulus (S)</span>
-                        <span class="tag">Neutral Stimulus (NS)</span>
-                        <span class="tag">Unconditioned Stimulus (US)</span>
-                        <span class="tag">Expected Response (ER)</span>
-                        <span class="tag">Terminal Behavior (TB)</span>
-                        <span class="tag">Not Expected Response (NER)</span>
-                        <span class="tag">Shaping (with Positive Reinforcement)</span>
-                        <span class="tag">Shaping (with Constructive Feedback)</span>
-                        <span class="tag">Shaping (Removing Distractions)</span>
-                        <span class="tag">Chaining</span>
+                        <span class="tag color-purple">Stimulus (S)</span>
+                        <span class="tag color-bright-yellow">Neutral Stimulus (NS)</span>
+                        <span class="tag color-lime-green">Unconditioned Stimulus (US)</span>
+                        <span class="tag color-cyan">Expected Response (ER)</span>
+                        <span class="tag color-bright-red">Terminal Behavior (TB)</span>
+                        <span class="tag color-bright-blue">Not Expected Response (NER)</span>
+                        <span class="tag color-aqua-green">Shaping (with Positive Reinforcement)</span>
+                        <span class="tag color-olive-green">Shaping (with Constructive Feedback)</span>
+                        <span class="tag color-dark-olive-yellow-Green">Shaping (Removing Distractions)</span>
+                        <span class="tag color-hot-pink">Chaining</span>
                     </div>
                 </div>
                 <div>
-                    <p>In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, a picture of three girls dancing gracefully under rainbow-colored lights is displayed. The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art." She then holds up three strips of tissue paper—red, blue, and yellow—and explains, "Today, we are going to create our own rainbow light effect by layering tissue paper. Imagine your dancers moving under the lights you design." Students eagerly begin cutting and arranging tissue paper. Some whisper ideas to each other, while others work silently, absorbed in their designs. The classroom hums with the rustling of paper and soft conversations. As the activity continues, the teacher stops to encourage a shy student, kneels to help another reposition a tricky layer, and praises one group for blending colors into a glowing sunset effect. Near the end, she invites everyone to place their collages on the display board titled "Dancing with Light." Students gather around, pointing and admiring. Excited voices say, "It looks like they're all dancing together on one big stage." Smiling, the teacher concludes by summarizing the class's creative outcomes.</p>
+                    <p>In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, <span class="color-bright-yellow">a picture of three girls dancing gracefully under rainbow-colored lights is displayed. </span>The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art." She then holds up three strips of tissue paper—red, blue, and yellow—and explains, "Today, we are going to create our own rainbow light effect by layering tissue paper. Imagine your dancers moving under the lights you design." Students eagerly begin cutting and arranging tissue paper. Some whisper ideas to each other, while others work silently, absorbed in their designs. The classroom hums with the rustling of paper and soft conversations. As the activity continues, the teacher stops to encourage a shy student, kneels to help another reposition a tricky layer, and praises one group for blending colors into a glowing sunset effect. Near the end, she invites everyone to place their collages on the display board titled "Dancing with Light." Students gather around, pointing and admiring. Excited voices say, "It looks like they're all dancing together on one big stage." Smiling, the teacher concludes by summarizing the class's creative outcomes.</p>
                 </div>
             </div>
         </section>
