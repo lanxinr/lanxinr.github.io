@@ -1,813 +1,288 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cognitivism - IDE621 Knowledge Base</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap"
-      rel="stylesheet"
-    />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitivism - Learning Theories</title>
+    <link rel="stylesheet" href="/style.css">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Gentium Basic", serif;
-        line-height: 1.6667;
-        color: #212121;
-        background-color: #ffffff;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Header Section */
-      .hero-section {
-        background-color: #226e93;
-        background-image: url("../home/assets/images/hero-background.jpg");
-        background-size: cover;
-        background-position: center center;
-        height: 340px;
-        padding: 60px 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(33, 33, 33, 0.4);
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        color: #ffffff;
-      }
-
-      .hero-content h1 {
-        font-family: "Lora", serif;
-        font-size: 52pt;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0;
-        line-height: 1.2;
-      }
-
-      .hero-subtitle {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        font-weight: 700;
-        color: #ff9900;
-        margin-top: 20px;
-      }
-
-      /* Navigation */
-      .nav-container {
-        background-color: #212121;
-        padding: 0;
-      }
-
-      .nav-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 0;
-        flex-wrap: wrap;
-      }
-
-      .nav-menu li {
-        margin: 0;
-      }
-
-      .nav-menu a {
-        color: rgba(255, 255, 255, 0.87);
-        text-decoration: none;
-        font-family: "Lora", serif;
-        font-size: 15pt;
-        padding: 11.5px 16px;
-        display: block;
-        transition: color 0.2s;
-      }
-
-      .nav-menu a:hover {
-        color: #49aad4;
-      }
-
-      .nav-menu a.active {
-        color: #49aad4;
-      }
-
-      /* Main Content */
-      .main-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 24px;
-      }
-
-      .page-title {
-        font-family: "Lora", serif;
-        font-size: 48pt;
-        font-weight: 700;
-        color: #226e93;
-        margin: 40px 0 20px;
-        text-align: center;
-      }
-
-      .page-subtitle {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        font-weight: 700;
-        color: #ff9900;
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .section {
-        margin: 60px 0;
-      }
-
-      .section h2 {
-        font-family: "Lora", serif;
-        font-size: 28pt;
-        font-weight: 400;
-        color: #226e93;
-        margin-bottom: 30px;
-        border-bottom: 2px solid #226e93;
-        padding-bottom: 10px;
-      }
-
-      .section h3 {
-        font-family: "Lora", serif;
-        font-size: 20pt;
-        font-weight: 400;
-        color: #226e93;
-        margin: 30px 0 20px;
-      }
-
-      .section p {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        line-height: 1.8;
-        margin: 16px 0;
-        text-align: justify;
-      }
-
-      .section ul {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-      }
-
-      .section ul li {
-        margin: 12px 0;
-        padding-left: 24px;
-        position: relative;
-      }
-
-      .section ul li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: #226e93;
-        font-weight: bold;
-      }
-
-      .section a {
-        color: #226e93;
-        text-decoration: underline;
-        transition: color 0.2s;
-      }
-
-      .section a:hover {
-        color: #49aad4;
-      }
-
-      .pdf-link {
-        display: inline-block;
-        margin: 10px 10px 10px 0;
-        padding: 12px 24px;
-        background-color: #226e93;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: 600;
-        transition: background-color 0.2s;
-      }
-
-      .pdf-link:hover {
-        background-color: #49aad4;
-        color: #ffffff;
-      }
-
-      /* PDF Preview Embedded */
-      .pdf-preview-container {
-        margin: 30px 0;
-        width: 100%;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 4px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .pdf-preview-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 141.42%; /* A4比例 (297/210 = 1.4142) */
-        overflow: hidden;
-      }
-
-      .pdf-preview-iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-      }
-
-      .reflection {
-        background-color: #f5f5f5;
-        padding: 30px;
-        border-left: 4px solid #226e93;
-        margin: 30px 0;
-        border-radius: 4px;
-      }
-
-      .reflection p {
-        margin: 16px 0;
-      }
-
-      /* Learning Scenario Section */
-      article {
-        display: flex;
-        gap: 30px;
-        margin: 30px 0;
-        flex-wrap: wrap;
-      }
-
-      sidebar {
-        flex: 0 0 300px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      sidebar img {
-        width: 100%;
-        height: auto;
-        border-radius: 4px;
-      }
-
-      main {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .scenario-content {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        line-height: 1.8;
-        color: #212121;
-        text-align: justify;
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .scenario-content p {
-        margin: 16px 0;
-        padding: 15px 20px;
-        border-radius: 4px;
-        border-left: 4px solid;
-      }
-
-      .p-yellow {
-        background-color: rgba(255, 235, 59, 0.3);
-        border-left-color: #ffeb3b;
-      }
-
-      .p-light-green {
-        background-color: rgba(139, 195, 74, 0.2);
-        border-left-color: #8bc34a;
-      }
-
-      .p-light-blue {
-        background-color: rgba(3, 169, 244, 0.15);
-        border-left-color: #03a9f4;
-      }
-
-      .tags-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 4px;
-      }
-
-      .tag {
-        padding: 10px 15px;
-        border-radius: 4px;
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        font-weight: 600;
-        color: #212121;
-        text-align: center;
-      }
-
-      .tag-magenta {
-        background-color: #e91e63;
-        color: #ffffff;
-      }
-
-      .tag-yellow {
-        background-color: #ffeb3b;
-        color: #212121;
-      }
-
-      .tag-olive {
-        background-color: #689f38;
-        color: #ffffff;
-      }
-
-      .tag-light-blue {
-        background-color: #03a9f4;
-        color: #ffffff;
-      }
-
-      .tag-dark-green {
-        background-color: #388e3c;
-        color: #ffffff;
-      }
-
-      .tag-light-green {
-        background-color: #8bc34a;
-        color: #212121;
-      }
-
-      .tag-purple {
-        background-color: #9c27b0;
-        color: #ffffff;
-      }
-
-      .tag-teal {
-        background-color: #009688;
-        color: #ffffff;
-      }
-
-      /* Observation Checklist Table */
-      .checklist-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 30px 0;
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .checklist-table thead {
-        background-color: #1976d2;
-        color: #ffffff;
-      }
-
-      .checklist-table thead th {
-        padding: 15px;
-        text-align: left;
-        font-weight: 600;
-        border: 1px solid #1565c0;
-      }
-
-      .checklist-table tbody tr:nth-child(even) {
-        background-color: #e3f2fd;
-      }
-
-      .checklist-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-      }
-
-      .checklist-table tbody td {
-        padding: 12px 15px;
-        border: 1px solid #e0e0e0;
-        vertical-align: top;
-      }
-
-      .checklist-table tbody td:first-child {
-        font-weight: 500;
-        width: 50%;
-      }
-
-      .checklist-table tbody td:nth-child(2),
-      .checklist-table tbody td:nth-child(3) {
-        width: 10%;
-        text-align: center;
-      }
-
-      .checklist-table thead th:first-child {
-        width: 50%;
-      }
-
-      .checklist-table thead th:nth-child(2),
-      .checklist-table thead th:nth-child(3) {
-        width: 10%;
-        text-align: center;
-      }
-
-      .checklist-section {
-        margin: 40px 0;
-      }
-
-      /* Footer */
-      .footer {
-        background-color: #ffffff;
-        padding: 40px 24px;
-        text-align: center;
-        margin-top: 60px;
-        border-top: 1px solid #e0e0e0;
-      }
-
-      .footer-text {
-        font-family: "Gentium Basic", serif;
-        font-size: 11pt;
-        color: #212121;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero-section {
-          height: 250px;
-          padding: 30px 24px;
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            margin: 0.25rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
-
-        .hero-content h1 {
-          font-size: 40pt;
+        .tag:nth-child(1) { background-color: #dbeafe; color: #1e40af; }
+        .tag:nth-child(2) { background-color: #fef3c7; color: #92400e; }
+        .tag:nth-child(3) { background-color: #d1fae5; color: #065f46; }
+        .tag:nth-child(4) { background-color: #fce7f3; color: #831843; }
+        .tag:nth-child(5) { background-color: #e0e7ff; color: #3730a3; }
+        .tag:nth-child(6) { background-color: #fed7aa; color: #7c2d12; }
+        .tag:nth-child(7) { background-color: #fecdd3; color: #991b1b; }
+        .tag:nth-child(8) { background-color: #cffafe; color: #164e63; }
+        .tag:nth-child(9) { background-color: #e9d5ff; color: #581c87; }
+        .learning-scenario-columns {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-2xl);
+            margin: var(--spacing-2xl) 0;
+            align-items: start;
         }
-
-        .page-title {
-          font-size: 36pt;
+        @media (max-width: 768px) {
+            .learning-scenario-columns {
+                grid-template-columns: 1fr;
+            }
         }
-
-        .section h2 {
-          font-size: 24pt;
-        }
-
-        .nav-menu {
-          flex-direction: column;
-        }
-      }
-
-      @media (max-width: 479px) {
-        .hero-content h1 {
-          font-size: 35pt;
-        }
-
-        .page-title {
-          font-size: 28pt;
-        }
-      }
     </style>
-  </head>
-
-  <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1>IDE621 Knowledge Base</h1>
-      </div>
-    </section>
-
+</head>
+<body>
     <!-- Navigation -->
     <nav class="nav-container">
-      <div class="nav-wrapper">
-        <ul class="nav-menu">
-          <li><a href="../home/">Home</a></li>
-          <li><a href="../behaviorism/">Behaviorism</a></li>
-          <li><a href="#" class="active">Cognitivism</a></li>
-          <li><a href="../social-learning/">Social Learning</a></li>
-          <li><a href="../about/">About</a></li>
-        </ul>
-      </div>
+        <div class="nav-wrapper">
+            <ul class="nav-menu">
+                <li><a href="/home/">Home</a></li>
+                <li><a href="/behaviorism/">Behaviorism</a></li>
+                <li><a href="/cognitivism/" class="active">Cognitivism</a></li>
+                <li><a href="/social-learning/">Social Learning</a></li>
+                <li><a href="/about/">About</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Cognitivism</h1>
+            <p><strong>Knowledge Base prepared by Zhen Li</strong></p>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <main class="main-container">
-      <h1 class="page-title">Cognitivism</h1>
-      <div class="page-subtitle">Knowledge Base prepared by Zhen Li</div>
-
-      <!-- Infographics Section -->
-      <section class="section">
-        <h2>Infographics of Cognitive Learning Theories & Cognitivism-Inspired Instructional Design Theories</h2>
-        <div>
-          <div class="pdf-preview-container">
-            <div class="pdf-preview-wrapper">
-              <iframe
-                class="pdf-preview-iframe"
-                src="assets/CLT_Learning_Theory.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-              ></iframe>
+        <!-- Infographics -->
+        <section class="section">
+            <h2>Infographics of Cognitive Learning Theories & Cognitivism-Inspired Instructional Design Theories</h2>
+            <div class="pdf-preview">
+                <iframe src="assets/CLT_Learning_Theory.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
             </div>
-          </div>
-        </div>
-        <div style="margin-top: 30px;">
-          <div class="pdf-preview-container">
-            <div class="pdf-preview-wrapper">
-              <iframe
-                class="pdf-preview-iframe"
-                src="assets/Cognitive_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-              ></iframe>
+            <div class="pdf-preview">
+                <iframe src="assets/Cognitive_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Examples Section -->
-      <section class="section">
-        <h2>Examples of Cognitive-Inspired Instructional Theories</h2>
-        
-        <h3>Meaningful Learning</h3>
-        <ul>
-          <li>Link: <a href="https://www.learningbp.com/meaningful-learning-ausubel-theory/" target="_blank">https://www.learningbp.com/meaningful-learning-ausubel-theory/</a></li>
-        </ul>
+        <!-- Examples -->
+        <section class="section">
+            <h2>Examples of Cognitive-Inspired Instructional Theories</h2>
+            
+            <h3>Meaningful Learning</h3>
+            <p>Link: <a href="https://www.learningbp.com/meaningful-learning-ausubel-theory/">https://www.learningbp.com/meaningful-learning-ausubel-theory/</a></p>
 
-        <h3>Advance Organizers</h3>
-        <ul>
-          <li>Link: <a href="https://kpcrossacademy.ua.edu/techniques/advance-organizers/" target="_blank">https://kpcrossacademy.ua.edu/techniques/advance-organizers/</a></li>
-        </ul>
+            <h3>Advance Organizers</h3>
+            <p>Link: <a href="https://kpcrossacademy.ua.edu/techniques/advance-organizers/">https://kpcrossacademy.ua.edu/techniques/advance-organizers/</a></p>
 
-        <h3>Gagne's Nine Events of Instruction</h3>
-        <ul>
-          <li>Link: <a href="https://educationlibrary.org/gagnes-nine-events-of-instruction/" target="_blank">https://educationlibrary.org/gagnes-nine-events-of-instruction/</a></li>
-        </ul>
-      </section>
+            <h3>Gagne's Nine Events of Instruction</h3>
+            <p>Link: <a href="https://educationlibrary.org/gagnes-nine-events-of-instruction/">https://educationlibrary.org/gagnes-nine-events-of-instruction/</a></p>
+        </section>
 
-      <!-- Learning Scenario Section -->
-      <section class="section">
-        <h2>Learning Scenario</h2>
-        <article>
-          <sidebar>
-            <img
-              src="assets/images/learning-scenario.png"
-              alt="Cognitivism Learning Scenario"
-            />
-            <div class="tags-container">
-              <div class="tag tag-magenta">Attention</div>
-              <div class="tag tag-yellow">Prior knowledge Activation</div>
-              <div class="tag tag-yellow">Advance Organizer</div>
-              <div class="tag tag-olive">Meaning Making</div>
-              <div class="tag tag-light-blue">Chunking/Multimodal Encoding</div>
-              <div class="tag tag-dark-green">Guided Practice</div>
-              <div class="tag tag-light-green">Feedback</div>
-              <div class="tag tag-purple">Organization of Knowledge</div>
-              <div class="tag tag-teal">Metacognition</div>
+        <!-- Learning Scenario -->
+        <section class="section">
+            <h2>Learning Scenario</h2>
+            <div class="learning-scenario-columns">
+                <div>
+                    <img src="assets/images/learning-scenario.png" alt="Learning Scenario">
+                    <p><strong>Tags:</strong></p>
+                    <div>
+                        <span class="tag">Attention</span>
+                        <span class="tag">Prior knowledge Activation</span>
+                        <span class="tag">Advance Organizer</span>
+                        <span class="tag">Meaning Making</span>
+                        <span class="tag">Chunking/Multimodal Encoding</span>
+                        <span class="tag">Guided Practice</span>
+                        <span class="tag">Feedback</span>
+                        <span class="tag">Organization of Knowledge</span>
+                        <span class="tag">Metacognition</span>
+                    </div>
+                </div>
+                <div>
+                    <p>In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, a picture of three girls dancing gracefully under rainbow-colored lights is displayed. The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art."</p>
+                    <p>She then holds up three strips of tissue paper—red, blue, and yellow—and explains, "Today, we are going to create our own rainbow light effect by layering tissue paper. Imagine your dancers moving under the lights you design." Students eagerly begin cutting and arranging tissue paper. Some whisper ideas to each other, while others work silently, absorbed in their designs. The classroom hums with the rustling of paper and soft conversations.</p>
+                    <p>As the activity continues, the teacher stops to encourage a shy student, kneels to help another reposition a tricky layer, and praises one group for blending colors into a glowing sunset effect. Near the end, she invites everyone to place their collages on the display board titled "Dancing with Light." Students gather around, pointing and admiring. Excited voices say, "It looks like they're all dancing together on one big stage." Smiling, the teacher concludes by summarizing the class's creative outcomes.</p>
+                </div>
             </div>
-          </sidebar>
-          <main>
-            <div class="scenario-content">
-              <p class="p-yellow">
-                In an art class, the teacher stands beside the front table while
-                22 students sit in pairs at their benches. On the interactive
-                whiteboard behind her, a picture of three girls dancing gracefully under
-                rainbow-colored lights is displayed. The beams reflect like sparkles on water.
-                She taps the screen gently and asks, "Can anyone tell me what
-                kind of feeling this picture gives you?" Little hands shoot up.
-                "It looks magical!" says one student. Another adds, "It feels
-                like a dream." The teacher smiles and nods, saying, "Exactly.
-                That's the power of color and movement in art."
-              </p>
-              <p class="p-light-green">
-                She then holds up three strips of tissue paper—red, blue, and yellow—and explains,
-                "Today, we are going to create our own rainbow light effect by
-                layering tissue paper. Imagine your dancers moving under the
-                lights you design." Students eagerly begin cutting and arranging
-                tissue paper. Some whisper ideas to each other, while others work
-                silently, absorbed in their designs. The classroom hums with the
-                rustling of paper and soft conversations.
-              </p>
-              <p class="p-light-blue">
-                As the activity continues, the teacher stops to encourage a shy
-                student, kneels to help another reposition a tricky layer, and praises one group
-                for blending colors into a glowing sunset effect. Near the
-                end, she invites everyone to place their collages on the
-                display board titled "Dancing with Light." Students gather
-                around, pointing and admiring. Excited voices say, "It looks like
-                they're all dancing together on one big stage." Smiling, the
-                teacher concludes by summarizing the class's creative outcomes.
-              </p>
-            </div>
-          </main>
-        </article>
-      </section>
+        </section>
 
-      <!-- Observation Checklist Section -->
-      <section class="section">
-        <h2>Observation Checklist</h2>
-        <div class="checklist-section">
-          <table class="checklist-table">
-            <thead>
-              <tr>
-                <th>Observed Behaviors</th>
-                <th>Yes</th>
-                <th>No</th>
-                <th>Comments</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Learners activate prior knowledge before starting a new task.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Students attend to key features highlighted by the teacher.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Learners interpret information and construct meaning from visuals or explanations.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Students follow multi-step instructions using internal processing.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Learners categorize, compare, or classify information to build mental structures.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Students plan steps or strategies before performing a task.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Learners verbalize thinking through explanation or think-aloud.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Students monitor their progress and self-correct when noticing errors.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Learners use visual references to guide understanding or performance.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Students reflect on learning outcomes and integrate new ideas.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- Observation Checklist -->
+        <section class="section">
+            <h2>Observation Checklist</h2>
+            
+            <h3>Observed Behaviors</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Observed Behaviors</th>
+                        <th>Yes</th>
+                        <th>No</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Learners activate prior knowledge before starting a new task.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Students attend to key features highlighted by the teacher.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners interpret information and construct meaning from visuals or explanations.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Students follow multi-step instructions using internal processing.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners categorize, compare, or classify information to build mental structures.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Students plan steps or strategies before performing a task.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners verbalize thinking through explanation or think-aloud.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Students monitor their progress and self-correct when noticing errors.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners use visual references to guide understanding or performance.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Students reflect on learning outcomes and integrate new ideas.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <div class="checklist-section">
-          <table class="checklist-table">
-            <thead>
-              <tr>
-                <th>Observed Materials / Evidence</th>
-                <th>Yes</th>
-                <th>No</th>
-                <th>Comments</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Advance organizers, warm-up prompts, KWL charts.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Teacher cues, pointing gestures, guiding questions.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Diagrams, concept images, charts supporting encoding.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Step-by-step guides, worked examples, procedural notes.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Sorting cards, comparison charts, classification visuals.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Graphic organizers, planning templates, note-taking tools.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Sentence stems, discussion prompts, think-aloud frames.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Checklists, self-monitoring tools, teacher feedback cues.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Reference models, sample solutions, anchor charts.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Reflection journals, exit tickets, summary prompts.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+            <h3>Observed Materials / Evidence</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Observed Materials / Evidence</th>
+                        <th>Yes</th>
+                        <th>No</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Advance organizers, warm-up prompts, KWL charts.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Teacher cues, pointing gestures, guiding questions.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Diagrams, concept images, charts supporting encoding.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Step-by-step guides, worked examples, procedural notes.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Sorting cards, comparison charts, classification visuals.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Graphic organizers, planning templates, note-taking tools.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Sentence stems, discussion prompts, think-aloud frames.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Checklists, self-monitoring tools, teacher feedback cues.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Reference models, sample solutions, anchor charts.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Reflection journals, exit tickets, summary prompts.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-      <!-- Reflection Section -->
-      <section class="section">
-        <h2>Reflection</h2>
-        <div class="reflection">
-          <p>
-            When I first entered instructional design, I treated learning a bit too mechanically. I broke down steps, highlighted key points, and checked whether learners could perform the "correct" behavior. This approach worked well in the technical training projects I managed in the past, yet something always felt incomplete. After studying Cognitivism, I finally understood what was missing—the mind behind the behavior, the active process of thinking, filtering, connecting, and reorganizing information.
-          </p>
-          <p>
-            Cognitivism reminds me that learners never walk into a classroom with an empty mind. They bring years of experiences, memories, assumptions, and personal logic, and all of these shape how they make sense of new information. As an international student and a mother of three, I experience this every day in graduate school. I find myself linking new theories to my previous training projects in China, or to the way my daughters learn new words at home. Some ideas fit into my existing understanding easily, while others require me to adjust my own framework before new knowledge can settle in. Looking back, this is exactly what Piaget describes as accommodation, even though I never named it that before.
-          </p>
-          <p>
-            It also struck me that I had been using "cognitive strategies" long before I learned the term. In many of my past projects, I would naturally create XMind or MindManager diagrams—flowcharts, timelines, tables, and concept maps—to help colleagues understand complex ideas. At the time, I simply thought they made communication easier. Now I realize they were advance organizers that reduced cognitive load and allowed people to see the structure before diving into details. Cognitivism helped me understand why these instinctive design choices worked so well.
-          </p>
-          <p>
-            My children also helped me see Cognitivism more clearly. My older daughter constantly asks "why"—why a math rule works, why plants grow toward the light, why English spelling and pronunciation don't always match. My younger daughter needs examples, pictures, gestures, and small steps. I used to think this was simply personality. Now I understand it as differences in working memory, prior knowledge, and how each child processes information. Cognitivism gave me a way to explain these everyday observations, instead of relying only on intuition.
-          </p>
-          <p>
-            Piaget and Vygotsky's ideas also stayed with me. At first, I thought they contradicted each other: one emphasizing that learners must be ready before learning, the other emphasizing that learning itself creates readiness. Now I see that the two perspectives can coexist. In both my earlier health-training work and my recent IDE 761 teacher PD project, I constantly navigate this balance—keeping tasks within learners' cognitive capacity while offering just enough scaffolding to stretch them. This tension between "not overwhelming" and "not over-helping" is something I want to be more intentional about.
-          </p>
-          <p>
-            One insight from this chapter that truly challenged me is that scaffolding is not always better when there is more of it. Too much support can fill up a learner's working memory and pull their attention away from the core task. When Ormrod described how elementary students gradually move from wide writing spaces to a single line, I immediately thought about my own teaching habits. I often tried to make learning easier by breaking tasks into very small steps and giving many hints. Now I wonder whether, in trying to help, I sometimes took away the productive struggle learners needed to truly understand.
-          </p>
-          <p>
-            Overall, Cognitivism and its related instructional theories feel very natural to me. They help me explain the learning challenges I see in real projects and guide me in designing materials more systematically—whether for teacher PD programs or for my micro-learning module on time management this semester. Cognitivism reshaped my understanding of the difference between "being able to perform" and "truly remembering and understanding." It also gave me a clearer and kinder way to look at myself—as a learner, a mother, and a designer.
-          </p>
-          <p>
-            I expect Cognitivism will appear again in my final reflection paper. Not because it is flawless, but because it helps me see learners, including myself, with more clarity and honesty.
-          </p>
-        </div>
-      </section>
+        <!-- Reflection -->
+        <section class="section">
+            <h2>Reflection</h2>
+            <p>When I first entered instructional design, I treated learning a bit too mechanically. I broke down steps, highlighted key points, and checked whether learners could perform the "correct" behavior. This approach worked well in the technical training projects I managed in the past, yet something always felt incomplete. After studying Cognitivism, I finally understood what was missing—the mind behind the behavior, the active process of thinking, filtering, connecting, and reorganizing information.</p>
+            <p>Cognitivism reminds me that learners never walk into a classroom with an empty mind. They bring years of experiences, memories, assumptions, and personal logic, and all of these shape how they make sense of new information. As an international student and a mother of three, I experience this every day in graduate school. I find myself linking new theories to my previous training projects in China, or to the way my daughters learn new words at home. Some ideas fit into my existing understanding easily, while others require me to adjust my own framework before new knowledge can settle in. Looking back, this is exactly what Piaget describes as accommodation, even though I never named it that before.</p>
+            <p>It also struck me that I had been using "cognitive strategies" long before I learned the term. In many of my past projects, I would naturally create XMind or MindManager diagrams—flowcharts, timelines, tables, and concept maps—to help colleagues understand complex ideas. At the time, I simply thought they made communication easier. Now I realize they were advance organizers that reduced cognitive load and allowed people to see the structure before diving into details. Cognitivism helped me understand why these instinctive design choices worked so well.</p>
+            <p>My children also helped me see Cognitivism more clearly. My older daughter constantly asks "why"—why a math rule works, why plants grow toward the light, why English spelling and pronunciation don't always match. My younger daughter needs examples, pictures, gestures, and small steps. I used to think this was simply personality. Now I understand it as differences in working memory, prior knowledge, and how each child processes information. Cognitivism gave me a way to explain these everyday observations, instead of relying only on intuition.</p>
+            <p>Piaget and Vygotsky's ideas also stayed with me. At first, I thought they contradicted each other: one emphasizing that learners must be ready before learning, the other emphasizing that learning itself creates readiness. Now I see that the two perspectives can coexist. In both my earlier health-training work and my recent IDE 761 teacher PD project, I constantly navigate this balance—keeping tasks within learners' cognitive capacity while offering just enough scaffolding to stretch them. This tension between "not overwhelming" and "not over-helping" is something I want to be more intentional about.</p>
+            <p>One insight from this chapter that truly challenged me is that scaffolding is not always better when there is more of it. Too much support can fill up a learner's working memory and pull their attention away from the core task. When Ormrod described how elementary students gradually move from wide writing spaces to a single line, I immediately thought about my own teaching habits. I often tried to make learning easier by breaking tasks into very small steps and giving many hints. Now I wonder whether, in trying to help, I sometimes took away the productive struggle learners needed to truly understand.</p>
+            <p>Overall, Cognitivism and its related instructional theories feel very natural to me. They help me explain the learning challenges I see in real projects and guide me in designing materials more systematically—whether for teacher PD programs or for my micro-learning module on time management this semester. Cognitivism reshaped my understanding of the difference between "being able to perform" and "truly remembering and understanding." It also gave me a clearer and kinder way to look at myself—as a learner, a mother, and a designer.</p>
+            <p>I expect Cognitivism will appear again in my final reflection paper. Not because it is flawless, but because it helps me see learners, including myself, with more clarity and honesty.</p>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-text">IDE621_Fall 2025_Zhen Li</div>
+        <p>IDE621_Fall 2025_Zhen Li</p>
     </footer>
-  </body>
+</body>
 </html>
-

@@ -1,1096 +1,347 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Social Learning Theories - IDE621 Knowledge Base</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap"
-      rel="stylesheet"
-    />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Learning Theories - Learning Theories</title>
+    <link rel="stylesheet" href="/style.css">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Gentium Basic", serif;
-        line-height: 1.6667;
-        color: #212121;
-        background-color: #ffffff;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Header Section */
-      .hero-section {
-        background-color: #226e93;
-        background-image: url("../home/assets/images/hero-background.jpg");
-        background-size: cover;
-        background-position: center center;
-        height: 340px;
-        padding: 60px 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(33, 33, 33, 0.4);
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        color: #ffffff;
-      }
-
-      .hero-content h1 {
-        font-family: "Lora", serif;
-        font-size: 52pt;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0;
-        line-height: 1.2;
-      }
-
-      .hero-subtitle {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        font-weight: 700;
-        color: #ff9900;
-        margin-top: 20px;
-      }
-
-      /* Navigation */
-      .nav-container {
-        background-color: #212121;
-        padding: 0;
-      }
-
-      .nav-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 0;
-        flex-wrap: wrap;
-      }
-
-      .nav-menu li {
-        margin: 0;
-      }
-
-      .nav-menu a {
-        color: rgba(255, 255, 255, 0.87);
-        text-decoration: none;
-        font-family: "Lora", serif;
-        font-size: 15pt;
-        padding: 11.5px 16px;
-        display: block;
-        transition: color 0.2s;
-      }
-
-      .nav-menu a:hover {
-        color: #49aad4;
-      }
-
-      .nav-menu a.active {
-        color: #49aad4;
-      }
-
-      /* Main Content */
-      .main-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 24px;
-      }
-
-      .page-title {
-        font-family: "Lora", serif;
-        font-size: 48pt;
-        font-weight: 700;
-        color: #226e93;
-        margin: 40px 0 20px;
-        text-align: center;
-      }
-
-      .page-subtitle {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        font-weight: 700;
-        color: #ff9900;
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .section {
-        margin: 60px 0;
-      }
-
-      .section h2 {
-        font-family: "Lora", serif;
-        font-size: 28pt;
-        font-weight: 400;
-        color: #226e93;
-        margin-bottom: 30px;
-        border-bottom: 2px solid #226e93;
-        padding-bottom: 10px;
-      }
-
-      .section h3 {
-        font-family: "Lora", serif;
-        font-size: 20pt;
-        font-weight: 400;
-        color: #226e93;
-        margin: 30px 0 20px;
-      }
-
-      .section h4 {
-        font-family: "Lora", serif;
-        font-size: 16pt;
-        font-weight: 600;
-        color: #226e93;
-        margin: 25px 0 15px;
-      }
-
-      .section p {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        line-height: 1.8;
-        margin: 16px 0;
-        text-align: justify;
-      }
-
-      .section ul {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-      }
-
-      .section ul li {
-        margin: 12px 0;
-        padding-left: 24px;
-        position: relative;
-      }
-
-      .section ul li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: #226e93;
-        font-weight: bold;
-      }
-
-      .section a {
-        color: #226e93;
-        text-decoration: underline;
-        transition: color 0.2s;
-      }
-
-      .section a:hover {
-        color: #49aad4;
-      }
-
-      .pdf-link {
-        display: inline-block;
-        margin: 10px 10px 10px 0;
-        padding: 12px 24px;
-        background-color: #226e93;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: 600;
-        transition: background-color 0.2s;
-      }
-
-      .pdf-link:hover {
-        background-color: #49aad4;
-        color: #ffffff;
-      }
-
-      /* PDF Preview Embedded */
-      .pdf-preview-container {
-        margin: 30px 0;
-        width: 100%;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 4px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .pdf-preview-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 141.42%; /* A4比例 (297/210 = 1.4142) */
-        overflow: hidden;
-      }
-
-      .pdf-preview-iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-      }
-
-      .reflection {
-        background-color: #f5f5f5;
-        padding: 30px;
-        border-left: 4px solid #226e93;
-        margin: 30px 0;
-        border-radius: 4px;
-      }
-
-      .reflection p {
-        margin: 16px 0;
-      }
-
-      .reflection h4 {
-        margin-top: 30px;
-        margin-bottom: 15px;
-      }
-
-      .reflection h4:first-of-type {
-        margin-top: 0;
-      }
-
-      /* Learning Scenario Section */
-      article {
-        display: flex;
-        gap: 30px;
-        margin: 30px 0;
-        flex-wrap: wrap;
-      }
-
-      sidebar {
-        flex: 0 0 300px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      sidebar img {
-        width: 100%;
-        height: auto;
-        border-radius: 4px;
-      }
-
-      main {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .scenario-content {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        line-height: 1.8;
-        color: #212121;
-        text-align: justify;
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .scenario-content p {
-        margin: 16px 0;
-        padding: 15px 20px;
-        border-radius: 4px;
-        border-left: 4px solid;
-      }
-
-      .p-yellow {
-        background-color: rgba(255, 235, 59, 0.3);
-        border-left-color: #ffeb3b;
-      }
-
-      .p-light-green {
-        background-color: rgba(139, 195, 74, 0.2);
-        border-left-color: #8bc34a;
-      }
-
-      .p-light-blue {
-        background-color: rgba(3, 169, 244, 0.15);
-        border-left-color: #03a9f4;
-      }
-
-      .tags-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 4px;
-      }
-
-      .tag {
-        padding: 10px 15px;
-        border-radius: 4px;
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        font-weight: 600;
-        color: #212121;
-        text-align: center;
-      }
-
-      .tag-purple {
-        background-color: #9c27b0;
-        color: #ffffff;
-      }
-
-      .tag-yellow {
-        background-color: #ffeb3b;
-        color: #212121;
-      }
-
-      .tag-light-green {
-        background-color: #8bc34a;
-        color: #212121;
-      }
-
-      .tag-light-blue {
-        background-color: #03a9f4;
-        color: #ffffff;
-      }
-
-      .tag-red {
-        background-color: #f44336;
-        color: #ffffff;
-      }
-
-      .tag-dark-blue {
-        background-color: #1976d2;
-        color: #ffffff;
-      }
-
-      .tag-teal {
-        background-color: #009688;
-        color: #ffffff;
-      }
-
-      .tag-dark-green {
-        background-color: #388e3c;
-        color: #ffffff;
-      }
-
-      .tag-olive {
-        background-color: #689f38;
-        color: #ffffff;
-      }
-
-      .tag-magenta {
-        background-color: #e91e63;
-        color: #ffffff;
-      }
-
-      /* Observation Checklist Table */
-      .checklist-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 30px 0;
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .checklist-table thead {
-        background-color: #1976d2;
-        color: #ffffff;
-      }
-
-      .checklist-table thead th {
-        padding: 15px;
-        text-align: left;
-        font-weight: 600;
-        border: 1px solid #1565c0;
-      }
-
-      .checklist-table tbody tr:nth-child(even) {
-        background-color: #e3f2fd;
-      }
-
-      .checklist-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-      }
-
-      .checklist-table tbody td {
-        padding: 12px 15px;
-        border: 1px solid #e0e0e0;
-        vertical-align: top;
-      }
-
-      .checklist-table tbody td:first-child {
-        font-weight: 500;
-        width: 50%;
-      }
-
-      .checklist-table tbody td:nth-child(2),
-      .checklist-table tbody td:nth-child(3) {
-        width: 10%;
-        text-align: center;
-      }
-
-      .checklist-table thead th:first-child {
-        width: 50%;
-      }
-
-      .checklist-table thead th:nth-child(2),
-      .checklist-table thead th:nth-child(3) {
-        width: 10%;
-        text-align: center;
-      }
-
-      .checklist-section {
-        margin: 40px 0;
-      }
-
-      /* Footer */
-      .footer {
-        background-color: #ffffff;
-        padding: 40px 24px;
-        text-align: center;
-        margin-top: 60px;
-        border-top: 1px solid #e0e0e0;
-      }
-
-      .footer-text {
-        font-family: "Gentium Basic", serif;
-        font-size: 11pt;
-        color: #212121;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero-section {
-          height: 250px;
-          padding: 30px 24px;
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            margin: 0.25rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
-
-        .hero-content h1 {
-          font-size: 40pt;
+        .tag:nth-child(1) { background-color: #dbeafe; color: #1e40af; }
+        .tag:nth-child(2) { background-color: #fef3c7; color: #92400e; }
+        .tag:nth-child(3) { background-color: #d1fae5; color: #065f46; }
+        .tag:nth-child(4) { background-color: #fce7f3; color: #831843; }
+        .tag:nth-child(5) { background-color: #e0e7ff; color: #3730a3; }
+        .tag:nth-child(6) { background-color: #fed7aa; color: #7c2d12; }
+        .tag:nth-child(7) { background-color: #fecdd3; color: #991b1b; }
+        .tag:nth-child(8) { background-color: #cffafe; color: #164e63; }
+        .tag:nth-child(9) { background-color: #e9d5ff; color: #581c87; }
+        .tag:nth-child(10) { background-color: #fef3c7; color: #92400e; }
+        .learning-scenario-columns {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-2xl);
+            margin: var(--spacing-2xl) 0;
+            align-items: start;
         }
-
-        .page-title {
-          font-size: 36pt;
+        @media (max-width: 768px) {
+            .learning-scenario-columns {
+                grid-template-columns: 1fr;
+            }
         }
-
-        .section h2 {
-          font-size: 24pt;
-        }
-
-        .nav-menu {
-          flex-direction: column;
-        }
-      }
-
-      @media (max-width: 479px) {
-        .hero-content h1 {
-          font-size: 35pt;
-        }
-
-        .page-title {
-          font-size: 28pt;
-        }
-      }
     </style>
-  </head>
-
-  <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1>IDE621 Knowledge Base</h1>
-      </div>
-    </section>
-
+</head>
+<body>
     <!-- Navigation -->
     <nav class="nav-container">
-      <div class="nav-wrapper">
-        <ul class="nav-menu">
-          <li><a href="../home/">Home</a></li>
-          <li><a href="../behaviorism/">Behaviorism</a></li>
-          <li><a href="../cognitivism/">Cognitivism</a></li>
-          <li><a href="#" class="active">Social Learning</a></li>
-          <li><a href="../about/">About</a></li>
-        </ul>
-      </div>
+        <div class="nav-wrapper">
+            <ul class="nav-menu">
+                <li><a href="/home/">Home</a></li>
+                <li><a href="/behaviorism/">Behaviorism</a></li>
+                <li><a href="/cognitivism/">Cognitivism</a></li>
+                <li><a href="/social-learning/" class="active">Social Learning</a></li>
+                <li><a href="/about/">About</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Social Learning Theories</h1>
+            <p><strong>Knowledge Base prepared by Zhen Li</strong></p>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <main class="main-container">
-      <h1 class="page-title">Social Learning Theories</h1>
-      <div class="page-subtitle">Knowledge Base prepared by Zhen Li</div>
-
-      <!-- Infographics Section -->
-      <section class="section">
-        <h2>
-          Infographics of Social Learning Theories & Social Learning
-          Theory-Inspired Instructional Design Theories
-        </h2>
-        <div>
-          <div class="pdf-preview-container">
-            <div class="pdf-preview-wrapper">
-              <iframe
-                class="pdf-preview-iframe"
-                src="assets/Social_Learning_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-              ></iframe>
+        <!-- Infographics -->
+        <section class="section">
+            <h2>Infographics of Social Learning Theories & Social Learning Theory-Inspired Instructional Design Theories</h2>
+            <div class="pdf-preview">
+                <iframe src="assets/Social_Learning_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
             </div>
-          </div>
-        </div>
-        <div style="margin-top: 30px">
-          <div class="pdf-preview-container">
-            <div class="pdf-preview-wrapper">
-              <iframe
-                class="pdf-preview-iframe"
-                src="assets/SLT_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-              ></iframe>
+            <div class="pdf-preview">
+                <iframe src="assets/SLT_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Examples Section -->
-      <section class="section">
-        <h2>
-          Examples of Social Learning Theories-Inspired Instructional Theories
-        </h2>
+        <!-- Examples -->
+        <section class="section">
+            <h2>Examples of Social Learning Theories-Inspired Instructional Theories</h2>
+            
+            <h3>Collaborative Learning Strategies for Better Classroom Interaction</h3>
+            <p>Link: <a href="https://creately.com/guides/collaborative-learning-strategies/">https://creately.com/guides/collaborative-learning-strategies/</a></p>
 
-        <h3>
-          Collaborative Learning Strategies for Better Classroom Interaction
-        </h3>
-        <ul>
-          <li>
-            Link:
-            <a
-              href="https://creately.com/guides/collaborative-learning-strategies/"
-              target="_blank"
-              >https://creately.com/guides/collaborative-learning-strategies/</a
-            >
-          </li>
-        </ul>
+            <h3>Learning by doing: Apprenticeship</h3>
+            <p>Link: <a href="https://pressbooks.bccampus.ca/teachinginadigitalagev2/chapter/3-5-apprenticeship-learning-by-doing-1/">https://pressbooks.bccampus.ca/teachinginadigitalagev2/chapter/3-5-apprenticeship-learning-by-doing-1/</a></p>
 
-        <h3>Learning by doing: Apprenticeship</h3>
-        <ul>
-          <li>
-            Link:
-            <a
-              href="https://pressbooks.bccampus.ca/teachinginadigitalagev2/chapter/3-5-apprenticeship-learning-by-doing-1/"
-              target="_blank"
-              >https://pressbooks.bccampus.ca/teachinginadigitalagev2/chapter/3-5-apprenticeship-learning-by-doing-1/</a
-            >
-          </li>
-        </ul>
+            <h3>Reciprocal Teaching</h3>
+            <p>Link: <a href="https://strategiesforspecialinterventions.weebly.com/reciprocal-teaching.html">https://strategiesforspecialinterventions.weebly.com/reciprocal-teaching.html</a></p>
 
-        <h3>Reciprocal Teaching</h3>
-        <ul>
-          <li>
-            Link:
-            <a
-              href="https://strategiesforspecialinterventions.weebly.com/reciprocal-teaching.html"
-              target="_blank"
-              >https://strategiesforspecialinterventions.weebly.com/reciprocal-teaching.html</a
-            >
-          </li>
-        </ul>
+            <h3>Cooperative Learning in STEM</h3>
+            <p>Link: <a href="https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem">https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem</a></p>
 
-        <h3>Cooperative Learning in STEM</h3>
-        <ul>
-          <li>
-            Link:
-            <a
-              href="https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem"
-              target="_blank"
-              >https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem</a
-            >
-          </li>
-        </ul>
+            <h3>Using Video Modeling and Peer Modeling to Teach SEL Skills</h3>
+            <p>Link: <a href="https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem">https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem</a></p>
+        </section>
 
-        <h3>Using Video Modeling and Peer Modeling to Teach SEL Skills</h3>
-        <ul>
-          <li>
-            Link:
-            <a
-              href="https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem"
-              target="_blank"
-              >https://blog.acceleratelearning.com/cooperative-learning-strategies-in-stem</a
-            >
-          </li>
-        </ul>
-      </section>
-
-      <!-- Learning Scenario Section -->
-      <section class="section">
-        <h2>Learning Scenario</h2>
-        <article>
-          <sidebar>
-            <img
-              src="assets/images/learning-scenario.png"
-              alt="Social Learning Learning Scenario"
-            />
-            <div class="tags-container">
-              <div class="tag tag-purple">Attention (A)</div>
-              <div class="tag tag-yellow">Retention (R)</div>
-              <div class="tag tag-light-green">Reproduction (P)</div>
-              <div class="tag tag-light-blue">Motivation (M)</div>
-              <div class="tag tag-red">Self-efficacy (SE)</div>
-              <div class="tag tag-dark-blue">Vicarious Reinforcement (VR)</div>
-              <div class="tag tag-teal">Direct Reinforcement (DR)</div>
-              <div class="tag tag-dark-green">Self-Reinforcement (SR)</div>
-              <div class="tag tag-olive">Modeling (M)</div>
-              <div class="tag tag-magenta">Reciprocal Determinism (RD)</div>
+        <!-- Learning Scenario -->
+        <section class="section">
+            <h2>Learning Scenario</h2>
+            <div class="learning-scenario-columns">
+                <div>
+                    <img src="assets/images/learning-scenario.png" alt="Learning Scenario">
+                    <p><strong>Tags:</strong></p>
+                    <div>
+                        <span class="tag">Attention (A)</span>
+                        <span class="tag">Retention (R)</span>
+                        <span class="tag">Reproduction (P)</span>
+                        <span class="tag">Motivation (M)</span>
+                        <span class="tag">Self-efficacy (SE)</span>
+                        <span class="tag">Vicarious Reinforcement (VR)</span>
+                        <span class="tag">Direct Reinforcement (DR)</span>
+                        <span class="tag">Self-Reinforcement (SR)</span>
+                        <span class="tag">Modeling (M)</span>
+                        <span class="tag">Reciprocal Determinism (RD)</span>
+                    </div>
+                </div>
+                <div>
+                    <p>In an art class, the teacher stands beside the front table while 22 students sit in pairs at their benches. On the interactive whiteboard behind her, a picture of three girls dancing gracefully under rainbow-colored lights is displayed. The beams reflect like sparkles on water. She taps the screen gently and asks, "Can anyone tell me what kind of feeling this picture gives you?" Little hands shoot up. "It looks magical!" says one student. Another adds, "It feels like a dream." The teacher smiles and nods, saying, "Exactly. That's the power of color and movement in art."</p>
+                    <p>She then holds up three strips of tissue paper—red, blue, and yellow—and explains, "Today, we are going to create our own rainbow light effect by layering tissue paper. Imagine your dancers moving under the lights you design." Students eagerly begin cutting and arranging tissue paper. Some whisper ideas to each other, while others work silently, absorbed in their designs. The classroom hums with the rustling of paper and soft conversations.</p>
+                    <p>As the activity continues, the teacher stops to encourage a shy student, kneels to help another reposition a tricky layer, and praises one group for blending colors into a glowing sunset effect. Near the end, she invites everyone to place their collages on the display board titled "Dancing with Light." Students gather around, pointing and admiring. Excited voices say, "It looks like they're all dancing together on one big stage." Smiling, the teacher concludes by summarizing the class's creative outcomes.</p>
+                </div>
             </div>
-          </sidebar>
-          <main>
-            <div class="scenario-content">
-              <p class="p-yellow">
-                In an art class, the teacher stands beside the front table while
-                22 students sit in pairs at their benches. On the interactive
-                whiteboard behind her, a picture of three girls dancing
-                gracefully under rainbow-colored lights is displayed. The beams
-                reflect like sparkles on water. She taps the screen gently and
-                asks, "Can anyone tell me what kind of feeling this picture
-                gives you?" Little hands shoot up. "It looks magical!" says one
-                student. Another adds, "It feels like a dream." The teacher
-                smiles and nods, saying, "Exactly. That's the power of color and
-                movement in art."
-              </p>
-              <p class="p-light-green">
-                She then holds up three strips of tissue paper—red, blue, and
-                yellow—and explains, "Today, we are going to create our own
-                rainbow light effect by layering tissue paper. Imagine your
-                dancers moving under the lights you design." Students eagerly
-                begin cutting and arranging tissue paper. Some whisper ideas to
-                each other, while others work silently, absorbed in their
-                designs. The classroom hums with the rustling of paper and soft
-                conversations.
-              </p>
-              <p class="p-light-blue">
-                As the activity continues, the teacher stops to encourage a shy
-                student, kneels to help another reposition a tricky layer, and
-                praises one group for blending colors into a glowing sunset
-                effect. Near the end, she invites everyone to place their
-                collages on the display board titled "Dancing with Light."
-                Students gather around, pointing and admiring. Excited voices
-                say, "It looks like they're all dancing together on one big
-                stage." Smiling, the teacher concludes by summarizing the
-                class's creative outcomes.
-              </p>
-            </div>
-          </main>
-        </article>
-      </section>
+        </section>
 
-      <!-- Observation Checklist Section -->
-      <section class="section">
-        <h2>Observation Checklist</h2>
-        <div class="checklist-section">
-          <table class="checklist-table">
-            <thead>
-              <tr>
-                <th>Observed Behaviors</th>
-                <th>Yes</th>
-                <th>No</th>
-                <th>Comments</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  Instructor models a target behavior or thinking process.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Learners attend to and observe the model.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Learners imitate or attempt to reproduce the modeled behavior.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Learners compare their performance with peers or model.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Instructor provides vicarious reinforcement by praising an
-                  observed peer behavior.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Learners adjust behavior after seeing peer success or
-                  correction.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Learners engage in collaborative meaning-making during tasks.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Learners seek social cues or guidance from peers.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Instructor encourages guided participation or joint activity.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Learners show increased self-efficacy as they gain skill.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Instructor gradually releases responsibility to learners.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Learners participate in a community-like learning environment.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Reciprocal causation observed among
-                  person-behavior-environment.
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <!-- Observation Checklist -->
+        <section class="section">
+            <h2>Observation Checklist</h2>
+            
+            <h3>Observed Behaviors</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Observed Behaviors</th>
+                        <th>Yes</th>
+                        <th>No</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instructor models a target behavior or thinking process.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners attend to and observe the model.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners imitate or attempt to reproduce the modeled behavior.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners compare their performance with peers or model.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Instructor provides vicarious reinforcement by praising an observed peer behavior.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners adjust behavior after seeing peer success or correction.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners engage in collaborative meaning-making during tasks.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners seek social cues or guidance from peers.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Instructor encourages guided participation or joint activity.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners show increased self-efficacy as they gain skill.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Instructor gradually releases responsibility to learners.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learners participate in a community-like learning environment.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Reciprocal causation observed among person-behavior-environment.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <div class="checklist-section">
-          <table class="checklist-table">
-            <thead>
-              <tr>
-                <th>Observed Materials / Evidence</th>
-                <th>Yes</th>
-                <th>No</th>
-                <th>Comments</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  Demonstration tools (e.g., teacher think-aloud, sample work,
-                  live demonstration)
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Visual cues (e.g., projected example, gestures that direct
-                  attention)
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Student artifacts (e.g., attempted work, practice samples)
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Peer work displays, comparison charts, group outputs</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Public praise, verbal feedback highlighting peer success,
-                  "look at how ...... solved it."
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Revised student work, changed strategy after observing peers
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Group discussion notes, shared graphic organizers,
-                  co-constructed posters
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Peer explanations, partner discussion scripts</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Structured group roles, teacher-led small groups, shared-task
-                  templates
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Verbal indicators ("I think I can do this"), confident
-                  participation, willingness to try
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Transition from teacher-led to peer-led dialogue, reciprocal
-                  teaching roles
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Learning centers, co-created norms, discussion boards, shared
-                  routines
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  Evidence of environment shaping behavior (e.g., displays,
-                  seating) + behavior shaping participation
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+            <h3>Observed Materials / Evidence</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Observed Materials / Evidence</th>
+                        <th>Yes</th>
+                        <th>No</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Demonstration tools (e.g., teacher think-aloud, sample work, live demonstration)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Visual cues (e.g., projected example, gestures that direct attention)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Student artifacts (e.g., attempted work, practice samples)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Peer work displays, comparison charts, group outputs</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Public praise, verbal feedback highlighting peer success, "look at how ...... solved it."</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Revised student work, changed strategy after observing peers</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Group discussion notes, shared graphic organizers, co-constructed posters</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Peer explanations, partner discussion scripts</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Structured group roles, teacher-led small groups, shared-task templates</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Verbal indicators ("I think I can do this"), confident participation, willingness to try</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Transition from teacher-led to peer-led dialogue, reciprocal teaching roles</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Learning centers, co-created norms, discussion boards, shared routines</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Evidence of environment shaping behavior (e.g., displays, seating) + behavior shaping participation</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-      <!-- Reflection Section -->
-      <section class="section">
-        <h2>Reflection</h2>
-        <div class="reflection">
-          <p>
-            Learning Social Learning Theory (SLT) over the past few weeks has
-            been a very gradual process for me. At first, it felt familiar:
-            "people learn by observing, imitating, and interacting." But I
-            didn't fully understand how these ideas connect with classroom
-            decisions, instructional design, or my own learning. Through reading
-            Bandura, watching the course videos, creating the shared scenario
-            for all three theories, and building the KB products, my thinking
-            started to shift. I realized that SLT is not just "learning happens
-            in interaction." It is a framework that truly connects environment,
-            behavior, and personal cognition.
-          </p>
-          <p>
-            The idea of reciprocal causation made the biggest impact on me. It
-            reminded me of something I learned earlier in a parenting-coach
-            certification program in China: "A child is the mirror of the
-            parent." When a child struggles, parents need to ask whether the
-            environment provides enough modeling, enough social support, and
-            enough chances for success. While marking up my learning scenario
-            with labels like self-efficacy, vicarious reinforcement, and guided
-            participation, I suddenly saw that these mechanisms have always
-            existed in my past professional experiences and even in my
-            parenting, but I had never viewed them through SLT before.
-          </p>
+        <!-- Reflection -->
+        <section class="section">
+            <h2>Reflection</h2>
+            <p>Learning Social Learning Theory (SLT) over the past few weeks has been a very gradual process for me. At first, it felt familiar: "people learn by observing, imitating, and interacting." But I didn't fully understand how these ideas connect with classroom decisions, instructional design, or my own learning. Through reading Bandura, watching the course videos, creating the shared scenario for all three theories, and building the KB products, my thinking started to shift. I realized that SLT is not just "learning happens in interaction." It is a framework that truly connects environment, behavior, and personal cognition.</p>
+            <p>The idea of reciprocal causation made the biggest impact on me. It reminded me of something I learned earlier in a parenting-coach certification program in China: "A child is the mirror of the parent." When a child struggles, parents need to ask whether the environment provides enough modeling, enough social support, and enough chances for success. While marking up my learning scenario with labels like self-efficacy, vicarious reinforcement, and guided participation, I suddenly saw that these mechanisms have always existed in my past professional experiences and even in my parenting, but I had never viewed them through SLT before.</p>
+            
+            <h3>1. My strongest connection: self-efficacy and learning through modeling</h3>
+            <p>The SLT concept that resonates with me the most is self-efficacy. It brought back many memories from my years managing a training team in China. Several new colleagues were fresh graduates, and they were terrified when they first had to teach a demo lesson. At the time, I didn't think about theory; I simply showed them "how I would do it," asked them to mimic the structure, and then stood beside them offering small prompts like eye contact, pacing, pausing. Later, I let them lead larger sections while I only stepped in when needed.</p>
+            <p>Looking back now, I see clearly: That was cognitive apprenticeship. And their progress came mainly from growing self-efficacy through supported practice. I only understood this after working through the SLT infographic and naming the strategies. Realizing that I had unknowingly been using SLT ideas for years was a meaningful moment for me.</p>
 
-          <h4>
-            1. My strongest connection: self-efficacy and learning through
-            modeling
-          </h4>
-          <p>
-            The SLT concept that resonates with me the most is self-efficacy. It
-            brought back many memories from my years managing a training team in
-            China. Several new colleagues were fresh graduates, and they were
-            terrified when they first had to teach a demo lesson. At the time, I
-            didn't think about theory; I simply showed them "how I would do it,"
-            asked them to mimic the structure, and then stood beside them
-            offering small prompts like eye contact, pacing, pausing. Later, I
-            let them lead larger sections while I only stepped in when needed.
-          </p>
-          <p>
-            Looking back now, I see clearly: That was cognitive apprenticeship.
-            And their progress came mainly from growing self-efficacy through
-            supported practice. I only understood this after working through the
-            SLT infographic and naming the strategies. Realizing that I had
-            unknowingly been using SLT ideas for years was a meaningful moment
-            for me.
-          </p>
+            <h3>2. Social learning in real life: watching my daughter grow</h3>
+            <p>As a mother of three, I also see SLT play out in my children's classroom experiences. When my oldest daughter first entered an American high school, she was very anxious about her English. But one of her classmates often raised her hand and spoke confidently. My daughter watched quietly for a few days and then said to me, "If she dares to try, maybe I can try too." That is vicarious reinforcement in the most natural form. The teacher would give my daughter simple feedback like "Great work!" and that was enough. Small social interactions like these slowly built her confidence. As I studied SLT, these real-life experiences helped me understand the theory at a deeper, more emotional level.</p>
 
-          <h4>2. Social learning in real life: watching my daughter grow</h4>
-          <p>
-            As a mother of three, I also see SLT play out in my children's
-            classroom experiences. When my oldest daughter first entered an
-            American high school, she was very anxious about her English. But
-            one of her classmates often raised her hand and spoke confidently.
-            My daughter watched quietly for a few days and then said to me, "If
-            she dares to try, maybe I can try too." That is vicarious
-            reinforcement in the most natural form. The teacher would give my
-            daughter simple feedback like "Great work!" and that was enough.
-            Small social interactions like these slowly built her confidence. As
-            I studied SLT, these real-life experiences helped me understand the
-            theory at a deeper, more emotional level.
-          </p>
+            <h3>3. Challenges while completing the assignments</h3>
+            <p>Working on the SLT infographic and the SLT-inspired instructional design infographic was not easy for me. I faced two challenges:</p>
+            <p><strong>(1) Turning theory into observable classroom behaviors</strong></p>
+            <p>Teacher modeling, peer collaboration, and positive reinforcement sound simple. But describing them as instructional strategies requires precision. I had to keep asking myself: "Is this SLT, or is it actually Cognitivism?" "Does this activity rely on social interaction, or is it only individual processing?" This back-and-forth helped me truly see the difference between theories.</p>
+            <p><strong>(2) Making sure my example matched SLT rather than other theories</strong></p>
+            <p>For instance, when I chose Reciprocal Teaching, I needed to ensure it wasn't merely repeated practice (Behaviorism) or just a set of cognitive reading strategies (Cognitivism). It had to include shared meaning-making and social dialogue. This required a lot of revision and comparison across theories. Although challenging, this process deepened my understanding far more than reading alone.</p>
 
-          <h4>3. Challenges while completing the assignments</h4>
-          <p>
-            Working on the SLT infographic and the SLT-inspired instructional
-            design infographic was not easy for me. I faced two challenges:
-          </p>
-          <p>
-            <strong
-              >(1) Turning theory into observable classroom behaviors</strong
-            >
-          </p>
-          <p>
-            Teacher modeling, peer collaboration, and positive reinforcement
-            sound simple. But describing them as instructional strategies
-            requires precision. I had to keep asking myself: "Is this SLT, or is
-            it actually Cognitivism?" "Does this activity rely on social
-            interaction, or is it only individual processing?" This
-            back-and-forth helped me truly see the difference between theories.
-          </p>
-          <p>
-            <strong
-              >(2) Making sure my example matched SLT rather than other
-              theories</strong
-            >
-          </p>
-          <p>
-            For instance, when I chose Reciprocal Teaching, I needed to ensure
-            it wasn't merely repeated practice (Behaviorism) or just a set of
-            cognitive reading strategies (Cognitivism). It had to include shared
-            meaning-making and social dialogue. This required a lot of revision
-            and comparison across theories. Although challenging, this process
-            deepened my understanding far more than reading alone.
-          </p>
+            <h3>4. How SLT reshaped my view of instructional design</h3>
+            <p>This course helped me recognize that a strong learning activity depends not only on content, but on the social structure around it: Is there a clear model to observe? Are peers reinforcing one another? Do students have opportunities to take on more responsibility over time? Do learners see "If others can do it, maybe I can too"? These ideas were scattered in my previous experiences, but SLT organizes them into a coherent system. I also appreciate how Rob structures our IDE621 and IDE631 classes—modeling analysis, guiding us step by step, and then having us apply ideas in groups. When I teach Chinese to second graders on weekends, I now intentionally design lessons with "model → practice → collaboration → reflection," rather than relying mainly on explanation and worksheets.</p>
 
-          <h4>4. How SLT reshaped my view of instructional design</h4>
-          <p>
-            This course helped me recognize that a strong learning activity
-            depends not only on content, but on the social structure around it:
-            Is there a clear model to observe? Are peers reinforcing one
-            another? Do students have opportunities to take on more
-            responsibility over time? Do learners see "If others can do it,
-            maybe I can too"? These ideas were scattered in my previous
-            experiences, but SLT organizes them into a coherent system. I also
-            appreciate how Rob structures our IDE621 and IDE631 classes—modeling
-            analysis, guiding us step by step, and then having us apply ideas in
-            groups. When I teach Chinese to second graders on weekends, I now
-            intentionally design lessons with "model → practice → collaboration
-            → reflection," rather than relying mainly on explanation and
-            worksheets.
-          </p>
-
-          <h4>5. My questions and limits I see in SLT</h4>
-          <p>
-            Even though I strongly value SLT, I also noticed some limits,
-            especially in my own graduate-level learning. Some tasks—such as
-            academic writing, coding, or reading theoretical articles—are highly
-            individual. Observation and social interaction are not always the
-            central mechanisms. In addition, cultural contexts shape social
-            interaction in very different ways. Team collaboration in my past
-            work environment in China feels very different from classroom
-            collaboration in the U.S. This makes me aware that SLT may behave
-            differently across cultural settings. Still, these observations do
-            not reduce my appreciation for SLT. Instead, they remind me that no
-            single theory explains all learning. SLT's strength lies in helping
-            people enter new domains, build confidence, and create shared
-            meaning. That makes it especially important in teaching, training,
-            and parent–child learning.
-          </p>
-          <p>
-            Studying SLT has helped me connect the theory with my real life,
-            think more carefully about what I'm doing, and understand it better
-            by using it.
-          </p>
-        </div>
-      </section>
+            <h3>5. My questions and limits I see in SLT</h3>
+            <p>Even though I strongly value SLT, I also noticed some limits, especially in my own graduate-level learning. Some tasks—such as academic writing, coding, or reading theoretical articles—are highly individual. Observation and social interaction are not always the central mechanisms. In addition, cultural contexts shape social interaction in very different ways. Team collaboration in my past work environment in China feels very different from classroom collaboration in the U.S. This makes me aware that SLT may behave differently across cultural settings. Still, these observations do not reduce my appreciation for SLT. Instead, they remind me that no single theory explains all learning. SLT's strength lies in helping people enter new domains, build confidence, and create shared meaning. That makes it especially important in teaching, training, and parent–child learning.</p>
+            <p>Studying SLT has helped me connect the theory with my real life, think more carefully about what I'm doing, and understand it better by using it.</p>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-text">IDE621_Fall 2025_Zhen Li</div>
+        <p>IDE621_Fall 2025_Zhen Li</p>
     </footer>
-  </body>
+</body>
 </html>

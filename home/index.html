@@ -1,869 +1,203 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>IDE621 Knowledge Base</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic%7CGentium%20Basic%3A400%2C400italic%2C700%2C700italic&display=swap"
-      rel="stylesheet"
-    />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Theories - Knowledge Base</title>
+    <link rel="stylesheet" href="/style.css">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Gentium Basic", serif;
-        line-height: 1.6667;
-        color: #212121;
-        background-color: #ffffff;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Header Section */
-      .hero-section {
-        background-color: #226e93;
-        background-image: url("assets/images/hero-background.jpg");
-        background-size: cover;
-        background-position: center center;
-        height: 340px;
-        padding: 60px 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(33, 33, 33, 0.4);
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        color: #ffffff;
-      }
-
-      .hero-content h1 {
-        font-family: "Lora", serif;
-        font-size: 52pt;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0;
-        line-height: 1.2;
-      }
-
-      .hero-subtitle {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        font-weight: 700;
-        color: #ff9900;
-        margin-top: 20px;
-      }
-
-      /* Navigation */
-      .nav-container {
-        background-color: #212121;
-        padding: 0;
-      }
-
-      .nav-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 0;
-        flex-wrap: wrap;
-      }
-
-      .nav-menu li {
-        margin: 0;
-      }
-
-      .nav-menu a {
-        color: rgba(255, 255, 255, 0.87);
-        text-decoration: none;
-        font-family: "Lora", serif;
-        font-size: 15pt;
-        padding: 11.5px 16px;
-        display: block;
-        transition: color 0.2s;
-      }
-
-      .nav-menu a:hover {
-        color: #49aad4;
-      }
-
-      .nav-menu a.active {
-        color: #49aad4;
-      }
-
-      /* Main Content */
-      .main-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 24px;
-      }
-
-      /* Three Column Grid */
-      .theories-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        margin: 40px 0;
-      }
-
-      .theory-item {
-        text-align: center;
-      }
-
-      .theory-image {
-        width: 100%;
-        margin-bottom: 16px;
-        border-radius: 4px;
-        transition: transform 0.2s;
-      }
-
-      .theory-image:hover {
-        transform: scale(1.02);
-      }
-
-      .theory-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .theory-keywords {
-        font-family: "Gentium Basic", serif;
-        font-size: 10pt;
-        color: #212121;
-        margin-top: 8px;
-      }
-
-      /* Theory Details Grid */
-      .theory-details {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        margin: 60px 0 40px;
-      }
-
-      /* Section Headers */
-      .section-header {
-        text-align: center;
-      }
-
-      .section-header img {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin-bottom: 16px;
-        border-radius: 4px;
-      }
-
-      .section-header h2 {
-        font-family: "Lora", serif;
-        font-size: 19pt;
-        font-weight: 400;
-        color: #226e93;
-        text-decoration: underline;
-        margin-top: 0;
-      }
-
-      .section-header a {
-        color: inherit;
-        text-decoration: underline;
-      }
-
-      /* Footer */
-      .footer {
-        background-color: #ffffff;
-        padding: 40px 24px;
-        text-align: center;
-        margin-top: 60px;
-      }
-
-      .footer-text {
-        font-family: "Gentium Basic", serif;
-        font-size: 11pt;
-        color: #212121;
-      }
-
-      /* Comparison Table */
-      .comparison-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 60px 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
-      }
-
-      .comparison-table thead {
-        background-color: #2d5016;
-        color: #ffffff;
-      }
-
-      .comparison-table th {
-        font-family: "Lora", serif;
-        font-size: 16pt;
-        font-weight: 700;
-        padding: 20px;
-        text-align: left;
-        border: 1px solid #1a3009;
-      }
-
-      .comparison-table tbody tr:nth-child(odd) {
-        background-color: #e8f5e9;
-      }
-
-      .comparison-table tbody tr:nth-child(even) {
-        background-color: #c8e6c9;
-      }
-
-      .comparison-table td {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        padding: 20px;
-        vertical-align: top;
-        border: 1px solid #a5d6a7;
-      }
-
-      .comparison-table td:first-child {
-        font-weight: 700;
-        color: #1b5e20;
-        font-size: 14pt;
-      }
-
-      .comparison-table ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .comparison-table li {
-        margin: 8px 0;
-        padding-left: 24px;
-        position: relative;
-      }
-
-      .comparison-table li::before {
-        content: "📖";
-        position: absolute;
-        left: 0;
-      }
-
-      .comparison-table .how-learning li::before {
-        content: "→";
-        font-size: 14pt;
-      }
-
-      /* PDF Preview Section */
-      .pdf-preview-section {
-        margin: 60px 0;
-        padding: 40px 0;
-      }
-
-      .pdf-preview-section h2 {
-        font-family: "Lora", serif;
-        font-size: 28pt;
-        font-weight: 400;
-        color: #226e93;
-        margin-bottom: 30px;
-        text-align: center;
-        border-bottom: 2px solid #226e93;
-        padding-bottom: 15px;
-      }
-
-      /* PDF Preview Container and Wrapper - Reusable */
-      .pdf-preview-container {
-        margin: 30px 0;
-        width: 100%;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 4px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .pdf-preview-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 141.42%; /* A4比例 (297/210 = 1.4142) */
-        overflow: hidden;
-      }
-
-      .pdf-preview-iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-      }
-
-      /* PDF Preview Section specific styles */
-      .pdf-preview-section .pdf-preview-container {
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        background-color: #f5f5f5;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Section Header specific styles */
-      .section-header .pdf-preview-container {
-        margin: 0 0 16px 0;
-        border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .pdf-fallback {
-        padding: 40px;
-        text-align: center;
-        color: #666;
-      }
-
-      .pdf-fallback a {
-        color: #226e93;
-        text-decoration: underline;
-      }
-
-      /* Reference Section */
-      .reference-section {
-        margin: 80px 0;
-        padding: 40px 0;
-      }
-
-      .reference-section h2 {
-        font-family: "Lora", serif;
-        font-size: 32pt;
-        font-weight: 400;
-        color: #226e93;
-        margin-bottom: 40px;
-        text-align: center;
-        border-bottom: 3px solid #226e93;
-        padding-bottom: 15px;
-      }
-
-      .reference-diagram {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 40px 0;
-        flex-wrap: wrap;
-        gap: 30px;
-      }
-
-      .diagram-circle {
-        border: 3px dashed #226e93;
-        border-radius: 50%;
-        padding: 30px;
-        background-color: rgba(34, 110, 147, 0.05);
-        text-align: center;
-        position: relative;
-        min-width: 200px;
-      }
-
-      .diagram-circle.large {
-        width: 280px;
-        height: 280px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .diagram-circle.medium {
-        width: 240px;
-        height: 240px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .diagram-circle.small {
-        width: 200px;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .diagram-circle p {
-        font-family: "Lora", serif;
-        font-size: 13pt;
-        font-weight: 600;
-        color: #226e93;
-        margin: 0;
-        line-height: 1.4;
-      }
-
-      .diagram-arrow {
-        font-size: 32pt;
-        color: #226e93;
-        font-weight: bold;
-      }
-
-      .reference-list {
-        margin: 50px 0;
-      }
-
-      .reference-list ol {
-        list-style: decimal;
-        padding-left: 30px;
-        margin: 20px 0;
-      }
-
-      .reference-list li {
-        font-family: "Gentium Basic", serif;
-        font-size: 12pt;
-        line-height: 1.8;
-        margin: 15px 0;
-        padding-left: 10px;
-        text-align: left;
-      }
-
-      .reference-list li strong {
-        font-weight: 700;
-        color: #226e93;
-      }
-
-      .reference-group {
-        margin: 30px 0;
-      }
-
-      .reference-group h3 {
-        font-family: "Lora", serif;
-        font-size: 18pt;
-        font-weight: 600;
-        color: #226e93;
-        margin: 25px 0 15px;
-      }
-
-      /* Responsive */
-      @media (max-width: 1024px) {
-        .theories-grid {
-          grid-template-columns: repeat(2, 1fr);
+        .theory-card {
+            display: flex;
+            flex-direction: column;
         }
-
-        .theory-details {
-          grid-template-columns: repeat(2, 1fr);
+        .theory-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+            order: 1;
         }
-      }
-
-      @media (max-width: 768px) {
-        .hero-section {
-          height: 250px;
-          padding: 30px 24px;
+        .theory-card h3 {
+            order: 2;
+            margin-top: var(--spacing-md);
+            font-size: 0.9rem;
         }
-
-        .hero-content h1 {
-          font-size: 40pt;
+        .three-theories-section h2 {
+            display: none;
         }
-
-        .theories-grid {
-          grid-template-columns: 1fr;
+        .theories-section h2,
+        .theories-section h3 {
+            display: none;
         }
-
-        .theory-details {
-          grid-template-columns: 1fr;
-        }
-
-        .nav-menu {
-          flex-direction: column;
-        }
-
-        .comparison-table {
-          font-size: 10pt;
-        }
-
-        .comparison-table th {
-          font-size: 12pt;
-          padding: 12px;
-        }
-
-        .comparison-table td {
-          font-size: 10pt;
-          padding: 12px;
-        }
-
-        .comparison-table td:first-child {
-          font-size: 12pt;
-        }
-
-        .reference-section h2 {
-          font-size: 26pt;
-        }
-
-        .reference-diagram {
-          flex-direction: column;
-        }
-
-        .diagram-arrow {
-          transform: rotate(90deg);
-          margin: 10px 0;
-        }
-
-        .diagram-circle.large,
-        .diagram-circle.medium,
-        .diagram-circle.small {
-          width: 90%;
-          max-width: 280px;
-          height: auto;
-          min-height: 200px;
-        }
-
-        .pdf-preview-wrapper {
-          padding-bottom: 141.42%; /* 保持A4比例 */
-        }
-
-        .pdf-preview-section h2 {
-          font-size: 24pt;
-        }
-      }
-
-      @media (max-width: 479px) {
-        .hero-content h1 {
-          font-size: 35pt;
-        }
-      }
     </style>
-  </head>
-
-  <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1>Learning Theories</h1>
-        <div class="hero-subtitle">Knowledge Base prepared by Zhen Li</div>
-      </div>
-    </section>
-
+</head>
+<body>
     <!-- Navigation -->
     <nav class="nav-container">
-      <div class="nav-wrapper">
-        <ul class="nav-menu">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="../behaviorism/">Behaviorism</a></li>
-          <li><a href="../cognitivism/">Cognitivism</a></li>
-          <li><a href="../social-learning/">Social Learning</a></li>
-          <li><a href="../about/">About</a></li>
-        </ul>
-      </div>
+        <div class="nav-wrapper">
+            <ul class="nav-menu">
+                <li><a href="/home/" class="active">Home</a></li>
+                <li><a href="/behaviorism/">Behaviorism</a></li>
+                <li><a href="/cognitivism/">Cognitivism</a></li>
+                <li><a href="/social-learning/">Social Learning</a></li>
+                <li><a href="/about/">About</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Learning Theories</h1>
+            <p><strong>Knowledge Base prepared by Zhen Li</strong></p>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <main class="main-container">
-      <!-- Three Theory Cards -->
-      <div class="theories-grid">
-        <!-- Behaviorism -->
-        <div class="theory-item">
-          <a href="../behaviorism/" class="theory-image">
-            <img src="assets/images/behaviorism.jpg" alt="Behaviorism" />
-          </a>
-          <div class="theory-keywords">
-            Classical Conditioning/Operant Conditioning
-          </div>
-        </div>
-
-        <!-- Cognitivism -->
-        <div class="theory-item">
-          <a href="../cognitivism/" class="theory-image">
-            <img src="assets/images/cognitivism.jpg" alt="Cognitivism" />
-          </a>
-          <div class="theory-keywords">
-            Schema, Scaffolding, Advance Organizers
-          </div>
-        </div>
-
-        <!-- Social Learning -->
-        <div class="theory-item">
-          <a href="../social-learning/" class="theory-image">
-            <img
-              src="assets/images/social-learning.png"
-              alt="Social Learning"
-            />
-          </a>
-          <div class="theory-keywords">
-            Modeling, Self-efficacy, Reciprocal Learning
-          </div>
-        </div>
-      </div>
-
-      <img src="assets/images/three-theories.png" alt="Three Theories" />
-
-      <div class="theory-details">
-        <!-- Section Headers -->
-        <div class="section-header">
-          <div class="pdf-preview-container">
-            <div class="pdf-preview-wrapper">
-              <iframe
-                class="pdf-preview-iframe"
-                src="../behaviorism/assets/Behaviorism_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-              ></iframe>
+        <!-- Three Learning Theories -->
+        <section class="section three-theories-section">
+            <h2>Three Learning Theories</h2>
+            <div class="layout-grid-3">
+                <div class="card theory-card">
+                    <a href="../behaviorism/">
+                        <img src="assets/images/behaviorism.jpg" alt="Behaviorism">
+                        <h3>Classical Conditioning/Operant Conditioning</h3>
+                    </a>
+                </div>
+                <div class="card theory-card">
+                    <a href="../cognitivism/">
+                        <img src="assets/images/cognitivism.jpg" alt="Cognitivism">
+                        <h3>Schema, Scaffolding, Advance Organizers</h3>
+                    </a>
+                </div>
+                <div class="card theory-card">
+                    <a href="../social-learning/">
+                        <img src="assets/images/social-learning.png" alt="Social Learning">
+                        <h3>Modeling, Self-efficacy, Reciprocal Learning</h3>
+                    </a>
+                </div>
             </div>
-          </div>
-          <h2><a href="../behaviorism/">Behaviorism</a></h2>
-        </div>
+        </section>
 
-        <div class="section-header">
-          <div class="pdf-preview-container">
-            <div class="pdf-preview-wrapper">
-              <iframe
-                class="pdf-preview-iframe"
-                src="../cognitivism/assets/Cognitive_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-              ></iframe>
+        <hr>
+
+        <img src="assets/images/three-theories.png" alt="Three Theories">
+
+        <!-- Theories -->
+        <section class="section theories-section">
+            <h2>Theories</h2>
+            <div class="layout-grid-3">
+                <div class="card">
+                    <h3>Behaviorism</h3>
+                    <div class="pdf-preview">
+                        <iframe src="../behaviorism/assets/Behaviorism_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
+                    </div>
+                    <p><a href="../behaviorism/">Behaviorism</a></p>
+                </div>
+                <div class="card">
+                    <h3>Cognitivism</h3>
+                    <div class="pdf-preview">
+                        <iframe src="../cognitivism/assets/Cognitive_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
+                    </div>
+                    <p><a href="../cognitivism/">Cognitivism</a></p>
+                </div>
+                <div class="card">
+                    <h3>Social Learning</h3>
+                    <div class="pdf-preview">
+                        <iframe src="../social-learning/assets/SLT_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
+                    </div>
+                    <p><a href="../social-learning/">Social Learning</a></p>
+                </div>
             </div>
-          </div>
-          <h2><a href="../cognitivism/">Cognitivism</a></h2>
-        </div>
+        </section>
 
-        <div class="section-header">
-          <div class="pdf-preview-container">
-            <div class="pdf-preview-wrapper">
-              <iframe
-                class="pdf-preview-iframe"
-                src="../social-learning/assets/SLT_Inspired_Instructional_Theories.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-              ></iframe>
+        <hr>
+
+        <!-- Comparison Table -->
+        <section class="section">
+            <h2>Comparison Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Learning Theory</th>
+                        <th>What is Learning?</th>
+                        <th>How Learning Occurs?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Behaviorism</strong></td>
+                        <td>• Learning is defined as "a change in observable behavior."<br>• Equipotentiality: organisms learn similarly.</td>
+                        <td>• Stimulus → Response conditioning.<br>• Reinforcement (positive/negative) strengthens behavior.<br>• Removing distractions to support S-R formation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cognitivism</strong></td>
+                        <td>• Learning is defined as "change in mental structures(schema)."<br>• Assimilation & Accommodation.</td>
+                        <td>• Information processing (attention → encoding → retrieval).<br>• Schema construction & meaningful organization.<br>• Use of prior knowledge.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Social Learning Theory</strong></td>
+                        <td>• Learning is defined as "constructing behavior patterns society expects."<br>• Through interaction with environment & people.</td>
+                        <td>• Reciprocal causation (B-E-P affect each other).<br>• Modeling (observing others).<br>• Vicarious reinforcement & social interaction.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <img src="assets/images/from-roots-to-practice.png" alt="From Roots to Practice">
+
+        <!-- Knowledge Base Grading Rubric -->
+        <section class="section">
+            <h2>Knowledge Base Grading Rubric</h2>
+            <div class="pdf-preview">
+                <iframe src="assets/KBGradingRubric_2025_CkList.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
             </div>
-          </div>
-          <h2><a href="../social-learning/">Social Learning</a></h2>
-        </div>
-      </div>
+        </section>
 
-      <!-- Comparison Table -->
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Learning Theory</th>
-            <th>What is Learning?</th>
-            <th>How Learning Occurs?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Behaviorism</td>
-            <td>
-              <ul>
-                <li>
-                  Learning is defined as "a change in observable behavior."
-                </li>
-                <li>Equipotentiality: organisms learn similarly.</li>
-              </ul>
-            </td>
-            <td class="how-learning">
-              <ul>
-                <li>Stimulus → Response conditioning.</li>
-                <li>Reinforcement (positive/negative) strengthens behavior.</li>
-                <li>Removing distractions to support S-R formation.</li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td>Cognitivism</td>
-            <td>
-              <ul>
-                <li>
-                  Learning is defined as "change in mental structures(schema)."
-                </li>
-                <li>Assimilation & Accommodation.</li>
-              </ul>
-            </td>
-            <td class="how-learning">
-              <ul>
-                <li>
-                  Information processing (attention → encoding → retrieval).
-                </li>
-                <li>Schema construction & meaningful organization.</li>
-                <li>Use of prior knowledge.</li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td>Social Learning Theory</td>
-            <td>
-              <ul>
-                <li>
-                  Learning is defined as "constructing behavior patterns society
-                  expects."
-                </li>
-                <li>Through interaction with environment & people.</li>
-              </ul>
-            </td>
-            <td class="how-learning">
-              <ul>
-                <li>Reciprocal causation (B-E-P affect each other).</li>
-                <li>Modeling (observing others).</li>
-                <li>Vicarious reinforcement & social interaction.</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <hr>
 
-      <section class="section">
-        <img
-          src="assets/images/from-roots-to-practice.png"
-          alt="From Roots to Practice"
-          style="width: 100%; height: auto"
-        />
-      </section>
+        <!-- Reference -->
+        <section class="section">
+            <h2>Reference</h2>
+            <h3>Evolution of Learning Theories</h3>
+            <p><strong>Behaviorism & Behavioral Instructional Design</strong> → <strong>Cognitivism, Cognitive Psychology & Cognitivist ID</strong> → <strong>Social Learning Theory, SLT-Inspired ID, Apprenticeship</strong></p>
 
-      <!-- PDF Preview Section -->
-      <section class="pdf-preview-section">
-        <h2>Knowledge Base Grading Rubric</h2>
-        <div class="pdf-preview-container">
-          <div class="pdf-preview-wrapper">
-            <iframe
-              class="pdf-preview-iframe"
-              src="assets/KBGradingRubric_2025_CkList.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+            <h3>References</h3>
+            <ol>
+                <li><strong>Pusch, R. S. (2025).</strong> <em>IDE621: All-unit summaries and definitions [Unpublished course handout].</em> Instructional Design, Development & Evaluation Program, Syracuse University.</li>
+            </ol>
 
-      <!-- Reference Section -->
-      <section class="reference-section">
-        <h2>Reference</h2>
-
-        <!-- Diagram -->
-        <div class="reference-diagram">
-          <div class="diagram-circle large">
-            <p>Behaviorism &<br />Behavioral Instructional Design</p>
-          </div>
-          <div class="diagram-arrow">→</div>
-          <div class="diagram-circle medium">
-            <p>Cognitivism, Cognitive Psychology &<br />Cognitivist ID</p>
-          </div>
-          <div class="diagram-arrow">→</div>
-          <div class="diagram-circle small">
-            <p>
-              Social Learning Theory,<br />SLT-Inspired ID,<br />Apprenticeship
-            </p>
-          </div>
-        </div>
-
-        <!-- Reference List -->
-        <div class="reference-list">
-          <ol>
-            <li>
-              <strong>Pusch, R. S. (2025).</strong>
-              <em
-                >IDE621: All-unit summaries and definitions [Unpublished course
-                handout].</em
-              >
-              Instructional Design, Development & Evaluation Program, Syracuse
-              University.
-            </li>
-          </ol>
-
-          <div class="reference-group">
-            <h3>Behaviorism & Behavioral Instructional Design</h3>
+            <h4>Behaviorism & Behavioral Instructional Design</h4>
             <ol start="2">
-              <li>
-                <strong>Skinner, B. F. (1954).</strong>
-                <em>The science of learning and the art of teaching.</em>
-                Harvard Educational Review, 24(2), 86-97.
-              </li>
-              <li>
-                <strong>Skinner, B. F. (1968).</strong>
-                <em>The technology of teaching.</em> Appleton-Century-Crofts.
-              </li>
-              <li>
-                <strong>Bloom, B. S. (1971).</strong>
-                <em>Mastery learning.</em> Holt, Rinehart & Winston.
-              </li>
-              <li>
-                <strong>Mager, R. F. (1997).</strong>
-                <em>Preparing instructional objectives (3rd ed.).</em> Center
-                for Effective Performance.
-              </li>
+                <li><strong>Skinner, B. F. (1954).</strong> <em>The science of learning and the art of teaching.</em> Harvard Educational Review, 24(2), 86-97.</li>
+                <li><strong>Skinner, B. F. (1968).</strong> <em>The technology of teaching.</em> Appleton-Century-Crofts.</li>
+                <li><strong>Bloom, B. S. (1971).</strong> <em>Mastery learning.</em> Holt, Rinehart & Winston.</li>
+                <li><strong>Mager, R. F. (1997).</strong> <em>Preparing instructional objectives (3rd ed.).</em> Center for Effective Performance.</li>
             </ol>
-          </div>
 
-          <div class="reference-group">
-            <h3>Cognitivism, Cognitive Psychology & Cognitivist ID</h3>
+            <h4>Cognitivism, Cognitive Psychology & Cognitivist ID</h4>
             <ol start="6">
-              <li>
-                <strong
-                  >Gagné, R. M., Wager, W. W., Golas, K. C., & Keller, J. M.
-                  (2005).</strong
-                >
-                <em>Principles of instructional design (5th ed.).</em>
-                Wadsworth.
-              </li>
-              <li>
-                <strong>Sweller, J. (1988).</strong> Cognitive load during
-                problem solving: Effects on learning.
-                <em>Cognitive Science</em>, 12(2), 257-285.
-              </li>
-              <li>
-                <strong>Merrill, M. D. (2002).</strong> First principles of
-                instruction.
-                <em>Educational Technology Research and Development</em>, 50(3),
-                43-59.
-              </li>
-              <li>
-                <strong>Bruner, J. S. (1960).</strong>
-                <em>The process of education.</em> Harvard University Press.
-              </li>
+                <li><strong>Gagné, R. M., Wager, W. W., Golas, K. C., & Keller, J. M. (2005).</strong> <em>Principles of instructional design (5th ed.).</em> Wadsworth.</li>
+                <li><strong>Sweller, J. (1988).</strong> Cognitive load during problem solving: Effects on learning. <em>Cognitive Science</em>, 12(2), 257-285.</li>
+                <li><strong>Merrill, M. D. (2002).</strong> First principles of instruction. <em>Educational Technology Research and Development</em>, 50(3), 43-59.</li>
+                <li><strong>Bruner, J. S. (1960).</strong> <em>The process of education.</em> Harvard University Press.</li>
             </ol>
-          </div>
 
-          <div class="reference-group">
-            <h3>Social Learning Theory, SLT-Inspired ID, Apprenticeship</h3>
+            <h4>Social Learning Theory, SLT-Inspired ID, Apprenticeship</h4>
             <ol start="10">
-              <li>
-                <strong>Bandura, A. (1977).</strong>
-                <em>Social learning theory.</em> Prentice-Hall.
-              </li>
-              <li>
-                <strong>Bandura, A. (1986).</strong>
-                <em
-                  >Social foundations of thought and action: A social cognitive
-                  theory.</em
-                >
-                Prentice-Hall.
-              </li>
-              <li>
-                <strong>Rogoff, B. (1990).</strong>
-                <em
-                  >Apprenticeship in thinking: Cognitive development in social
-                  context.</em
-                >
-                Oxford University Press.
-              </li>
-              <li>
-                <strong>Lave, J., & Wenger, E. (1991).</strong>
-                <em>Situated learning: Legitimate peripheral participation.</em>
-                Cambridge University Press.
-              </li>
+                <li><strong>Bandura, A. (1977).</strong> <em>Social learning theory.</em> Prentice-Hall.</li>
+                <li><strong>Bandura, A. (1986).</strong> <em>Social foundations of thought and action: A social cognitive theory.</em> Prentice-Hall.</li>
+                <li><strong>Rogoff, B. (1990).</strong> <em>Apprenticeship in thinking: Cognitive development in social context.</em> Oxford University Press.</li>
+                <li><strong>Lave, J., & Wenger, E. (1991).</strong> <em>Situated learning: Legitimate peripheral participation.</em> Cambridge University Press.</li>
             </ol>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-text">IDE621_Fall 2025_Zhen Li</div>
+        <p>IDE621_Fall 2025_Zhen Li</p>
     </footer>
-  </body>
+</body>
 </html>

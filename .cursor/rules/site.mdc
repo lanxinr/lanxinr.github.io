@@ -55,11 +55,21 @@ alwaysApply: true
 
 13. **PDF 预览规则：**
     - 对于 `.pdf` 文件，生成的页面中必须插入一个 PDF 预览区域。
-    - **仅显示第一页**，无需展示工具栏（toolbar）。
-    - 使用 `<embed>`、`<iframe>` 或 `<object>` 均可，只要能完整呈现第一页且无任何控件。
+    - **完成显示第一页**，无需展示工具栏（toolbar）。
+    - 使用 `<iframe src="./../**pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH">`，只要能完整呈现第一页且无任何控件。
     - PDF 文件路径必须保持不变。
+    - 仅仅展示预览即可，不需要下载，预览链接
 
 14. **忽略 `cases` 目录规则：**
     - 在进行 HTML 生成时，必须**跳过名为 `cases` 的目录**。
     - 不为 `cases` 目录及其子目录生成任何 `index.html` 或其他 HTML 文件。
     - 其他非 `cases` 目录仍按本规则正常处理与生成页面。
+
+15. **表格渲染规则（Table Rendering Rules）：**
+    - 当 `.mdc` 文件中出现 Markdown 表格时，生成的 HTML 中必须为每个表格元素添加可见边框。
+    - 解析方式：
+      - Markdown 表格必须转换为 `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`。
+    - 样式要求：
+      - 所有单元格（`<th>` 与 `<td>`）都必须添加边框，边框颜色为浅灰色（如 `#e5e7eb`）。
+      - 表格必须使用 `border-collapse: collapse;`。
+      - 表格必须全宽度（`width: 100%`），并在页面中自动适应布局。
