@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+
+    <title>
+      Quality Parent-Child Time: Building Meaningful Daily Connections
+    </title>
+    <link type="text/css" rel="stylesheet" href="lib/icomoon.css" />
+    <script type="text/javascript" src="lib/player-0.0.11.min.js"></script>
+    <script type="text/javascript" src="lib/lzwcompress.js"></script>
+
+    <!-- Resize Hack -->
+    <script type="text/javascript">
+      window.resizeTo(screen.width, screen.height);
+    </script>
+
+    <script id="__ENTRY__" type="application/json">
+      { ".js": ["rise/7b468cd3.js"], ".css": ["sandbox/4adfab46.css"] }
+    </script>
+
+    <script id="__REMOTE_ENTRIES__" type="application/json">
+      {
+        "learn_distribution_frontend": { ".js": ["learn_dist/entry.js"] },
+        "mondrian": { ".js": ["mondrian/entry.js"] }
+      }
+    </script>
+
+    <script>
+      (function () {
+        const jsonp = {};
+        const allowOutsideDriver = true;
+
+        function shouldLoad() {
+          if (allowOutsideDriver) return true;
+
+          return (
+            window.location.protocol === "file:" ||
+            (window !== window.parent &&
+              typeof window.parent.IsLmsPresent === "function")
+          );
+        }
+
+        function loadModule(manifest) {
+          const p = [];
+
+          if (manifest[".css"] != null) {
+            for (var idx = 0; idx < manifest[".css"].length; idx++) {
+              p.push(
+                new Promise((resolve, reject) => {
+                  var link = document.createElement("link");
+                  link.onload = resolve;
+                  link.onerror = reject;
+                  link.rel = "stylesheet";
+                  link.href = "lib/" + manifest[".css"][idx];
+                  document.body.appendChild(link);
+                })
+              );
+            }
+          }
+
+          if (manifest[".js"] != null) {
+            for (var idx = 0; idx < manifest[".js"].length; idx++) {
+              p.push(
+                new Promise((resolve, reject) => {
+                  var script = document.createElement("script");
+                  script.onload = resolve;
+                  script.onerror = reject;
+                  script.src = "lib/" + manifest[".js"][idx];
+                  document.body.appendChild(script);
+                })
+              );
+            }
+          }
+
+          return Promise.all(p);
+        }
+
+        function deserialize(str) {
+          const buffer = Uint8Array.from(atob(str), (c) => c.charCodeAt(0));
+          const json = new TextDecoder().decode(buffer);
+          const result = JSON.parse(json);
+          return result;
+        }
+
+        function __preventLoad() {
+          let appDiv = document.getElementById("app");
+          let errMsgSpan = document.createElement("span");
+          let errMsgText = document.createTextNode(
+            "Error: Content launched outside of a supported LMS enviroment."
+          );
+
+          errMsgSpan.appendChild(errMsgText);
+          appDiv.appendChild(errMsgSpan);
+
+          throw new Error(
+            "Content launched outside of a supported LMS enviroment."
+          );
+        }
+
+        function __loadEntry() {
+          return loadModule(
+            JSON.parse(document.getElementById("__ENTRY__").textContent)
+          );
+        }
+
+        function __loadRemoteEntry(name) {
+          const manifest = JSON.parse(
+            document.getElementById("__REMOTE_ENTRIES__").textContent
+          );
+          if (manifest[name] == null)
+            throw new Error(`Missing manifest for remote entry "${name}".`);
+          return loadModule(manifest[name]);
+        }
+
+        async function __fetchCourse() {
+          return {
+            course: {
+              id: "mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg",
+              originalId: null,
+              author: "aid|e46bbd7d-d14f-54a3-9803-b7058d3c66b6",
+              selectedAuthorId: "",
+              color: "#f8bfa6",
+              navigationMode: "",
+              sharePassword: "",
+              shareId: "ARro5UnHZrGOhd4afAPkdoZeC2BCSbcC",
+              copyOf: "",
+              order: "1764293061337",
+              fonts: null,
+              media: {},
+              coverImage: {
+                media: {
+                  image: {
+                    key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/fJGFo2Ui7MPORzi2.jpg",
+                    crushedKey: "3-yOYFOGV-RJuvP2.jpg",
+                    dimensions: {
+                      originalWidth: 1680,
+                      originalHeight: 1121,
+                    },
+                    isSkipCrush: false,
+                    originalUrl: "stock-image.jpg",
+                    sourcedFrom: "LIBRARY",
+                    useCrushedKey: true,
+                    src: "https://cdn.articulate.com/assets/rise/assets/themes/classic/cover-image/21_architecture.jpg",
+                  },
+                },
+              },
+              lessons: [
+                {
+                  author: "aid|e46bbd7d-d14f-54a3-9803-b7058d3c66b6",
+                  courseId: "mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg",
+                  createdAt: "2025-11-10T17:13:19.735Z",
+                  deleted: false,
+                  description: "",
+                  duplicatedFromId: "",
+                  experiments: null,
+                  headerImage: {},
+                  icon: null,
+                  id: "PBUa2IoFTlveEN0RSYrTdIBOz92QkCpm",
+                  isPartnerContentAuthor: false,
+                  lastUpdatedBy: "aid|e46bbd7d-d14f-54a3-9803-b7058d3c66b6",
+                  media: {},
+                  metadata: null,
+                  originalId: null,
+                  piles: [],
+                  position: null,
+                  ready: true,
+                  selectedAuthorId: "none",
+                  settings: {},
+                  sourceLessonLocaleId: null,
+                  title: "",
+                  transferredAt: null,
+                  type: "blocks",
+                  updatedAt: "2025-11-28T00:55:14.061Z",
+                  items: [
+                    {
+                      id: "cmihpnjkv03eq3b6ooi79inhp",
+                      type: "text",
+                      items: [
+                        {
+                          id: "cmihpnjkv03ew3b6otlj05o70",
+                          heading:
+                            '<div data-editor-id="bf2f5fb2-4772-42f0-abc5-8052b0197515"><p><span style="color: #2580cc; text-decoration: inherit">Introduction</span></p></div>',
+                          paragraph:
+                            '<div data-editor-id="378ad74f-7caa-4282-8e9c-1f37fcaa45af"><p><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Many families today share the same physical space but still struggle to feel genuinely connected. Work, school, and screens compete for everyone’s attention, and even small distractions can pull us out of the moment.</span></span></p><p><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>This module explores why the quality of attention matters and how a few simple, everyday habits can help parents feel closer to their children. Even small shifts in awareness can make a difference. They help you be more present and make the time with your child feel more genuine.</span></span></p></div>',
+                        },
+                      ],
+                      family: "text",
+                      variant: "heading paragraph",
+                      settings: {
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        quotesInline: false,
+                        audioPosition: "bottom",
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "5055e825-8d2c-4929-998d-051216717c20",
+                    },
+                    {
+                      id: "cmihuruwz03g83b6okv0xtu0i",
+                      type: "text",
+                      items: [
+                        {
+                          id: "cmihurux103ge3b6o2ivxmcwn",
+                          heading:
+                            '<div data-editor-id="9432fab4-1627-408b-ad17-7799ba290116"><p><span style="color: #efefef; text-decoration: inherit">Learning Objectives</span></p></div>',
+                          paragraph:
+                            '<div data-editor-id="7e2ab38c-e94e-4c1b-9f15-14edf373251f"><ol><li><p style="text-align: left"><span style="color: #ffffff; text-decoration: inherit"><strong>Identify</strong> at least three examples of quality parent-child interactions after viewing a short comparison video.</span></p></li><li><p style="text-align: left"><span style="color: #ffffff; text-decoration: inherit"><strong>Explain</strong> in their own words the difference between “quantity of time” and “quality of time,” including one personal example.</span></p></li><li><p style="text-align: left"><span style="color: #ffffff; text-decoration: inherit"><strong>Select</strong> </span><span><span style="color: #ffffff; text-decoration: inherit"><span>the response that best supports the child’s feelings and strengthens connection in short, scenario-based questions.</span></span></span></p></li><li><p style="text-align: left"><span style="color: #ffffff; text-decoration: inherit"><strong>Create</strong> one small, realistic action to try the next day and <strong>self-rate</strong> their commitment on a 1–5 scale.</span></p></li></ol><p></p></div>',
+                        },
+                      ],
+                      family: "text",
+                      variant: "heading paragraph",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        accentColor: null,
+                        quotesInline: false,
+                        audioPosition: "bottom",
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "IMAGE",
+                        entranceAnimation: true,
+                        attachedToNextBlock: false,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/_NTdqGS8SjK8iP2P.jpg",
+                            type: "image",
+                            alpha: 0.5,
+                            crushedKey: "stock-image.jpg",
+                            dimensions: {
+                              originalWidth: 1680,
+                              originalHeight: 1118,
+                            },
+                            isSkipCrush: false,
+                            originalUrl: "stock-image.jpg",
+                            sourcedFrom: "LIBRARY",
+                            useCrushedKey: true,
+                          },
+                        },
+                      },
+                      globalBlockId: "5a85aec3-7b77-441d-afdb-c169b72c8d7f",
+                    },
+                    {
+                      id: "cmhtfb67p00183p7gsnk1gzdr",
+                      type: "text",
+                      items: [
+                        {
+                          id: "cmhtfb67q001e3p7g71ib8ljy",
+                          heading:
+                            '<div data-editor-id="0a4ae3e4-df8e-4e05-85c8-a6713051e05a"><p>Why Quality Time Matters More Than Quantity</p></div>',
+                          paragraph:
+                            '<div data-editor-id="f79d21ea-58ff-43df-b601-826dda797766"><p><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Have you ever been in the same room with your child but felt your mind was somewhere else?</span></span></p><p><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Many parents face this without realizing how much it affects connection.</span></span></p><p><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>The short video below will help you notice the difference between being “physically present” and being&nbsp;</span><strong><span>emotionally engaged</span></strong><span>&nbsp;— and why even one minute of full attention can make a big difference.</span></span></p></div>',
+                        },
+                      ],
+                      family: "text",
+                      variant: "heading paragraph",
+                      settings: {
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        quotesInline: false,
+                        audioPosition: "bottom",
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "",
+                        entranceAnimation: true,
+                        attachedToNextBlock: false,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "513cfa91-9350-49df-9be0-a87f3911ad8a",
+                    },
+                    {
+                      id: "cmhtg7cqx005v3p7g878lrqd9",
+                      type: "multimedia",
+                      items: [
+                        {
+                          id: "cmhtg7cqx005w3p7g97cfei8x",
+                          media: {
+                            embed: {
+                              src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/vdZBTo3pfco?si=TsX4J_WyQKhAOT_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+                              type: "embed",
+                              embedType: "iframe",
+                              originalUrl:
+                                '<iframe width="560" height="315" src="https://www.youtube.com/embed/vdZBTo3pfco?si=TsX4J_WyQKhAOT_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+                            },
+                          },
+                        },
+                      ],
+                      family: "multimedia",
+                      variant: "embed",
+                      settings: {
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "",
+                        entranceAnimation: true,
+                        attachedToNextBlock: false,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "2a2263ff-a1a5-4694-9acb-b2b8f0edbe7d",
+                    },
+                    {
+                      id: "cmihxrtk604iy3b6nx87ybh4v",
+                      type: "text",
+                      items: [
+                        {
+                          id: "cmihxrtk704j43b6n16za3kgn",
+                          heading:
+                            '<div data-editor-id="5fb64f52-153a-4de7-94da-e50ddefa11b8"><p><span style="color: #ffffff; text-decoration: inherit">Core Content Overview</span></p></div>',
+                          paragraph:
+                            '<div data-editor-id="d721de83-6a00-4f19-993a-3471cc68b4e0"><p style="text-align: justify"><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>This section introduces the key ideas of the lesson, including quality time, connection skills, and simple everyday strategies, and presents them through short video examples, infographics, visuals, and interactive activities.</span></span></span></p></div>',
+                        },
+                      ],
+                      family: "text",
+                      variant: "heading paragraph",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        accentColor: null,
+                        quotesInline: false,
+                        audioPosition: "bottom",
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "COLOR",
+                        backgroundColor: "#f8c9a6",
+                        entranceAnimation: true,
+                        attachedToNextBlock: false,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {},
+                      globalBlockId: "82367118-30da-4c1b-adbd-146f9de864f4",
+                    },
+                    {
+                      id: "cmi94gz7x07m33p7g4sypse64",
+                      type: "image",
+                      items: [
+                        {
+                          id: "cmi94gz7y07m53p7gyxyiejkt",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/7dNOZDkUI83q28Z5.jpg",
+                              type: "image",
+                              isSquare: false,
+                              crushedKey:
+                                "From%20Attention%20to%20Presence.jpg",
+                              dimensions: {
+                                top: 0,
+                                left: 0,
+                                width: 600,
+                                height: 1499,
+                                originalWidth: 600,
+                                originalHeight: 1499,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "From Attention to Presence.png",
+                              sourcedFrom: "USER",
+                              originalImage: {
+                                key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/scc-pyR-ytJbf2CB.png",
+                                type: "image",
+                                crushedKey:
+                                  "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/v2Z8JH235aGjaB4a.jpg",
+                                dimensions: {
+                                  originalWidth: 600,
+                                  originalHeight: 1499,
+                                },
+                                isSkipCrush: false,
+                                originalUrl: "From Attention to Presence.png",
+                                sourcedFrom: "USER",
+                                useCrushedKey: true,
+                              },
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption:
+                            '<div data-editor-id="786f29f8-f178-43c9-bc7b-1922c6edac61"><p><span style="font-size: 1.3rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit">These four steps help you shift your attention and show up with presence.</span></span></p><p><span style="font-size: 1.3rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit">In the next section, you’ll take a closer look at three everyday skills that parents use to build connection: attention, emotion, and shared action.</span></span></p></div>',
+                        },
+                      ],
+                      family: "gallery",
+                      variant: "centered",
+                      settings: {
+                        opacity: 0.5,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        zoomOnClick: true,
+                        opacityColor: "#000000",
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "163985b5-50ec-4d75-91dd-4b61292fe7b1",
+                    },
+                    {
+                      id: "cmhtfptxf00583p7g7lg0bx0k",
+                      type: "image",
+                      items: [
+                        {
+                          id: "cmhtfptxf005b3p7g82v1ybja",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/5DAjO_JqeDTiBCB_.png",
+                              type: "image",
+                              crushedKey: "ZL-Left%20hand.jpg",
+                              dimensions: {
+                                originalWidth: 428,
+                                originalHeight: 483,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "ZL-Left hand.png",
+                              sourcedFrom: "USER",
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption: "",
+                          paragraph:
+                            '<div data-editor-id="58157ea5-7c4d-423d-baf6-06712b6b2812"><p><span style="font-size: 2.6rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong>Your Quick Reflection</strong></span></span></p><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>After watching the video and the quick guide above, what’s one small change you could try in your daily routine to bring more</span></span><span style="color: #f57926; text-decoration: inherit"><strong><span> “quality time” </span></strong></span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>into your day with your child?</span></span></span></p><p><span style="color: rgb(70, 84, 120); text-decoration: inherit">“Which small change do you want to start with?”</span></p><p></p></div>',
+                        },
+                      ],
+                      family: "image",
+                      variant: "text aside",
+                      settings: {
+                        opacity: 0.5,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        zoomOnClick: true,
+                        opacityColor: "#000000",
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "12e927e2-3532-4cf4-9dd9-f4db967e9d60",
+                    },
+                    {
+                      id: "cmhtgmwpj006k3p7ge9hrad01",
+                      type: "knowledgeCheck",
+                      items: [
+                        {
+                          id: "cmhtgmwpk006l3p7glcb9n58c",
+                          type: "MULTIPLE_CHOICE",
+                          title:
+                            '<div data-editor-id="e41eec3d-c527-43bf-99b1-32269bf35fec"><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong><span>Which small change would you like to start with this week?</span></strong></span></span></p></div>',
+                          answers: [
+                            {
+                              id: "cmhtgmwpk006m3p7gocpu0lhl",
+                              title:
+                                '<div data-editor-id="89e9fe48-98dd-4e6a-b3c5-08812be78193"><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Putting my phone away during family time</span></span></span></p></div>',
+                              correct: true,
+                            },
+                            {
+                              id: "cmhtgmwpk006n3p7g4c0bra04",
+                              title:
+                                '<div data-editor-id="a2661901-a73f-4163-a9e8-7e8b502d370a"><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Listening to my child’s story before bedtime</span></span></span></p></div>',
+                              correct: false,
+                            },
+                            {
+                              id: "cmhtgnqih007h3p7gc30at1g2",
+                              title:
+                                '<div data-editor-id="b3d5355f-a9fe-4d44-b207-0ebf215c2ff3"><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Eating one meal together without distractions</span></span></span></p></div>',
+                              correct: false,
+                            },
+                            {
+                              id: "cmhtgoqpu007l3p7gl0k7rdjv",
+                              title:
+                                '<div data-editor-id="c8756c9d-6b73-4718-8e1a-491438c76ad6"><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Giving my child more eye contact when talking</span></span></span></p></div>',
+                              correct: false,
+                            },
+                            {
+                              id: "cmhtgp1pu007n3p7gssvy2hlv",
+                              title:
+                                '<div data-editor-id="93d6e499-81ac-425f-b840-aa8f27068fb0"><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Taking a short walk or doing something small together</span></span></span></p></div>',
+                              correct: false,
+                            },
+                          ],
+                          feedback:
+                            '<div data-editor-id="b0de1dd2-96aa-4c8d-b5b6-20e1357ba96b"><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Great choice!</span></span></span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span><br class="break-when-trailing"></span></span><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Even one small change can make a big difference in how connected you feel with your child.</span></span></span></p></div>',
+                          feedbackType: "ANY",
+                          feedbackCorrect:
+                            '<div data-editor-id="91b5b67c-26b0-416c-825c-67df2b2776ee"><p>Even one small change can make a difference.</p></div>',
+                        },
+                      ],
+                      family: "knowledgeCheck",
+                      variant: "multiple choice",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        accentColor: null,
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        requireCorrectAnswer: false,
+                        revealCorrectAnswers: true,
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "fca3a001-3fb1-43f6-9492-e9e93151da4f",
+                    },
+                    {
+                      id: "cmhu1jezx00aq3p7g9dqoyuit",
+                      type: "interactive",
+                      items: [
+                        {
+                          id: "cmhu1jezx00ar3p7gghqcx3tp",
+                          back: {
+                            type: "fullimage",
+                            media: {
+                              image: {
+                                key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/EjzbznX3wl1HgMEM.jpg",
+                                type: "image",
+                                crushedKey: "4Wx1Pt/stock-image.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1120,
+                                },
+                                isSkipCrush: false,
+                                originalUrl: "stock-image.jpg",
+                                sourcedFrom: "LIBRARY",
+                                useCrushedKey: true,
+                              },
+                            },
+                            description: "Back of card 1",
+                          },
+                          front: {
+                            media: {
+                              image: {
+                                key: "assets/rise/assets/block-defaults/mountains.jpg",
+                                src: "cVgCcu/mountains.jpg",
+                                type: "image",
+                                thumbnail:
+                                  "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1120,
+                                },
+                                originalUrl: "mountains.jpg",
+                                sourcedFrom: "DEFAULT",
+                              },
+                            },
+                            description:
+                              '<div data-editor-id="e5068589-92df-4cc4-8064-6ec51d55f318"><p style="text-align: center"><span style="font-size: 2.4rem"><strong>Attention</strong></span></p><p style="text-align: left"><span style="color: rgb(0, 0, 0); text-decoration: inherit">Put your phone face down when your child starts talking. Even one minute of full focus counts.</span></p></div>',
+                          },
+                        },
+                        {
+                          id: "cmhu1jezx00as3p7ge2v4f1y0",
+                          back: {
+                            type: "fullimage",
+                            media: {
+                              image: {
+                                key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/e4SLefBE69fNLt9P.jpg",
+                                type: "image",
+                                crushedKey: "Emotion%20Connection_New.jpg",
+                                dimensions: {
+                                  originalWidth: 1042,
+                                  originalHeight: 752,
+                                },
+                                isSkipCrush: false,
+                                originalUrl: "Emotion Connection_New.jpg",
+                                sourcedFrom: "USER",
+                                useCrushedKey: true,
+                              },
+                            },
+                            description: "Back of card 2",
+                          },
+                          front: {
+                            media: {
+                              image: {
+                                key: "assets/rise/assets/block-defaults/mountains.jpg",
+                                src: "cVgCcu/mountains.jpg",
+                                type: "image",
+                                thumbnail:
+                                  "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1120,
+                                },
+                                originalUrl: "mountains.jpg",
+                                sourcedFrom: "DEFAULT",
+                              },
+                            },
+                            description:
+                              '<div data-editor-id="4cabbacf-27c4-41fc-b16b-08ca1201ad42"><p style="text-align: center"><span style="font-size: 2.4rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong>Emotion</strong></span></span></p><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Show interest in what they say — nod, smile, or ask, “How did that make you feel?”</span></span></span></p></div>',
+                          },
+                        },
+                        {
+                          id: "cmhu1jezx00at3p7gaq7wjivq",
+                          back: {
+                            type: "fullimage",
+                            media: {
+                              image: {
+                                key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/Dn3HZ68XVJNd_zOK.jpg",
+                                type: "image",
+                                crushedKey: "_BIG2k/stock-image.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1120,
+                                },
+                                isSkipCrush: false,
+                                originalUrl: "stock-image.jpg",
+                                sourcedFrom: "LIBRARY",
+                                useCrushedKey: true,
+                              },
+                            },
+                            description: "Back of card 3",
+                          },
+                          front: {
+                            media: {
+                              image: {
+                                key: "assets/rise/assets/block-defaults/mountains.jpg",
+                                src: "cVgCcu/mountains.jpg",
+                                type: "image",
+                                thumbnail:
+                                  "https://cdn.articulate.com/assets/rise/assets/block-defaults/mountains_thumb.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1120,
+                                },
+                                originalUrl: "mountains.jpg",
+                                sourcedFrom: "DEFAULT",
+                              },
+                            },
+                            description:
+                              '<div data-editor-id="4d0886cb-53de-4a50-97fa-d472e125f76e"><p><span style="font-size: 2.4rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong>Shared Action</strong></span></span></p><p><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Join your child for a quick activity, like drawing together or sharing a bedtime story.</span></span></span></p></div>',
+                          },
+                        },
+                      ],
+                      family: "flashcard",
+                      variant: "flashcard",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        accentColor: null,
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: null,
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {},
+                      globalBlockId: "8573f1a8-6576-46dc-a617-298ec0418072",
+                    },
+                    {
+                      id: "cmhu2hwhf00fa3p7gzs7kbudt",
+                      type: "quote",
+                      items: [
+                        {
+                          id: "cmhu2hwhg00fe3p7g8ttmaayc",
+                          name: '<div data-editor-id="c6172219-226b-4f33-af27-c820b4b010ba"><p><span style="font-size: 1.8rem"><strong>- </strong><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong><span>Turning Ideas into Daily Habits</span></strong></span></span></p></div>',
+                          avatar: {
+                            media: {
+                              image: {
+                                key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/lXGEwyLdGCjupivi.jpg",
+                                type: "image",
+                                crushedKey: "xzMFur/stock-image.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1135,
+                                },
+                                isSkipCrush: false,
+                                originalUrl: "stock-image.jpg",
+                                sourcedFrom: "LIBRARY",
+                                useCrushedKey: true,
+                              },
+                            },
+                          },
+                          paragraph:
+                            '<div data-editor-id="1087b38f-c0c8-4b76-b599-5db81fbc6d8b"><p>"<span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>You’ve already seen how attention, emotion, and shared action can make a difference.</span></span></span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span><br class="break-when-trailing"></span></span><span><span style="color: rgb(0, 0, 0); text-decoration: inherit"><span>Now, let’s see how you can bring these ideas into small, real-life moments — even when your day feels busy.</span></span></span>"</p></div>',
+                          background: {
+                            media: {
+                              image: {
+                                key: "assets/rise/assets/block-defaults/quote_background.jpg",
+                                src: "quote_background.jpg",
+                                type: "image",
+                                thumbnail:
+                                  "https://cdn.articulate.com/assets/rise/assets/block-defaults/quote_background_thumb.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1680,
+                                },
+                                originalUrl: "quote_background.jpg",
+                                sourcedFrom: "DEFAULT",
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      family: "quote",
+                      variant: "c",
+                      settings: {
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        quotesInline: true,
+                        audioPosition: "bottom",
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "cf61b588-fdf8-4f54-b165-f44d75969c6c",
+                    },
+                    {
+                      id: "cmhu4rh0603tt3p7g5b8vnxgt",
+                      type: "interactive",
+                      items: [
+                        {
+                          x: "46.84504792332269",
+                          y: "55.086300497959485",
+                          id: "cmhu4rh0703tu3p7gsh7n0cq6",
+                          icon: "01",
+                          title: "Emotion",
+                          isActive: false,
+                          description:
+                            '<div data-editor-id="b1df0b96-38b1-4387-8ca0-c24b29805373"><p>When your child shares something small, how can your tone or facial expression show warmth and care?</p></div>',
+                        },
+                        {
+                          x: "77.72813498402556",
+                          y: "32.43663184694297",
+                          id: "cmhu4rh0703tv3p7gbfc8zea2",
+                          icon: "01",
+                          title: "Shared Action",
+                          isActive: false,
+                          description:
+                            '<div data-editor-id="84afa0bf-fa49-460c-ab5b-cafce7bc3ec7"><p>Think of one quick activity you could share together today — a short walk, a story, &nbsp;or even a laugh.</p></div>',
+                        },
+                        {
+                          x: "17.412140575079874",
+                          y: "35.703320977947506",
+                          id: "cmhu4s1hc03ub3p7gj5hs341y",
+                          icon: "01",
+                          title: "Attention",
+                          hasMedia: false,
+                          isActive: false,
+                          description:
+                            '<div data-editor-id="d975857a-6e0c-4905-b063-547d41421fb1"><p>Notice the moment your child starts sharing and focusing&nbsp;— what would happen if you paused and truly listened for one minute?</p></div>',
+                          isNewlyInserted: true,
+                        },
+                      ],
+                      media: {
+                        image: {
+                          key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/V0vROMNzSYkLZDi6.png",
+                          type: "image",
+                          crushedKey: "3%20Skills%20Photo.jpg",
+                          dimensions: {
+                            originalWidth: 1248,
+                            originalHeight: 832,
+                          },
+                          isSkipCrush: false,
+                          originalUrl: "3 Skills Photo.png",
+                          sourcedFrom: "USER",
+                          useCrushedKey: true,
+                        },
+                      },
+                      family: "interactive-fullscreen",
+                      variant: "labeledgraphic",
+                      settings: {
+                        cardMode: "WHITE",
+                        mediaWidth: "1",
+                        paddingTop: 3,
+                        zoomOnClick: true,
+                        quotesInline: false,
+                        audioPosition: "bottom",
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "#ffffff",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "e0fc0e77-ecb8-43f5-84f6-be1e2ba112d4",
+                    },
+                    {
+                      id: "cmhu5sm1004783p7glrrhcn8h",
+                      type: "knowledgeCheck",
+                      items: [
+                        {
+                          id: "cmhu5sm11047j3p7ggkq689xp",
+                          type: "MATCHING",
+                          title:
+                            '<div data-editor-id="05579703-6f09-444b-8490-85ec057f4eae"><p><span style="font-size: 2.4rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong><span>Which skill does each parent action show?</span></strong></span></span></p></div>',
+                          answers: [
+                            {
+                              id: "cmhu5sm11047k3p7gwmyhwmwr",
+                              title:
+                                "Puts the phone down and listens carefully",
+                              correct: true,
+                              matchTitle: "Attention - Listening",
+                            },
+                            {
+                              id: "cmhu5sm11047l3p7gj8807d6j",
+                              title:
+                                "Smiles and asks, “How did that make you feel?” Choice",
+                              correct: true,
+                              matchTitle: "Emotion - Warming Response",
+                            },
+                            {
+                              id: "cmhu5sm11047m3p7g6adm47vl",
+                              title: "Draws or cooks something together",
+                              correct: true,
+                              matchTitle: "Shared Action - Doing Together",
+                            },
+                            {
+                              id: "cmhu5ve2m04893p7gq33ze393",
+                              title:
+                                "Keeps typing on the phone while the child talks",
+                              correct: false,
+                              matchTitle: "Missed Opportunity - Distraction",
+                            },
+                            {
+                              id: "cmhu5xf6y048a3p7g4n3avu62",
+                              title:
+                                "Gives the child a quick hug after a hard day",
+                              correct: false,
+                              matchTitle: "Emotion - Comfort & Support",
+                            },
+                            {
+                              id: "cmhu5xulb048b3p7gvp22bekj",
+                              title: "Joins a short bedtime story",
+                              correct: false,
+                              matchTitle: "Shared Action - Shared Routine",
+                            },
+                            {
+                              id: "cmhu5ye52048c3p7g12uxyzt8",
+                              title:
+                                "Maintains eye contact during a conversation\t",
+                              correct: false,
+                              matchTitle: "Attention - Eye Contact",
+                            },
+                            {
+                              id: "cmhu5yka9048d3p7gkakx83md",
+                              title:
+                                "Asks, “Why are you making such a mess?”\t",
+                              correct: false,
+                              matchTitle: " Missed Opportunity - Criticism",
+                            },
+                          ],
+                          feedback: "",
+                        },
+                      ],
+                      family: "knowledgeCheck",
+                      variant: "matching",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        accentColor: null,
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        columnBehavior: "freezeSecond",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "a09b8999-97ba-4558-8062-1b1e6133b9c1",
+                    },
+                    {
+                      id: "cmhuocmk703g13p7gfvx3wi0x",
+                      type: "text",
+                      items: [
+                        {
+                          id: "cmhuocmk803g93p7gt6chvzn9",
+                          heading:
+                            '<div data-editor-id="caace736-45ac-4188-aa76-3c17b2fac18d"><p style="text-align: center"><span style="font-size: 2rem">Let’s take a quick look back at the three key ways parents build daily connection.</span></p><h3 style="text-align: center"><span style="color: #ed6a51; text-decoration: inherit">From Attention to Action: Three Everyday Connection Skills</span></h3></div>',
+                        },
+                      ],
+                      family: "text",
+                      variant: "heading",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        textWidth: 76,
+                        paddingTop: 3,
+                        accentColor: null,
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "TINT",
+                        backgroundColor: "#f8bfa6",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {},
+                      globalBlockId: "16513403-7459-4d29-8b77-4c8e3f23a072",
+                    },
+                    {
+                      id: "cmhu6up0j04jd3p7gq8cdtg28",
+                      type: "image",
+                      items: [
+                        {
+                          id: "cmhu6up0k04ji3p7gmknhn9cf",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/dVmsKM7aVfmuMotJ.jpg",
+                              type: "image",
+                              crushedKey: "C60S-W/stock-image.jpg",
+                              dimensions: {
+                                originalWidth: 1680,
+                                originalHeight: 2517,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "stock-image.jpg",
+                              sourcedFrom: "LIBRARY",
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption:
+                            '<div data-editor-id="2f805292-b65e-4835-9e71-12b05b14a49d"><p style="text-align: center"><span style="font-size: 2rem"><span style="color: rgb(245, 121, 38); text-decoration: inherit"><strong>Attention</strong></span></span></p><p style="text-align: center"><span style="font-size: 2rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong>Active Listening</strong></span></span></p><p style="text-align: center"><span style="color: rgb(0, 0, 0); text-decoration: inherit">Give your full attention —</span></p><p style="text-align: center"><span style="color: rgb(0, 0, 0); text-decoration: inherit">listen with your eyes, face, and body.</span></p></div>',
+                          paragraph:
+                            '<div data-editor-id="19bb144a-80ac-4879-967b-b0e890b9d964"><ol><li><p></p></li></ol></div>',
+                        },
+                        {
+                          id: "cmhu6up0k04jj3p7g9mt3vf15",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/--ASwZTUDMY20RSp.jpg",
+                              type: "image",
+                              crushedKey: "aA4YZf/stock-image.jpg",
+                              dimensions: {
+                                originalWidth: 1680,
+                                originalHeight: 1121,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "stock-image.jpg",
+                              sourcedFrom: "LIBRARY",
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption:
+                            '<div data-editor-id="b9658c58-c2b9-4639-b690-5319e396e578"><p style="text-align: center"><span style="font-size: 2rem"><span style="color: #f57926; text-decoration: inherit"><strong>Emotion</strong></span></span></p><p style="text-align: center"><span style="font-size: 2rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong>Empathic Conversation</strong></span></span></p><p style="text-align: center"><span style="color: rgb(0, 0, 0); text-decoration: inherit">Respond with warmth and curiosity. Ask how your child feels.</span></p></div>',
+                        },
+                        {
+                          id: "cmhu6up0k04jk3p7gvhmiocgn",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/-jlQS6tsK2FIfXis.jpg",
+                              type: "image",
+                              crushedKey: "sVKPcx/stock-image.jpg",
+                              dimensions: {
+                                originalWidth: 1680,
+                                originalHeight: 1120,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "stock-image.jpg",
+                              sourcedFrom: "LIBRARY",
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption:
+                            '<div data-editor-id="4396fa94-bef8-48b9-8c23-cb29dbc0f8c8"><p style="text-align: center"><span style="font-size: 2rem"><span style="color: #f57926; text-decoration: inherit"><strong>Shared Action</strong></span></span></p><p style="text-align: center"><span style="font-size: 2rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong>Shared Short Activities</strong></span></span></p><p style="text-align: center"><span style="color: rgb(0, 0, 0); text-decoration: inherit">Do something small together, like drawing or walking.</span></p></div>',
+                        },
+                      ],
+                      family: "gallery",
+                      variant: "three column",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        paddingTop: 12,
+                        accentColor: null,
+                        zoomOnClick: false,
+                        quotesInline: false,
+                        paddingBottom: 12,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "d6e86fea-c17c-4dea-845a-66d0f40568d2",
+                    },
+                    {
+                      id: "cmhua0cbs06za3p7gdvkokoil",
+                      type: "multimedia",
+                      items: [
+                        {
+                          id: "cmhua0cbt06zb3p7gzi3q3mh2",
+                          media: {
+                            embed: {
+                              src: '<iframe src="https://www.educandy.com/site/html5/bin/main.php?activity=multiple&amp;quizid=1301189"></iframe>',
+                              type: "embed",
+                              embedType: "iframe",
+                              originalUrl:
+                                '<iframe src="https://www.educandy.com/site/html5/bin/main.php?activity=multiple&amp;quizid=1301189"></iframe>',
+                            },
+                          },
+                        },
+                      ],
+                      family: "multimedia",
+                      variant: "embed",
+                      settings: {
+                        v: 2,
+                        cardMode: "WHITE",
+                        mediaWidth: "2",
+                        paddingTop: 3,
+                        accentColor: null,
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      globalBlockId: "44e31a41-1df4-4dec-a1c4-b34da6d046b9",
+                    },
+                    {
+                      id: "cmhu7fogf050c3p7gwyd1ad9s",
+                      type: "image",
+                      items: [
+                        {
+                          id: "cmhu7fogg050g3p7gdfuh96b7",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/CtTvifYsfzD4lnPr.png",
+                              type: "image",
+                              crushedKey: "Slide2.jpg",
+                              dimensions: {
+                                originalWidth: 720,
+                                originalHeight: 405,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "Slide2.png",
+                              sourcedFrom: "USER",
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption:
+                            '<div data-editor-id="bc940dc6-57e8-491f-bdc2-9d339de98a1d"><p><span style="font-size: 1.4rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong><em>Your 1-Minute Plan</em></strong></span></span></p></div>',
+                          paragraph:
+                            '<div data-editor-id="ca3e01a8-fbcd-4fc4-8c3e-574f972c9878"><p style="text-align: justify"></p><p style="text-align: justify"></p><p style="text-align: justify"><span style="color: rgb(0, 0, 0); text-decoration: inherit">You’ve thought about what <strong>“quality time” </strong>means.<br class="break-when-trailing">Now, take one minute to write a small, specific action you’ll try this week.</span></p><ul><li><p style="text-align: justify"><span style="font-size: 1.4rem"><span style="color: rgb(0, 0, 0); text-decoration: inherit"><strong><em><u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Turning reflection into real action &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></em></strong></span></span></p></li><li><p style="text-align: justify"><u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p></li></ul><p style="text-align: left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>',
+                        },
+                      ],
+                      family: "image",
+                      variant: "text aside",
+                      settings: {
+                        v: 2,
+                        opacity: "0.3",
+                        cardMode: "WHITE",
+                        paddingTop: 7,
+                        accentColor: null,
+                        zoomOnClick: true,
+                        opacityColor: "#000000",
+                        quotesInline: false,
+                        paddingBottom: 7,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "32ba3cde-1922-4d85-b951-1fff261d2d38",
+                    },
+                    {
+                      id: "cmi960o7204k63p7gtovxdr7x",
+                      type: "image",
+                      items: [
+                        {
+                          id: "cmi960o7404ka3p7g9bjdgk31",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/DjQY44o57pOcErD8.jpg",
+                              type: "image",
+                              isSquare: false,
+                              crushedKey: "-BaIFV/stock-image.jpg",
+                              dimensions: {
+                                top: 19,
+                                left: 0,
+                                width: 1680,
+                                height: 978,
+                                originalWidth: 1680,
+                                originalHeight: 1120,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "stock-image.jpg",
+                              sourcedFrom: "LIBRARY",
+                              originalImage: {
+                                key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/bxlnoWD4RCinVtvF.jpg",
+                                type: "image",
+                                crushedKey:
+                                  "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/uKvR5Hek6278VK2Z.jpg",
+                                dimensions: {
+                                  originalWidth: 1680,
+                                  originalHeight: 1120,
+                                },
+                                isSkipCrush: false,
+                                originalUrl: "stock-image.jpg",
+                                sourcedFrom: "LIBRARY",
+                                useCrushedKey: true,
+                              },
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption:
+                            '<div data-editor-id="868c09d1-0d5c-4b83-9ad8-f1cf64386fde"><p></p><p></p><p></p><h3 style="text-align: center"><span style="font-size: 2.2rem"><span style="color: rgb(255, 255, 255); text-decoration: inherit"><strong>Before you go</strong></span><span style="color: #ffffff; text-decoration: inherit"><strong>, </strong><span>here’s a small </span></span><span style="color: #fda100; text-decoration: inherit"><span>guide</span></span><span style="color: #ffffff; text-decoration: inherit"><span> you can keep.<br class="break-when-trailing"></span></span><span style="color: rgb(255, 255, 255); text-decoration: inherit"><span style="color: #ffffff; text-decoration: inherit"><span>Save it somewhere you’ll see it, and let these tiny skills support you in the days ahead.</span></span></span></span></h3></div>',
+                          paragraph: "",
+                        },
+                      ],
+                      family: "image",
+                      variant: "text overlay",
+                      settings: {
+                        v: 2,
+                        opacity: "0.5",
+                        cardMode: "WHITE",
+                        paddingTop: 0,
+                        accentColor: null,
+                        zoomOnClick: true,
+                        opacityColor: "#000000",
+                        quotesInline: false,
+                        paddingBottom: 0,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "b6f0da9f-42eb-46c8-b2cd-8ed20042d30b",
+                    },
+                    {
+                      id: "cmi95xpu804ey3p7gphyp6qi2",
+                      type: "image",
+                      items: [
+                        {
+                          id: "cmi95xpu904ez3p7grgp9nez6",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/tzfT-PRG4Hg5_EPZ.png",
+                              type: "image",
+                              crushedKey: "Connection%20Skills.jpg",
+                              dimensions: {
+                                originalWidth: 800,
+                                originalHeight: 2000,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "Connection Skills.png",
+                              sourcedFrom: "USER",
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption: "",
+                        },
+                      ],
+                      family: "gallery",
+                      variant: "centered",
+                      settings: {
+                        opacity: 0.5,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        zoomOnClick: true,
+                        opacityColor: "#000000",
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        backgroundColor: "",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "a0596cd7-e17e-4028-9fa3-128c153b8cae",
+                    },
+                    {
+                      id: "cmhu9ab7k06zk3p7gk6zt1pd2",
+                      type: "image",
+                      items: [
+                        {
+                          id: "cmhu9ab7l06zm3p7gd405kd84",
+                          media: {
+                            image: {
+                              key: "rise/courses/mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg/rcGKQzWsyuBuCpHo.jpg",
+                              type: "image",
+                              crushedKey: "3PNSaP/stock-image.jpg",
+                              dimensions: {
+                                originalWidth: 1680,
+                                originalHeight: 1120,
+                              },
+                              isSkipCrush: false,
+                              originalUrl: "stock-image.jpg",
+                              sourcedFrom: "LIBRARY",
+                              useCrushedKey: true,
+                            },
+                          },
+                          caption:
+                            '<div data-editor-id="3d78db96-2e92-4ea9-b70e-596efdbbf913"><p style="text-align: center"><span style="font-size: 2rem"><span style="color: #f57926; text-decoration: inherit"><strong>“Connection grows in moments, not minutes.”</strong></span></span></p><p style="text-align: center"><span style="font-size: 1.8rem"><span style="color: #fbc600; text-decoration: inherit">— Parenting is about presence, not perfection.</span></span></p></div>',
+                        },
+                      ],
+                      family: "image",
+                      variant: "text overlay",
+                      settings: {
+                        v: 2,
+                        opacity: 0.5,
+                        cardMode: "WHITE",
+                        paddingTop: 3,
+                        accentColor: null,
+                        zoomOnClick: true,
+                        opacityColor: "#000000",
+                        quotesInline: false,
+                        paddingBottom: 3,
+                        paddingLinked: true,
+                        backgroundType: "LIGHT",
+                        entranceAnimation: true,
+                        markerColorContrast: "AUTO",
+                        snippetColorContrast: "AUTO",
+                        customBackgroundColorContrast: "AUTO",
+                      },
+                      background: {
+                        media: {
+                          image: {
+                            type: "image",
+                            sourcedFrom: "DEFAULT",
+                            useCrushedKey: false,
+                          },
+                        },
+                      },
+                      globalBlockId: "ee7dd274-8fc5-4c69-9d59-562785845dea",
+                    },
+                  ],
+                },
+              ],
+              jobs: [],
+              labelSetId: "",
+              deleted: false,
+              createdAt: "2025-11-10T17:13:19.719Z",
+              updatedAt: "2025-11-28T01:24:21.337Z",
+              markComplete: false,
+              isDefault: false,
+              ready: true,
+              reviewId: "",
+              exportSettings: {
+                title:
+                  "Quality Parent-Child Time: Building Meaningful Daily Connections",
+                format: "zip",
+                quizId: null,
+                target: "scorm12",
+                shareId: "ARro5UnHZrGOhd4afAPkdoZeC2BCSbcC",
+                activeLMS: 0,
+                hideLmsUi: false,
+                reporting: "passed-incomplete",
+                exportType: "raw",
+                identifier: "mi5dUHV-yiX9qqaQEA5vOf7Z7Kp-oxBg_rise",
+                targetName: "SCORM 1.2",
+                storylineId: null,
+                completeWith: "reporting",
+                isTranslated: false,
+                quizComplete: false,
+                activeEdition: 0,
+                loadOnlyInLMS: true,
+                isRemotePackage: false,
+                disableCoverPage: false,
+                enableExitCourse: false,
+                resetLearnerData: false,
+                updateResumeData: true,
+                storylineComplete: false,
+                webExportSettings: {
+                  disableCoverPage: false,
+                },
+                localesPackageType: "single",
+                completionPercentage: 100,
+                translationModelVersion: null,
+                enableTelemetryCollection: true,
+              },
+              headingTypefaceId: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+              bodyTypefaceId: "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+              uiTypefaceId: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+              sidebarMode: "open",
+              tenantId: "a3269c9b-bcca-4404-b2d8-a35d204e5f19",
+              showLessonCount: true,
+              showNavigationButtons: true,
+              allowSearch: true,
+              animateBlockEntrance: true,
+              transferredAt: null,
+              allowCopy: false,
+              enableVideoPlaybackSpeed: null,
+              jobType: null,
+              partnerContentId: null,
+              cardImage: {},
+              theme: {
+                themeId: "classic",
+                navigation: true,
+                showAuthor: true,
+                allowSearch: true,
+                colorAccent: "#f8bfa6",
+                blockCorners: "ROUNDED",
+                buttonScheme: "LIGHT",
+                uiTypefaceId: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+                coverPageType: "IMAGE",
+                accentContrast: "AUTO",
+                bodyTypefaceId: "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+                navigationType: "SIDEBAR",
+                blockPaddingTop: 30,
+                coverImageAlpha: 50,
+                navigationStyle: "LIGHT",
+                showLessonCount: true,
+                lessonHeaderSize: "MEDIUM",
+                buttonInlineStyle: "ROUNDED",
+                coverImageDefault:
+                  "https://cdn.articulate.com/assets/rise/assets/themes/classic/cover-image/21_architecture.jpg",
+                headingTypefaceId: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+                hideLessonHeaders: false,
+                lessonHeaderColor: null,
+                lessonHeaderStyle: "LIGHT",
+                sidebarStartsOpen: true,
+                blockPaddingBottom: 30,
+                blockNavigationType: "STEPPED",
+                markLessonsComplete: false,
+                animateBlockEntrance: true,
+                blockNavigationStyle: "NUMBERS",
+                navigationRestricted: false,
+                buttonNavigationStyle: "FULL",
+                showNavigationButtons: true,
+                compactShowLessonCount: true,
+                lessonHeaderImageAlpha: 0.6,
+                lessonHeaderImageColor: "DARK",
+                enableVideoPlaybackSpeed: true,
+                customColorLessonHeaderContrast: "AUTO",
+              },
+              lessonHeaderImage: {},
+              overlayNavigationImage: {},
+              type: "onePage",
+              locale: null,
+              sourceCourseLocaleId: null,
+              experiments: null,
+              settings: {},
+              description: "",
+              title:
+                "Quality Parent-Child Time: Building Meaningful Daily Connections",
+              defaultLocaleId: null,
+              metadata: {
+                createdVia: "blank",
+              },
+              blockBackgroundImage: {},
+              features: {
+                "rise-audio-release": true,
+                "rise-course-navigation": true,
+                "rise-process-accessibility": true,
+                "rise-matching-accessibility": true,
+                "rise-block-controls-phase-four": true,
+              },
+              authors: [
+                {
+                  id: "aid|e46bbd7d-d14f-54a3-9803-b7058d3c66b6",
+                  avatar: "small.png",
+                  authorName: "Yun Shawn",
+                },
+              ],
+              mondrian: {
+                blockuments: {},
+                items: {},
+                fonts: {},
+              },
+              bodyTypeface: "Merriweather",
+              headingTypeface: "Lato",
+              uiTypeface: "Lato",
+              lmsOptions: {
+                disableCoverPage: false,
+                enableExitCourse: false,
+                enableTelemetryCollection: false,
+              },
+              aiLearnerCourseApiKey: null,
+            },
+            labelSet: {
+              id: "j7M5pjnaTmuON8YToDoOWAkG",
+              author: "aid|e46bbd7d-d14f-54a3-9803-b7058d3c66b6",
+              name: "English",
+              defaultId: 1,
+              defaultSet: true,
+              labels: {
+                a11yAnswerLive: "Your answer",
+                a11yAuthorPrefix: "By",
+                a11yBlockChartAxisX: "x-axis",
+                a11yBlockChartAxisY: "y-axis",
+                a11yBlockChartBar: "Bar chart",
+                a11yBlockChartInstructions:
+                  "Use arrow keys to navigate data points. Screen reader users may need to switch modes to interact.",
+                a11yBlockChartLine: "Line chart",
+                a11yBlockChartPie: "Pie chart",
+                a11yBlockChartPreposition: "of",
+                a11yBlockCode: "Custom Interaction",
+                a11yBlockCodeSnippet: "Code",
+                a11yBlockEmbed: "Embedded Content",
+                a11yBlockFlashcardBack: "Back of card",
+                a11yBlockFlashcardFront: "Front of card",
+                a11yBlockFlashcardGrid: "Flashcard grid",
+                a11yBlockFlashcardStack: "Flashcard carousel",
+                a11yBlockFlashcardStackRoleDescription: "Carousel",
+                a11yBlockFlashcardStackSlideControls: "Slide controls",
+                a11yBlockFlashcardStackSlideControlsGoToNext:
+                  "Go to next slide",
+                a11yBlockFlashcardStackSlideControlsGoToPrevious:
+                  "Go to previous slide",
+                a11yBlockFlashcardStackSlideControlsGoToSlide: "Go to slide",
+                a11yBlockFlashcardStackSlidePreposition: "of",
+                a11yBlockFlashcardStackSlideRoleDescription: "Slide",
+                a11yBlockImageCarousel: "Image Carousel",
+                a11yBlockImageCarouselRoleDescription: "Carousel",
+                a11yBlockImageCarouselSlideControls: "Slide controls",
+                a11yBlockImageCarouselSlideControlsGoToNext: "Go to next slide",
+                a11yBlockImageCarouselSlideControlsGoToPrevious:
+                  "Go to previous slide",
+                a11yBlockImageCarouselSlideControlsGoToSlide: "Go to slide",
+                a11yBlockImageCarouselSlidePreposition: "of",
+                a11yBlockImageCarouselSlideRoleDescription: "Slide",
+                a11yBlockKnowledgeCheck: "Knowledge check",
+                a11yBlockKnowledgeCheckFIB:
+                  "Knowledge check: Fill in the blank",
+                a11yBlockKnowledgeCheckM: "Knowledge check: Matching",
+                a11yBlockKnowledgeCheckMC: "Knowledge check: Multiple choice",
+                a11yBlockKnowledgeCheckMR: "Knowledge check: Multiple response",
+                a11yBlockProcessCarousel: "Carousel",
+                a11yBlockProcessRoleDescription: "Carousel",
+                a11yBlockProcessSlideControls: "Slide controls",
+                a11yBlockProcessSlideControlsGoToNext: "Go to next slide",
+                a11yBlockProcessSlideControlsGoToPrevious:
+                  "Go to previous slide",
+                a11yBlockProcessSlideControlsGoToSlide: "Go to slide",
+                a11yBlockProcessSlideControlsIntroduction: "Introduction",
+                a11yBlockProcessSlideControlsSummary: "Summary",
+                a11yBlockProcessSlidePreposition: "of",
+                a11yBlockProcessSlideRoleDescription: "Slide",
+                a11yBlockQuoteCarousel: "Quote Carousel",
+                a11yBlockQuoteCarouselRoleDescription: "Carousel",
+                a11yBlockQuoteCarouselSlideControls: "Slide controls",
+                a11yBlockQuoteCarouselSlideControlsGoToNext: "Go to next slide",
+                a11yBlockQuoteCarouselSlideControlsGoToPrevious:
+                  "Go to previous slide",
+                a11yBlockQuoteCarouselSlideControlsGoToSlide: "Go to slide",
+                a11yBlockQuoteCarouselSlidePreposition: "of",
+                a11yBlockQuoteCarouselSlideRoleDescription: "Slide",
+                a11yBlockStoryline: "Storyline",
+                a11yBlockTimeline: "Timeline",
+                a11yCarouselNext: "Next",
+                a11yCarouselPrevious: "Previous",
+                a11yCertificateDownloadFailed: "Failed to download certificate",
+                a11yCorrectLive: "Correct answer",
+                a11yCoverCourseCompleted: "Course Completed",
+                a11yCoverCourseLength: "Course Length",
+                a11yCoverRequirementComplete: "Requirement complete",
+                a11yCoverRequirementFailed: "Requirement failed",
+                a11yCoverRequirementIncomplete: "Requirement incomplete",
+                a11yExcelIcon: "Microsoft Excel spreadsheet",
+                a11yFileIcon: "File",
+                a11yGroupAudioPlayer: "Audio player",
+                a11yGroupScenario: "Interactive scenario",
+                a11yGroupVideoPlayer: "Video player",
+                a11yLabeledGraphicBlock: "Labeled graphic",
+                a11yLabeledGraphicButtonMarker: "Marker",
+                a11yLabeledGraphicIconArrowDown: "Down arrow",
+                a11yLabeledGraphicIconArrowDownLeft: "Down left arrow",
+                a11yLabeledGraphicIconArrowDownRight: "Down right arrow",
+                a11yLabeledGraphicIconArrowLeft: "Left arrow",
+                a11yLabeledGraphicIconArrowRight: "Right arrow",
+                a11yLabeledGraphicIconArrowUp: "Up arrow",
+                a11yLabeledGraphicIconArrowUpLeft: "Up left arrow",
+                a11yLabeledGraphicIconArrowUpRight: "Up right arrow",
+                a11yLabeledGraphicIconCheck: "Check mark",
+                a11yLabeledGraphicIconDot: "Dot",
+                a11yLabeledGraphicIconHeart: "Heart",
+                a11yLabeledGraphicIconInformation: "Information",
+                a11yLabeledGraphicIconPin: "Map pin",
+                a11yLabeledGraphicIconPlus: "Plus",
+                a11yLabeledGraphicIconQuestion: "Question mark",
+                a11yLabeledGraphicIconX: "X",
+                a11yLabeledGraphicUnviewed: "Not viewed",
+                a11yLabeledGraphicViewed: "Viewed",
+                a11yMatchingColumn1: "Matching column 1",
+                a11yMatchingColumn2: "Matching column 2",
+                a11yMatchingItemMatchedWith: "Matched with",
+                a11yMatchingItemMatchWith: "Match with",
+                a11yMatchingItemSelectableItem: "Selectable item",
+                a11yMatchingItemShowLess: "Show less",
+                a11yMatchingItemShowMore: "Show more",
+                a11yMediaMute: "Mute",
+                a11yMediaPause: "Pause",
+                a11yMediaPlay: "Play",
+                a11yMediaSeek: "Seek",
+                a11yMediaUnmute: "Unmute",
+                a11yMediaVolume: "Volume",
+                a11yNavigationMenuClose: "Close navigation menu",
+                a11yNavigationMenuOpen: "Open navigation menu",
+                a11yNoticeLinkNewTab: "(opens in a new tab)",
+                a11yPageMarker: "Top of page",
+                a11yPDFIcon: "PDF file",
+                a11yPPTIcon: "PowerPoint presentation",
+                a11yProgressSummaryRequirementCompleted:
+                  "Requirement completed, check mark",
+                a11yProgressSummaryRequirementNotCompleted:
+                  "Requirement not completed, empty square",
+                a11yQuizFailed: "Failed",
+                a11yQuizFeedback: "Feedback",
+                a11yQuizPassed: "Passed",
+                a11yQuizReviewCorrectlyChecked: "Correctly checked",
+                a11yQuizReviewCorrectlySelected: "Correctly selected",
+                a11yQuizReviewCorrectlyUnchecked: "Correctly unchecked",
+                a11yQuizReviewCorrectlyUnselected: "Correctly unselected",
+                a11yQuizReviewIncorrectlyChecked: "Incorrectly checked",
+                a11yQuizReviewIncorrectlySelected: "Incorrectly selected",
+                a11yQuizReviewIncorrectlyUnchecked: "Incorrectly unchecked",
+                a11yQuizReviewIncorrectlyUnselected: "Incorrectly unselected",
+                a11yRegionMainLesson: "Lesson content",
+                a11yRegionMainOverview: "Course overview",
+                a11yRegionNavLesson: "Navigation menu",
+                a11yRegionNavOverview: "Table of contents",
+                a11yRestrictedNav: "This lesson is currently unavailable",
+                a11yRTFIcon: "Rich Text File",
+                a11ySearchClose: "Close search menu",
+                a11ySearchInput: "Search",
+                a11ySearchInputClear: "clear search term",
+                a11ySearchOpen: "Open search menu",
+                a11yStatusAdditionalContent:
+                  "Additional content has been loaded",
+                a11yStatusContinued: "Continued",
+                a11yUnzoomImage: "Unzoom image",
+                a11yWordIcon: "Microsoft Word document",
+                a11yZipIcon: "Zip file",
+                a11yZoomImage: "Zoom image",
+                audioCollapsePlayer: "Collapse audio player",
+                audioExpandPlayer: "Expand audio player",
+                audioHideTranscript: "Hide transcript",
+                audioNoTranscriptAvailable: "No transcript available",
+                audioPlaySpeed: "Play speed",
+                audioShowTranscript: "Show transcript",
+                audioTranscript: "Audio transcript",
+                blocksClickToFlip: "Click to flip",
+                blocksPreposition: "of",
+                certificateDownload: "Download certificate",
+                certificateDownloadInProgress: "Downloading...",
+                certificateRetryDownload: "Retry download",
+                courseExit: "EXIT COURSE",
+                courseFinish: "Finish",
+                courseHome: "Home",
+                courseResume: "RESUME COURSE",
+                courseSkipToLesson: "SKIP TO LESSON",
+                courseStart: "START COURSE",
+                coverCompleteAllLessons: "Complete all lessons in this course",
+                coverCompleted: "Completed",
+                coverCompleteLessonsInCourse: "lessons in this course",
+                coverCompleteLessonsName: "Complete",
+                coverCompleteLessonsPreposition: "of",
+                coverCourseRequirements: "Course Requirements",
+                coverHour: "Hour",
+                coverHours: "Hours",
+                coverLesson: "Lesson",
+                coverLessons: "Lessons",
+                coverMinute: "Minute",
+                coverMinutes: "Minutes",
+                coverNoAttemptsRemaining: "No attempts remaining",
+                coverPublished: "Published",
+                coverQuizPercentOrHigher: "% or higher",
+                coverQuizScoreOf: "Score of",
+                curtainLoading: "Your content is loading.",
+                curtainOffline: "Your computer is offline.",
+                curtainOfflineReconnecting: "Attempting to reconnect…",
+                curtainSessionTimedOut: "Your session has timed out.",
+                curtainSessionTimedOutRefresh: "Refresh",
+                curtainSessionTimedOutRestart:
+                  "Click refresh to restart your session.",
+                curtainSomethingWrong: "Something went wrong.",
+                curtainSomethingWrongRefresh: "Refresh",
+                curtainSomethingWrongTryAgain:
+                  "Click to refresh and try again.",
+                embedLinkGroup: "Embedded web content",
+                embedPlayerGroup: "Embedded media player",
+                embedReadMore: "Read more",
+                embedViewOn: "VIEW ON",
+                exitMessage: "You may now leave this page.",
+                knowledgeCheckCorrectAnswerRequiredBlock:
+                  "Requires a correct answer to continue",
+                knowledgeCheckCorrectAnswerRequiredNav:
+                  "Complete previous knowledge checks to unlock this lesson",
+                knowledgeCheckMaxRetriesReached:
+                  "You have reached the maximum amount of retries.",
+                knowledgeCheckRetriesAttemptsRemaining: "Attempts remaining:",
+                l10nChooseLanguage: "Choose your course language",
+                l10nChooseLanguageContinue: "Continue",
+                labeledGraphicMarkerLabel: "Labeled graphic marker",
+                lessonComplete: "COMPLETE",
+                lessonName: "Lesson",
+                lessonPreposition: "of",
+                lessonRestricted: "Lessons must be completed in order",
+                noResults: "No results for",
+                numberedDividerGroup: "Numbered divider",
+                overviewPageTitleSuffix: "Overview",
+                pauseButtonLabel: "Pause",
+                playButtonLabel: "Play",
+                processComplete: "Complete",
+                processLandmark: "Process",
+                processLessonName: "Lesson",
+                processNextStep: "NEXT STEP",
+                processStart: "START",
+                processStartAgain: "START AGAIN",
+                processStepName: "Step",
+                processStepPreposition: "of",
+                processSwipe: "Swipe to continue",
+                progressPieClickToComplete: "Click to complete",
+                progressPieClickToReset: "Click to reset",
+                progressPieCompleted: "Completed",
+                progressPieQuizFailed: "Failed",
+                progressPieUnstarted: "Unstarted",
+                progressSummary: "Progress Summary",
+                progressSummaryBackToLearning: "Back to my learning",
+                progressSummaryCompleted: "Completed:",
+                progressSummaryCompletionRequirement: "Completion Requirement",
+                progressSummaryCongratulations: "Congratulations!",
+                progressSummaryNextUp: "Next up",
+                progressSummaryNoAttemptsRemaining: "No attempts remaining.",
+                progressSummaryNoTitle: "(No Title)",
+                progressSummaryPercentComplete: "% Complete",
+                progressSummaryPercentCompletion: "% Completion",
+                progressSummaryQuizRequirement: "Quiz Requirement",
+                progressSummaryRequirementsMet:
+                  "You've met all the requirements.",
+                progressSummaryScoreOf: "Score of",
+                progressSummaryScoreOfPreposition: "% on",
+                progressSummaryStartOver: "Start Over",
+                progressSummaryViewQuiz: "View quiz",
+                progressSummaryYouCompleted: "You completed:",
+                progressSummaryYouScored: "You scored",
+                quizAcceptableResponses: "Acceptable responses",
+                quizAnswerPlaceholder: "Type your answer here",
+                quizContinue: "Continue",
+                quizCorrect: "Correct",
+                quizIncorrect: "Incorrect",
+                quizNext: "NEXT",
+                quizPassing: "PASSING",
+                quizQuestion: "Question",
+                quizRequireAnswer: "Please answer the question to continue",
+                quizRequirePassingScore: "Must pass quiz before continuing",
+                quizRestart: "Restart",
+                quizResults: "Quiz Results",
+                quizScore: "Your score",
+                quizStart: "START QUIZ",
+                quizSubmit: "SUBMIT",
+                quizTakeAgain: "TAKE AGAIN",
+                quizTimerElapsed: "Time elapsed",
+                quizTimerExpired: "Time expired",
+                quizTimerExpiredAction: "OK",
+                quizTimerExpiredMessage:
+                  "You have reached the time limit for this quiz. Your results will be automatically submitted",
+                quizTimerHide: "Hide",
+                quizTimerLimit: "Time limit",
+                quizTimerMinute: "Minute",
+                quizTimerMinutePlural: "Minutes",
+                quizTimerRemaining: "Time left",
+                quizTimerShow: "Show timer",
+                result: "result",
+                results: "results",
+                salutation: "👋 Bye!",
+                scenarioComplete: "Scenario Complete!",
+                scenarioContinue: "CONTINUE",
+                scenarioStartOver: "START OVER",
+                scenarioTryAgain: "TRY AGAIN",
+                search: "search",
+                seekSliderLabel: "Seek",
+                sortingCardsCorrect: "Cards Correct",
+                sortingLandmark: "Sorting Activity",
+                sortingReplay: "REPLAY",
+              },
+              deleted: false,
+              createdAt: "2025-11-10T17:12:58.932Z",
+              updatedAt: "2025-11-10T17:12:58.932Z",
+              iso639Code: "en",
+              transferredAt: null,
+            },
+            fonts: [
+              {
+                id: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+                name: "Lato",
+                default: true,
+                key: "assets/rise/fonts/Lato2-Regular.woff",
+                style: "normal",
+                weight: "400",
+              },
+              {
+                id: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+                name: "Lato",
+                default: true,
+                key: "assets/rise/fonts/Lato2-Light.woff",
+                style: "normal",
+                weight: "300",
+              },
+              {
+                id: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+                name: "Lato",
+                default: true,
+                key: "assets/rise/fonts/Lato2-Italic.woff",
+                style: "italic",
+                weight: "400",
+              },
+              {
+                id: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+                name: "Lato",
+                default: true,
+                key: "assets/rise/fonts/Lato2-Bold.woff",
+                style: "normal",
+                weight: "700",
+              },
+              {
+                id: "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+                name: "Lato",
+                default: true,
+                key: "assets/rise/fonts/Lato2-Black.woff",
+                style: "normal",
+                weight: "900",
+              },
+              {
+                id: "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+                name: "Merriweather",
+                default: true,
+                key: "assets/rise/fonts/Merriweather-Black.woff",
+                style: "normal",
+                weight: "900",
+              },
+              {
+                id: "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+                name: "Merriweather",
+                default: true,
+                key: "assets/rise/fonts/Merriweather-Italic.woff",
+                style: "italic",
+                weight: "400",
+              },
+              {
+                id: "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+                name: "Merriweather",
+                default: true,
+                key: "assets/rise/fonts/Merriweather-Bold.woff",
+                style: "normal",
+                weight: "700",
+              },
+              {
+                id: "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+                name: "Merriweather",
+                default: true,
+                key: "assets/rise/fonts/Merriweather-Regular.woff",
+                style: "normal",
+                weight: "400",
+              },
+              {
+                id: "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+                name: "Merriweather",
+                default: true,
+                key: "assets/rise/fonts/Merriweather-Light.woff",
+                style: "normal",
+                weight: "300",
+              },
+            ],
+            media: [],
+          };
+        }
+
+        window.__loadEntry = shouldLoad() ? __loadEntry : __preventLoad;
+        window.__loadRemoteEntry = __loadRemoteEntry;
+        window.__fetchCourse = __fetchCourse;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+      (function (root) {
+        window.partnerContent = [];
+
+        function isExport() {
+          return true;
+        }
+
+        function resolvePath(path) {
+          return "assets/".concat(path);
+        }
+
+        function resolveFontPath(font) {
+          return "lib/fonts/".concat(font.key.split("/").reverse()[0]);
+        }
+
+        root.Runtime = {
+          fetch: window.__fetchCourse,
+          isExport: isExport,
+          resolvePath: resolvePath,
+          resolveFontPath: resolveFontPath,
+        };
+      })(window);
+    </script>
+
+    <script>
+      __loadEntry();
+    </script>
+  </body>
+</html>
