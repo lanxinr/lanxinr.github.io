@@ -1,1051 +1,1161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>AI-Supported Revision in Undergraduate Academic Writing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Global site stylesheet -->
     <link rel="stylesheet" href="/style.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.8;
+        color: #43545d;
+        background: linear-gradient(135deg, #f9fbff 0%, #f1f7f4 100%);
+        min-height: 100vh;
+        padding: 0;
+        display: flex;
+        gap: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      /* H1 - main title */
+      h1 {
+        font-size: 2.4rem;
+        margin-bottom: 0;
+        color: #3a6a84;
+        text-align: center;
+      }
+
+      h1::after {
+        display: none;
+      }
+
+      /* H2 - top-level section */
+      h2 {
+        margin: -2rem -2rem 1.5rem -2rem;
+        font-size: 1.65rem;
+        color: #5aa6a6;
+        padding: 1rem 2rem;
+        border-left: none;
+        background: linear-gradient(
+          90deg,
+          rgba(213, 237, 234, 0.9) 0%,
+          rgba(255, 255, 255, 0.2) 100%
+        );
+        border-radius: 12px 12px 0 0;
+        border-bottom: 3px solid rgba(150, 206, 197, 0.6);
+      }
+
+      /* Section Card */
+      .section-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 20px 40px rgba(120, 165, 169, 0.15);
+        border: 1px solid rgba(213, 228, 226, 0.9);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 45px rgba(122, 181, 183, 0.25);
+      }
+
+      /* H3 - subsection */
+      h3 {
+        margin-top: 1.75rem;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        color: #6d9c8b;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+      }
+
+      h3::before {
+        content: "▸";
+        color: #6d9c8b;
+        margin-right: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      /* H4 - sub-subsection */
+      h4 {
+        margin-top: 1.25rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.15rem;
+        color: #486570;
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 1rem 0;
+        color: #556671;
+        text-align: justify;
+      }
+
+      ul,
+      ol {
+        margin: 1rem 0 1.5rem 2rem;
+      }
+
+      li {
+        margin: 0.65rem 0;
+        padding-left: 0.5rem;
+        color: #566670;
+      }
+
+      ul li::marker {
+        color: #8cb9af;
+      }
+
+      ol li::marker {
+        color: #80b9c4;
+        font-weight: 600;
+      }
+
+      strong {
+        color: #384f59;
+        font-weight: 600;
+      }
+
+      .container {
+        background: transparent;
+        border-radius: 0;
+        padding: 2rem 3rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        box-shadow: none;
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      /* Fixed page header (hero-style title) – placed under global nav */
+      .top-header {
+        position: fixed;
+        top: 0; /* leave space for global nav bar */
+        left: 0;
+        right: 0;
+        height: 110px;
+        background: radial-gradient(
+          circle at top left,
+          #f9fefe 0%,
+          #e4f2f0 35%,
+          #f3f9ff 70%,
+          #e8f5f2 100%
+        );
+        box-shadow: 0 14px 32px rgba(116, 157, 163, 0.28);
+        z-index: 1200;
+        display: flex;
+        align-items: center;
+      }
+
+      .top-header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .top-header h1 {
+        font-size: 2.1rem;
+        margin: 0;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #315f74;
+        text-shadow: 0 2px 6px rgba(118, 162, 170, 0.35);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Table styling (evaluation criteria) */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 2rem 0;
+        font-size: 0.95rem;
+        box-shadow: 0 12px 26px rgba(130, 171, 178, 0.2);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(190, 219, 217, 0.8);
+      }
+
+      thead {
+        background: linear-gradient(135deg, #9dd4d1 0%, #a8d8e2 100%);
+        color: #2f4b53;
+      }
+
+      thead th {
+        padding: 1rem;
+        font-weight: 600;
+        text-align: left;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: 1px solid #e5e7eb;
+      }
+
+      tbody tr {
+        border-bottom: 1px solid rgba(213, 228, 226, 0.9);
+        transition: background-color 0.3s ease;
+      }
+
+      tbody tr:hover {
+        background-color: rgba(219, 239, 235, 0.6);
+      }
+
+      tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      tbody td {
+        padding: 1rem;
+        color: #4d5f68;
+        vertical-align: top;
+        border: 1px solid #e5e7eb;
+      }
+
+      tbody td:first-child {
+        font-weight: 600;
+        color: #384f59;
+        background-color: rgba(232, 244, 242, 0.7);
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 11px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #edf4f2;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #9fd8cf 0%, #7fc3b6 100%);
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #7fc3b6 0%, #6ab0a5 100%);
+      }
+
+      /* Improved nested lists */
+      ul ul,
+      ol ul {
+        margin: 0.5rem 0 0.5rem 1.5rem;
+      }
+
+      /* Local navigation sidebar (Table of Contents) */
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 110px; /* global nav (≈60) + header (110) */
+        width: 270px;
+        height: calc(100vh - 170px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        box-shadow: 6px 0 25px rgba(125, 163, 169, 0.15);
+        padding: 2rem 1.5rem;
+        overflow-y: auto;
+        z-index: 1000;
+        border-right: 1px solid rgba(209, 225, 223, 0.8);
+      }
+
+      .sidebar-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #3f6c7c;
+        margin-bottom: 1.6rem;
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(190, 219, 217, 0.9);
+        background: linear-gradient(
+          135deg,
+          rgba(233, 246, 244, 0.95) 0%,
+          rgba(219, 239, 235, 0.95) 50%,
+          rgba(233, 246, 244, 0.95) 100%
+        );
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 6px 14px rgba(150, 200, 196, 0.35);
+      }
+
+      .nav-menu-local {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-menu-local li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-menu-local a {
+        display: block;
+        padding: 0.7rem 1rem;
+        color: #58788a;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        border-left: 3px solid transparent;
+        margin-bottom: 0.35rem;
+      }
+
+      .nav-menu-local a:hover {
+        background: rgba(198, 232, 226, 0.6);
+        color: #3e6b7a;
+        border-left-color: #7ec5b3;
+        transform: translateX(4px);
+      }
+
+      .nav-menu-local a.active {
+        background: rgba(186, 224, 223, 0.9);
+        color: #3e6b7a;
+        font-weight: 600;
+        border-left-color: #64b0a4;
+      }
+
+      /* Back to Top Button */
+      .back-to-top-item {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 2px solid #e0e0e0;
+      }
+
+      .back-to-top-link {
+        background: linear-gradient(135deg, #8fd2b6 0%, #a6e1c8 100%);
+        color: #1f3f46 !important;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 10px;
+        border-left: none !important;
+        box-shadow: 0 10px 20px rgba(143, 210, 182, 0.4);
+      }
+
+      .back-to-top-link:hover {
+        background: linear-gradient(135deg, #7ec5a8 0%, #9fdac4 100%);
+        color: #163437 !important;
+        transform: translateY(-3px);
+        box-shadow: 0 14px 24px rgba(122, 199, 171, 0.5);
+      }
+
+      /* Main content wrapper */
+      .main-wrapper {
+        flex: 1;
+        margin-left: 270px;
+        padding: 2rem 2.5rem 2.5rem 2rem;
+        max-width: calc(100% - 270px);
+        background: transparent;
+        min-height: 100vh;
+        margin-top: 110px; /* align with sidebar top */
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      /* Mobile menu toggle for local TOC */
+      .mobile-menu-toggle {
+        display: none;
+        position: fixed;
+        top: 70px; /* below global nav */
+        left: 0.9rem;
+        z-index: 1001;
+        background: #5aa6a6;
+        border: none;
+        border-radius: 10px;
+        padding: 0.6rem;
+        box-shadow: 0 8px 18px rgba(90, 166, 166, 0.35);
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 3px;
+        background: #ffffff;
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+
+      /* Responsive design */
+      @media (max-width: 1024px) {
+        .sidebar {
+          width: 240px;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .main-wrapper {
+          margin-left: 240px;
+          max-width: calc(100% - 240px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        .sidebar {
+          top: 170px;
+          height: calc(100vh - 170px);
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .sidebar.active {
+          transform: translateX(0);
+        }
+
+        .main-wrapper {
+          margin-left: 0;
+          max-width: 100%;
+          padding: 1rem 0.75rem 1.5rem;
+          margin-top: 190px; /* a bit more space on small screens */
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.8;
-            color: #43545d;
-            background: linear-gradient(135deg, #f9fbff 0%, #f1f7f4 100%);
-            min-height: 100vh;
-            padding: 0;
-            display: flex;
-            gap: 0;
+          padding: 0;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-weight: 700;
-            line-height: 1.3;
+        .container {
+          padding: 1.5rem 1rem;
         }
 
-        /* H1 - main title */
         h1 {
-            font-size: 2.4rem;
-            margin-bottom: 0;
-            color: #3a6a84;
-            text-align: center;
+          font-size: 1.8rem;
         }
 
-        h1::after {
-            display: none;
-        }
-
-        /* H2 - top-level section */
         h2 {
-            margin: -2rem -2rem 1.5rem -2rem;
-            font-size: 1.65rem;
-            color: #5aa6a6;
-            padding: 1rem 2rem;
-            border-left: none;
-            background: linear-gradient(90deg, rgba(213, 237, 234, 0.9) 0%, rgba(255, 255, 255, 0.2) 100%);
-            border-radius: 12px 12px 0 0;
-            border-bottom: 3px solid rgba(150, 206, 197, 0.6);
+          font-size: 1.4rem;
         }
 
-        /* Section Card */
-        .section-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 20px 40px rgba(120, 165, 169, 0.15);
-            border: 1px solid rgba(213, 228, 226, 0.9);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 45px rgba(122, 181, 183, 0.25);
-        }
-
-        /* H3 - subsection */
         h3 {
-            margin-top: 1.75rem;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            color: #6d9c8b;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
+          font-size: 1.15rem;
         }
 
-        h3::before {
-            content: '▸';
-            color: #6d9c8b;
-            margin-right: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* H4 - sub-subsection */
-        h4 {
-            margin-top: 1.25rem;
-            margin-bottom: 0.75rem;
-            font-size: 1.15rem;
-            color: #486570;
-            font-style: normal;
-            font-weight: 600;
-        }
-
-        p {
-            margin: 1rem 0;
-            color: #556671;
-            text-align: justify;
-        }
-
-        ul,
-        ol {
-            margin: 1rem 0 1.5rem 2rem;
-        }
-
-        li {
-            margin: 0.65rem 0;
-            padding-left: 0.5rem;
-            color: #566670;
-        }
-
-        ul li::marker {
-            color: #8cb9af;
-        }
-
-        ol li::marker {
-            color: #80b9c4;
-            font-weight: 600;
-        }
-
-        strong {
-            color: #384f59;
-            font-weight: 600;
-        }
-
-        .container {
-            background: transparent;
-            border-radius: 0;
-            padding: 2rem 3rem;
-            max-width: 1100px;
-            margin: 0 auto;
-            box-shadow: none;
-            animation: fadeIn 0.6s ease-in-out;
-        }
-
-        /* Fixed page header (hero-style title) – placed under global nav */
-        .top-header {
-            position: fixed;
-            top: 0; /* leave space for global nav bar */
-            left: 0;
-            right: 0;
-            height: 110px;
-            background: radial-gradient(circle at top left, #f9fefe 0%, #e4f2f0 35%, #f3f9ff 70%, #e8f5f2 100%);
-            box-shadow: 0 14px 32px rgba(116, 157, 163, 0.28);
-            z-index: 1200;
-            display: flex;
-            align-items: center;
-        }
-
-        .top-header-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .top-header h1 {
-            font-size: 2.1rem;
-            margin: 0;
-            text-align: center;
-            letter-spacing: 0.04em;
-            color: #315f74;
-            text-shadow: 0 2px 6px rgba(118, 162, 170, 0.35);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Table styling (evaluation criteria) */
         table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 2rem 0;
-            font-size: 0.95rem;
-            box-shadow: 0 12px 26px rgba(130, 171, 178, 0.2);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(190, 219, 217, 0.8);
+          font-size: 0.85rem;
         }
 
-        thead {
-            background: linear-gradient(135deg, #9dd4d1 0%, #a8d8e2 100%);
-            color: #2f4b53;
-        }
-
-        thead th {
-            padding: 1rem;
-            font-weight: 600;
-            text-align: left;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid #e5e7eb;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid rgba(213, 228, 226, 0.9);
-            transition: background-color 0.3s ease;
-        }
-
-        tbody tr:hover {
-            background-color: rgba(219, 239, 235, 0.6);
-        }
-
-        tbody tr:last-child {
-            border-bottom: none;
-        }
-
+        thead th,
         tbody td {
-            padding: 1rem;
-            color: #4d5f68;
-            vertical-align: top;
-            border: 1px solid #e5e7eb;
+          padding: 0.6rem;
         }
-
-        tbody td:first-child {
-            font-weight: 600;
-            color: #384f59;
-            background-color: rgba(232, 244, 242, 0.7);
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 11px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #edf4f2;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #9fd8cf 0%, #7fc3b6 100%);
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #7fc3b6 0%, #6ab0a5 100%);
-        }
-
-        /* Improved nested lists */
-        ul ul,
-        ol ul {
-            margin: 0.5rem 0 0.5rem 1.5rem;
-        }
-
-        /* Local navigation sidebar (Table of Contents) */
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 110px; /* global nav (≈60) + header (110) */
-            width: 270px;
-            height: calc(100vh - 170px);
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            box-shadow: 6px 0 25px rgba(125, 163, 169, 0.15);
-            padding: 2rem 1.5rem;
-            overflow-y: auto;
-            z-index: 1000;
-            border-right: 1px solid rgba(209, 225, 223, 0.8);
-        }
-
-        .sidebar-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #3f6c7c;
-            margin-bottom: 1.6rem;
-            padding: 0.55rem 0.9rem;
-            border-radius: 999px;
-            border: 1px solid rgba(190, 219, 217, 0.9);
-            background: linear-gradient(135deg, rgba(233, 246, 244, 0.95) 0%, rgba(219, 239, 235, 0.95) 50%, rgba(233, 246, 244, 0.95) 100%);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 6px 14px rgba(150, 200, 196, 0.35);
-        }
-
-        .nav-menu-local {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-menu-local li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-menu-local a {
-            display: block;
-            padding: 0.7rem 1rem;
-            color: #58788a;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            border-left: 3px solid transparent;
-            margin-bottom: 0.35rem;
-        }
-
-        .nav-menu-local a:hover {
-            background: rgba(198, 232, 226, 0.6);
-            color: #3e6b7a;
-            border-left-color: #7ec5b3;
-            transform: translateX(4px);
-        }
-
-        .nav-menu-local a.active {
-            background: rgba(186, 224, 223, 0.9);
-            color: #3e6b7a;
-            font-weight: 600;
-            border-left-color: #64b0a4;
-        }
-
-        /* Back to Top Button */
-        .back-to-top-item {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 2px solid #e0e0e0;
-        }
-
-        .back-to-top-link {
-            background: linear-gradient(135deg, #8fd2b6 0%, #a6e1c8 100%);
-            color: #1f3f46 !important;
-            text-align: center;
-            font-weight: 600;
-            border-radius: 10px;
-            border-left: none !important;
-            box-shadow: 0 10px 20px rgba(143, 210, 182, 0.4);
-        }
-
-        .back-to-top-link:hover {
-            background: linear-gradient(135deg, #7ec5a8 0%, #9fdac4 100%);
-            color: #163437 !important;
-            transform: translateY(-3px);
-            box-shadow: 0 14px 24px rgba(122, 199, 171, 0.5);
-        }
-
-        /* Main content wrapper */
-        .main-wrapper {
-            flex: 1;
-            margin-left: 270px;
-            padding: 2rem 2.5rem 2.5rem 2rem;
-            max-width: calc(100% - 270px);
-            background: transparent;
-            min-height: 100vh;
-            margin-top: 110px; /* align with sidebar top */
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* Mobile menu toggle for local TOC */
-        .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            top: 70px; /* below global nav */
-            left: 0.9rem;
-            z-index: 1001;
-            background: #5aa6a6;
-            border: none;
-            border-radius: 10px;
-            padding: 0.6rem;
-            box-shadow: 0 8px 18px rgba(90, 166, 166, 0.35);
-            cursor: pointer;
-            width: 44px;
-            height: 44px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mobile-menu-toggle span {
-            display: block;
-            width: 24px;
-            height: 3px;
-            background: #ffffff;
-            margin: 4px 0;
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-
-        /* Responsive design */
-        @media (max-width: 1024px) {
-            .sidebar {
-                width: 240px;
-            }
-
-            .main-wrapper {
-                margin-left: 240px;
-                max-width: calc(100% - 240px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .sidebar {
-                top: 170px;
-                height: calc(100vh - 170px);
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-            }
-
-            .sidebar.active {
-                transform: translateX(0);
-            }
-
-            .main-wrapper {
-                margin-left: 0;
-                max-width: 100%;
-                padding: 1rem 0.75rem 1.5rem;
-                margin-top: 190px; /* a bit more space on small screens */
-            }
-
-            body {
-                padding: 0;
-            }
-
-            .container {
-                padding: 1.5rem 1rem;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            h3 {
-                font-size: 1.15rem;
-            }
-
-            table {
-                font-size: 0.85rem;
-            }
-
-            thead th,
-            tbody td {
-                padding: 0.6rem;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- Fixed page header (hero-style) -->
     <header class="top-header">
-        <div class="top-header-inner">
-            <h1>AI-Supported Revision in Undergraduate Academic Writing</h1>
-        </div>
+      <div class="top-header-inner">
+        <h1>AI-Supported Revision in Undergraduate Academic Writing</h1>
+      </div>
     </header>
 
     <!-- Mobile Toggle for local TOC -->
-    <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle local table of contents">
-        <span></span>
-        <span></span>
-        <span></span>
+    <button
+      class="mobile-menu-toggle"
+      onclick="toggleMenu()"
+      aria-label="Toggle local table of contents"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
     <!-- Local Sidebar Navigation (Table of Contents) -->
     <nav class="sidebar" id="sidebar">
-        <div class="sidebar-title">📚 Table of Contents</div>
-        <ul class="nav-menu-local">
-            <li><a href="#section-1" onclick="closeMobileMenu()">1. Scenario Description</a></li>
-            <li><a href="#section-2" onclick="closeMobileMenu()">2. Learning Objectives</a></li>
-            <li><a href="#section-3" onclick="closeMobileMenu()">3. Activity Process</a></li>
-            <li><a href="#section-4" onclick="closeMobileMenu()">4. Student Artifacts</a></li>
-            <li><a href="#section-5" onclick="closeMobileMenu()">5. Evaluation Criteria and Performance Levels</a></li>
-            <li><a href="#section-6" onclick="closeMobileMenu()">6. Guidelines for Faculty</a></li>
-            <li><a href="#section-7" onclick="closeMobileMenu()">7. Guidelines for Students</a></li>
-            <li><a href="#section-8" onclick="closeMobileMenu()">8. References</a></li>
-            <li class="back-to-top-item">
-                <a href="#" onclick="scrollToTop(); closeMobileMenu(); return false;" class="back-to-top-link">⬆ Back to Top</a>
-            </li>
-        </ul>
+      <div class="sidebar-title">📚 Table of Contents</div>
+      <ul class="nav-menu-local">
+        <li>
+          <a href="#section-1" onclick="closeMobileMenu()"
+            >1. Scenario Description</a
+          >
+        </li>
+        <li>
+          <a href="#section-2" onclick="closeMobileMenu()"
+            >2. Learning Objectives</a
+          >
+        </li>
+        <li>
+          <a href="#section-3" onclick="closeMobileMenu()"
+            >3. Activity Process</a
+          >
+        </li>
+        <li>
+          <a href="#section-4" onclick="closeMobileMenu()"
+            >4. Student Artifacts</a
+          >
+        </li>
+        <li>
+          <a href="#section-5" onclick="closeMobileMenu()"
+            >5. Evaluation Criteria and Performance Levels</a
+          >
+        </li>
+        <li>
+          <a href="#section-6" onclick="closeMobileMenu()"
+            >6. Guidelines for Faculty</a
+          >
+        </li>
+        <li>
+          <a href="#section-7" onclick="closeMobileMenu()"
+            >7. Guidelines for Students</a
+          >
+        </li>
+        <li>
+          <a href="#section-8" onclick="closeMobileMenu()">8. References</a>
+        </li>
+        <li class="back-to-top-item">
+          <a
+            href="#"
+            onclick="scrollToTop(); closeMobileMenu(); return false;"
+            class="back-to-top-link"
+            >⬆ Back to Top</a
+          >
+        </li>
+      </ul>
     </nav>
 
     <!-- Main Content -->
     <div class="main-wrapper">
-        <div class="container">
+      <div class="container">
+        <!-- Section 1 -->
+        <div class="section-card">
+          <h2 id="section-1">1. Scenario Description</h2>
 
-            <!-- Section 1 -->
-            <div class="section-card">
-                <h2 id="section-1">1. Scenario Description</h2>
+          <p>
+            In an undergraduate academic writing course, the instructor works
+            with students who have completed basic instruction in academic
+            writing and can produce organized drafts, but who remain uncertain
+            about how to revise effectively. While most students understand that
+            revision is expected, they often treat it as surface
+            correction—fixing grammar or wording—rather than as deliberate work
+            on paragraph focus, sentence-to-sentence logic, or clarity of
+            meaning for an academic reader.
+          </p>
 
-                <p>
-                    In an undergraduate academic writing course, the instructor works with students who have completed
-                    basic instruction in academic writing and can produce organized drafts, but who remain uncertain
-                    about how to revise effectively. While most students understand that revision is expected, they
-                    often treat it as surface correction—fixing grammar or wording—rather than as deliberate work on
-                    paragraph focus, sentence-to-sentence logic, or clarity of meaning for an academic reader.
-                </p>
+          <p>
+            Across drafts, several patterns recur. Paragraphs frequently lack a
+            clear controlling idea, with topic sentences that do not clearly
+            signal what the paragraph will develop. Sentences may be
+            individually grammatical but loosely connected, leaving readers to
+            infer relationships that should be explicit. Claims are sometimes
+            stated clearly but not fully supported or explained, resulting in
+            gaps between ideas and evidence. These underlying issues are often
+            obscured by language-level problems such as long, tangled sentences
+            or repetitive phrasing.
+          </p>
 
-                <p>
-                    Across drafts, several patterns recur. Paragraphs frequently lack a clear controlling idea, with
-                    topic sentences that do not clearly signal what the paragraph will develop. Sentences may be
-                    individually grammatical but loosely connected, leaving readers to infer relationships that should
-                    be explicit. Claims are sometimes stated clearly but not fully supported or explained, resulting in
-                    gaps between ideas and evidence. These underlying issues are often obscured by language-level
-                    problems such as long, tangled sentences or repetitive phrasing.
-                </p>
-
-                <p>
-                    Like many instructors teaching writing, this instructor has limited capacity to provide timely,
-                    repeated, and individualized feedback on every draft, particularly at the sentence and paragraph
-                    level across multiple revision cycles. To address this constraint while maintaining student
-                    responsibility for writing, the instructor integrates a recurring writing practice that occurs
-                    approximately every two weeks within a 60-minute class session. An AI-based feedback tool is
-                    incorporated deliberately as support for revision and evaluation, not for content generation. The
-                    instructor’s primary concern is not whether students find AI helpful, but whether they can explain
-                    why specific revision decisions improve focus, logic, or clarity in ways that can be evaluated
-                    across drafts over multiple cycles.
-                </p>
-            </div>
-
-            <!-- Section 2 -->
-            <div class="section-card">
-                <h2 id="section-2">2. Learning Objectives</h2>
-
-                <p>
-                    Across repeated cycles of this practice, students are expected to improve their ability to:
-                </p>
-
-                <ul>
-                    <li>
-                        Revise paragraphs so that each one has a clear topic sentence and supporting details that
-                        directly develop that focus, using AI-based feedback tools (e.g., ChatGPT, Claude, Gemini)
-                        selectively to identify and address weaknesses in focus through revision, rather than to
-                        generate content.
-                    </li>
-                    <li>
-                        Improve sentence-to-sentence clarity and logical flow by evaluating AI feedback about wording,
-                        connections, or emphasis, and demonstrating through revision which suggestions improve
-                        readability for an academic reader.
-                    </li>
-                    <li>
-                        Increase clarity of meaning by revising sentences that are vague, overloaded, or ambiguous,
-                        while maintaining the writer’s intended claim and stance, as evidenced by consistency across
-                        revised passages.
-                    </li>
-                    <li>
-                        Explain revision decisions by articulating why specific AI-supported or independent changes
-                        improved paragraph focus, sentence-level clarity, or alignment between claims and supporting
-                        details, as reflected in differences between original and revised drafts, rather than accepting
-                        AI feedback automatically.
-                    </li>
-                </ul>
-
-                <p>
-                    Progress toward these objectives is observed across drafts and explanations of revision choices,
-                    reflecting developing judgment in both writing and responsible AI use.
-                </p>
-            </div>
-
-            <!-- Section 3 -->
-            <div class="section-card">
-                <h2 id="section-3">3. Activity Process</h2>
-
-                <h3>Phase 1: Independent Drafting (≈10–15 minutes)</h3>
-
-                <p>
-                    Students work with a complete draft of a short academic text written independently. In some cycles,
-                    students draft during class; in others, they arrive with a draft prepared in advance. In both cases,
-                    the emphasis remains on independent drafting before AI use. The draft reflects the student’s own
-                    ideas and argument and is not expected to be polished. Many drafts show promising thinking
-                    alongside unclear paragraph focus or weak sentence connections. The instructor treats the draft as
-                    evidence of thinking rather than a finished product.
-                </p>
-
-                <p>
-                    Students briefly review their own draft and identify specific areas of concern, such as a paragraph
-                    whose main point is unclear or a sequence of sentences that does not read smoothly. This
-                    self-identification anchors later feedback.
-                </p>
-
-                <h3>Phase 2: Focused Use of AI for Feedback (≈10–15 minutes)</h3>
-
-                <p>
-                    Students turn to the AI tools with questions about specific sentences or short passages they have
-                    already identified. In practice, some students initially attempt broad requests. When this happens,
-                    the instructor redirects them briefly and concretely.
-                </p>
-
-                <p>A typical contrast at this stage is:</p>
-
-                <ul>
-                    <li>Unfocused request: “Rewrite this paragraph to sound more academic.”</li>
-                    <li>
-                        Focused question: “Does this topic sentence clearly signal what the paragraph is about, or is
-                        the problem in how the next sentence connects to it?”
-                    </li>
-                </ul>
-
-                <p>
-                    Through repeated redirection, students learn to use AI as a reader that highlights possible
-                    problems in focus, sentence connections, or wording. Learning to identify where focus, logic, or
-                    clarity breaks down is itself a core learning goal, and early-stage misidentification is treated as
-                    a normal and productive part of the process, supported through brief instructor guidance. AI
-                    responses sometimes clarify where meaning breaks down and sometimes offer alternatives that
-                    oversimplify or subtly shift emphasis. The instructor reinforces that AI feedback is informational,
-                    not authoritative.
-                </p>
-
-                <h3>Phase 3: Student-Directed Revision (≈15–20 minutes)</h3>
-
-                <p>
-                    Students revise their drafts manually, deciding which suggestions to accept, adapt, or reject. The
-                    final authority for all revision decisions remains with the student, not the AI tools. At first,
-                    many students apply suggestions broadly. Over repeated cycles, a common shift occurs: students
-                    begin to keep revisions that sharpen paragraph focus or clarify logical links, while rejecting
-                    changes that weaken their claim or flatten their voice.
-                </p>
-
-                <p>
-                    This phase makes learning visible. The instructor observes not only changes in the text, but
-                    changes in how students talk about those changes—moving from “the AI said this was better” to “this
-                    makes the connection between my claim and example clearer.”
-                </p>
-
-                <h3>Phase 4: Reflection and Instructor Feedback (≈10–15 minutes)</h3>
-
-                <p>
-                    Students submit their revised draft with brief notes explaining key revision decisions. The
-                    reflection focuses on why a change improved paragraph focus, sentence flow, or clarity of meaning,
-                    not on describing AI tools or features.
-                </p>
-
-                <p>
-                    Instructor feedback builds on these explanations, often returning to concrete questions such as
-                    whether a paragraph now stays focused on its main idea, whether sentences guide the reader
-                    logically, or whether claims and supporting details are better aligned.
-                </p>
-            </div>
-
-            <!-- Section 4 -->
-            <div class="section-card">
-                <h2 id="section-4">4. Student Artifacts</h2>
-
-                <p>
-                    Each writing cycle produces a consistent set of artifacts:
-                </p>
-
-                <ol>
-                    <li>
-                        <strong>Original Draft</strong><br />
-                        The original draft represents the student’s independent thinking before any AI-supported
-                        feedback is used. It provides a baseline for examining paragraph focus, sentence-to-sentence
-                        logic, and clarity of meaning as initially expressed by the student.
-                    </li>
-                    <li>
-                        <strong>Revised Draft</strong><br />
-                        The revised draft shows how the student has addressed issues of paragraph organization, logical
-                        flow between sentences, and clarity through manual revision. Differences between the original
-                        and revised versions make visible which problems the student prioritized and how effectively
-                        those problems were resolved.
-                    </li>
-                    <li>
-                        <strong>AI Interaction Evidence (brief excerpts or notes)</strong><br />
-                        Students submit brief excerpts or notes showing where AI feedback was consulted and the type of
-                        question asked (e.g., about paragraph focus, sentence connections, or wording). This evidence is
-                        limited in scope and descriptive rather than interpretive, serving to clarify how the AI was
-                        used as a source of feedback, not to explain or justify revision decisions.
-                    </li>
-                    <li>
-                        <strong>Short Reflection on Revision Decisions</strong><br />
-                        Students provide a brief reflection explaining why specific revisions improved paragraph focus,
-                        sentence-to-sentence logic, or clarity of meaning, and why certain AI suggestions were
-                        accepted, adapted, or rejected. The reflection focuses on concrete revision decisions and their
-                        effects on the text, and is written in the student’s own terms, foregrounding independent
-                        judgment and authorship rather than descriptions of AI use.
-                    </li>
-                </ol>
-            </div>
-
-            <!-- Section 5 -->
-            <div class="section-card">
-                <h2 id="section-5">5. Evaluation Criteria and Performance Levels</h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Criterion</th>
-                            <th>Strong</th>
-                            <th>Adequate</th>
-                            <th>Weak</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Paragraph Focus</td>
-                            <td>
-                                Each paragraph has a clear topic sentence; supporting details directly develop that focus.
-                            </td>
-                            <td>
-                                Main idea is present but unevenly developed.
-                            </td>
-                            <td>
-                                Paragraph lacks a clear focus or shifts between ideas.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sentence-to-Sentence Logic</td>
-                            <td>
-                                Sentences are clearly connected through explicit logical relationships (e.g., cause,
-                                contrast, elaboration).
-                            </td>
-                            <td>
-                                Some connections are implicit or weak.
-                            </td>
-                            <td>
-                                Sentences read as isolated or loosely related.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Strategic AI Use</td>
-                            <td>
-                                AI feedback is used selectively; the student can explain why suggestions were adopted,
-                                adapted, or rejected.
-                            </td>
-                            <td>
-                                AI feedback is mostly accepted with limited explanation.
-                            </td>
-                            <td>
-                                AI feedback is applied wholesale or without understanding.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Consistency of Meaning</td>
-                            <td>
-                                Revisions clarify meaning without altering the writer’s claim or stance.
-                            </td>
-                            <td>
-                                Minor shifts in emphasis or tone appear.
-                            </td>
-                            <td>
-                                Meaning or argument becomes unclear or inconsistent.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Transparency &amp; Integrity</td>
-                            <td>
-                                AI use is documented clearly, and revision decisions reflect independent authorship and
-                                judgment.
-                            </td>
-                            <td>
-                                AI use is documented but explanations are vague or incomplete.
-                            </td>
-                            <td>
-                                AI use is unclear, undocumented, or obscures authorship.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Section 6 -->
-            <div class="section-card">
-                <h2 id="section-6">6. Guidelines for Faculty</h2>
-
-                <h3>Preparation</h3>
-
-                <ul>
-                    <li>
-                        Anticipate that students will equate revision with correction rather than rethinking focus or
-                        logic.
-                    </li>
-                    <li>
-                        Clarify that AI supports evaluation and revision, not content generation.
-                    </li>
-                </ul>
-
-                <h3>During the Activity</h3>
-
-                <ul>
-                    <li>
-                        Redirect broad “rewrite this” requests toward questions about paragraph focus or sentence
-                        connections.
-                    </li>
-                    <li>
-                        Listen closely to how students explain their revisions; explanations reveal more than the text
-                        alone.
-                    </li>
-                    <li>
-                        Accept uneven judgment early on as part of the learning process.
-                    </li>
-                </ul>
-
-                <h3>After the Activity</h3>
-
-                <ul>
-                    <li>
-                        Frame feedback around concrete writing decisions rather than general quality.
-                    </li>
-                    <li>
-                        Address recurring issues (e.g., paragraph drift, weak sentence links) collectively.
-                    </li>
-                    <li>
-                        Use patterns from one cycle to adjust emphasis in the next, reinforcing the iterative nature of
-                        the practice.
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Section 7 -->
-            <div class="section-card">
-                <h2 id="section-7">7. Guidelines for Students</h2>
-
-                <h3>Preparation</h3>
-
-                <ul>
-                    <li>
-                        Produce a complete draft independently, with each paragraph attempting to address a single main
-                        idea.
-                    </li>
-                    <li>
-                        Read the draft once without revising and identify specific problems, such as unclear paragraph
-                        focus, weak sentence connections, or confusing wording.
-                    </li>
-                </ul>
-
-                <h3>During the Activity</h3>
-
-                <ul>
-                    <li>
-                        Use AI-based feedback tools primarily on sentences or short passages you have already
-                        identified as problematic.
-                    </li>
-                    <li>
-                        Ask questions that help you evaluate focus, logic, or clarity rather than requesting rewrites.
-                    </li>
-                    <li>
-                        Compare AI suggestions directly with your original wording and decide whether each one
-                        strengthens paragraph focus, clarifies sentence relationships, or sharpens meaning.
-                    </li>
-                    <li>
-                        Accept, adapt, or reject AI suggestions based on their effect on argument and voice.
-                    </li>
-                </ul>
-
-                <h3>After the Activity</h3>
-
-                <ul>
-                    <li>
-                        Revise the draft manually so that all changes reflect your own decisions.
-                    </li>
-                    <li>
-                        Review original and revised versions side by side to identify where focus, logic, or clarity
-                        improved.
-                    </li>
-                    <li>
-                        Write a brief revision reflection (approximately 200 words) explaining why specific revisions
-                        improved the writing and why certain AI suggestions were not used.
-                    </li>
-                    <li>
-                        Document where AI feedback influenced the revision, so your decision-making process is
-                        transparent.
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Section 8 -->
-            <div class="section-card">
-                <h2 id="section-8">8. References</h2>
-
-                <p>
-                    Marzuki, M. M., Nureni, G. F., &amp; Yusuf, Y. Q. (2023). The impact of AI writing tools on the
-                    content and structure of EFL student writing. <em>Cogent Education, 10</em>(1), 2236469.
-                    https://doi.org/10.1080/2331186X.2023.2236469
-                </p>
-                <p>
-                    Mahapatra, B. P. (2024). Impact of ChatGPT on ESL students’ academic writing skills: A mixed methods
-                    intervention study. <em>Smart Learning Environments, 11</em>, 21.
-                    https://doi.org/10.1186/s40561-024-00295-9
-                </p>
-                <p>
-                    Ekizoğlu, M., &amp; Demir, A. N. (2025). The role of AI-assisted writing feedback in developing
-                    writing proficiency in an EFL context. <em>Discover Education, 4</em>, 454.
-                    https://doi.org/10.1007/s44217-025-00919-3
-                </p>
-                <p>
-                    Li, X., Zhang, M., Chen, Y., &amp; Wang, H. (2024). Exploring the potential of artificial
-                    intelligence to enhance the writing of English academic papers by non-native English-speaking
-                    medical students. <em>BMC Medical Education, 24</em>, 573.
-                    https://bmcmededuc.biomedcentral.com/articles/10.1186/s12909-024-05738-y
-                </p>
-            </div>
-
+          <p>
+            Like many instructors teaching writing, this instructor has limited
+            capacity to provide timely, repeated, and individualized feedback on
+            every draft, particularly at the sentence and paragraph level across
+            multiple revision cycles. To address this constraint while
+            maintaining student responsibility for writing, the instructor
+            integrates a recurring writing practice that occurs approximately
+            every two weeks within a 60-minute class session. An AI-based
+            feedback tool is incorporated deliberately as support for revision
+            and evaluation, not for content generation. The instructor’s primary
+            concern is not whether students find AI helpful, but whether they
+            can explain why specific revision decisions improve focus, logic, or
+            clarity in ways that can be evaluated across drafts over multiple
+            cycles.
+          </p>
         </div>
+
+        <!-- Section 2 -->
+        <div class="section-card">
+          <h2 id="section-2">2. Learning Objectives</h2>
+
+          <p>
+            Across repeated cycles of this practice, students are expected to
+            improve their ability to:
+          </p>
+
+          <ul>
+            <li>
+              Revise paragraphs so that each one has a clear topic sentence and
+              supporting details that directly develop that focus, using
+              AI-based feedback tools (e.g., ChatGPT, Claude, Gemini)
+              selectively to identify and address weaknesses in focus through
+              revision, rather than to generate content.
+            </li>
+            <li>
+              Improve sentence-to-sentence clarity and logical flow by
+              evaluating AI feedback about wording, connections, or emphasis,
+              and demonstrating through revision which suggestions improve
+              readability for an academic reader.
+            </li>
+            <li>
+              Increase clarity of meaning by revising sentences that are vague,
+              overloaded, or ambiguous, while maintaining the writer’s intended
+              claim and stance, as evidenced by consistency across revised
+              passages.
+            </li>
+            <li>
+              Explain revision decisions by articulating why specific
+              AI-supported or independent changes improved paragraph focus,
+              sentence-level clarity, or alignment between claims and supporting
+              details, as reflected in differences between original and revised
+              drafts, rather than accepting AI feedback automatically.
+            </li>
+          </ul>
+
+          <p>
+            Progress toward these objectives is observed across drafts and
+            explanations of revision choices, reflecting developing judgment in
+            both writing and responsible AI use.
+          </p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-card">
+          <h2 id="section-3">3. Activity Process</h2>
+
+          <h3>Phase 1: Independent Drafting (≈10–15 minutes)</h3>
+
+          <p>
+            Students work with a complete draft of a short academic text written
+            independently. In some cycles, students draft during class; in
+            others, they arrive with a draft prepared in advance. In both cases,
+            the emphasis remains on independent drafting before AI use. The
+            draft reflects the student’s own ideas and argument and is not
+            expected to be polished. Many drafts show promising thinking
+            alongside unclear paragraph focus or weak sentence connections. The
+            instructor treats the draft as evidence of thinking rather than a
+            finished product.
+          </p>
+
+          <p>
+            Students briefly review their own draft and identify specific areas
+            of concern, such as a paragraph whose main point is unclear or a
+            sequence of sentences that does not read smoothly. This
+            self-identification anchors later feedback.
+          </p>
+
+          <h3>Phase 2: Focused Use of AI for Feedback (≈10–15 minutes)</h3>
+
+          <p>
+            Students turn to the AI tools with questions about specific
+            sentences or short passages they have already identified. In
+            practice, some students initially attempt broad requests. When this
+            happens, the instructor redirects them briefly and concretely.
+          </p>
+
+          <p>A typical contrast at this stage is:</p>
+
+          <ul>
+            <li>
+              Unfocused request: “Rewrite this paragraph to sound more
+              academic.”
+            </li>
+            <li>
+              Focused question: “Does this topic sentence clearly signal what
+              the paragraph is about, or is the problem in how the next sentence
+              connects to it?”
+            </li>
+          </ul>
+
+          <p>
+            Through repeated redirection, students learn to use AI as a reader
+            that highlights possible problems in focus, sentence connections, or
+            wording. Learning to identify where focus, logic, or clarity breaks
+            down is itself a core learning goal, and early-stage
+            misidentification is treated as a normal and productive part of the
+            process, supported through brief instructor guidance. AI responses
+            sometimes clarify where meaning breaks down and sometimes offer
+            alternatives that oversimplify or subtly shift emphasis. The
+            instructor reinforces that AI feedback is informational, not
+            authoritative.
+          </p>
+
+          <h3>Phase 3: Student-Directed Revision (≈15–20 minutes)</h3>
+
+          <p>
+            Students revise their drafts manually, deciding which suggestions to
+            accept, adapt, or reject. The final authority for all revision
+            decisions remains with the student, not the AI tools. At first, many
+            students apply suggestions broadly. Over repeated cycles, a common
+            shift occurs: students begin to keep revisions that sharpen
+            paragraph focus or clarify logical links, while rejecting changes
+            that weaken their claim or flatten their voice.
+          </p>
+
+          <p>
+            This phase makes learning visible. The instructor observes not only
+            changes in the text, but changes in how students talk about those
+            changes—moving from “the AI said this was better” to “this makes the
+            connection between my claim and example clearer.”
+          </p>
+
+          <h3>Phase 4: Reflection and Instructor Feedback (≈10–15 minutes)</h3>
+
+          <p>
+            Students submit their revised draft with brief notes explaining key
+            revision decisions. The reflection focuses on why a change improved
+            paragraph focus, sentence flow, or clarity of meaning, not on
+            describing AI tools or features.
+          </p>
+
+          <p>
+            Instructor feedback builds on these explanations, often returning to
+            concrete questions such as whether a paragraph now stays focused on
+            its main idea, whether sentences guide the reader logically, or
+            whether claims and supporting details are better aligned.
+          </p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section-card">
+          <h2 id="section-4">4. Student Artifacts</h2>
+
+          <p>Each writing cycle produces a consistent set of artifacts:</p>
+
+          <h3>Original Draft</h3>
+          <p>
+            The original draft represents the student’s independent thinking
+            before any AI-supported feedback is used. It provides a baseline for
+            examining paragraph focus, sentence-to-sentence logic, and clarity
+            of meaning as initially expressed by the student.
+          </p>
+
+          <h3>Revised Draft</h3>
+          <p>
+            The revised draft shows how the student has addressed issues of
+            paragraph organization, logical flow between sentences, and clarity
+            through manual revision. Differences between the original and
+            revised versions make visible which problems the student prioritized
+            and how effectively those problems were resolved.
+          </p>
+          <h3>AI Interaction Evidence (brief excerpts or notes)</h3>
+          <p>
+            Students submit brief excerpts or notes showing where AI feedback
+            was consulted and the type of question asked (e.g., about paragraph
+            focus, sentence connections, or wording). This evidence is limited
+            in scope and descriptive rather than interpretive, serving to
+            clarify how the AI was used as a source of feedback, not to explain
+            or justify revision decisions.
+          </p>
+          <h3>Short Reflection on Revision Decisions</h3>
+          <p>
+            Students provide a brief reflection explaining why specific
+            revisions improved paragraph focus, sentence-to-sentence logic, or
+            clarity of meaning, and why certain AI suggestions were accepted,
+            adapted, or rejected. The reflection focuses on concrete revision
+            decisions and their effects on the text, and is written in the
+            student’s own terms, foregrounding independent judgment and
+            authorship rather than descriptions of AI use.
+          </p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section-card">
+          <h2 id="section-5">5. Evaluation Criteria and Performance Levels</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Criterion</th>
+                <th>Strong</th>
+                <th>Adequate</th>
+                <th>Weak</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paragraph Focus</td>
+                <td>
+                  Each paragraph has a clear topic sentence; supporting details
+                  directly develop that focus.
+                </td>
+                <td>Main idea is present but unevenly developed.</td>
+                <td>Paragraph lacks a clear focus or shifts between ideas.</td>
+              </tr>
+              <tr>
+                <td>Sentence-to-Sentence Logic</td>
+                <td>
+                  Sentences are clearly connected through explicit logical
+                  relationships (e.g., cause, contrast, elaboration).
+                </td>
+                <td>Some connections are implicit or weak.</td>
+                <td>Sentences read as isolated or loosely related.</td>
+              </tr>
+              <tr>
+                <td>Strategic AI Use</td>
+                <td>
+                  AI feedback is used selectively; the student can explain why
+                  suggestions were adopted, adapted, or rejected.
+                </td>
+                <td>
+                  AI feedback is mostly accepted with limited explanation.
+                </td>
+                <td>
+                  AI feedback is applied wholesale or without understanding.
+                </td>
+              </tr>
+              <tr>
+                <td>Consistency of Meaning</td>
+                <td>
+                  Revisions clarify meaning without altering the writer’s claim
+                  or stance.
+                </td>
+                <td>Minor shifts in emphasis or tone appear.</td>
+                <td>Meaning or argument becomes unclear or inconsistent.</td>
+              </tr>
+              <tr>
+                <td>Transparency &amp; Integrity</td>
+                <td>
+                  AI use is documented clearly, and revision decisions reflect
+                  independent authorship and judgment.
+                </td>
+                <td>
+                  AI use is documented but explanations are vague or incomplete.
+                </td>
+                <td>
+                  AI use is unclear, undocumented, or obscures authorship.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section-card">
+          <h2 id="section-6">6. Guidelines for Faculty</h2>
+
+          <h3>Preparation</h3>
+
+          <ul>
+            <li>
+              Anticipate that students will equate revision with correction
+              rather than rethinking focus or logic.
+            </li>
+            <li>
+              Clarify that AI supports evaluation and revision, not content
+              generation.
+            </li>
+          </ul>
+
+          <h3>During the Activity</h3>
+
+          <ul>
+            <li>
+              Redirect broad “rewrite this” requests toward questions about
+              paragraph focus or sentence connections.
+            </li>
+            <li>
+              Listen closely to how students explain their revisions;
+              explanations reveal more than the text alone.
+            </li>
+            <li>
+              Accept uneven judgment early on as part of the learning process.
+            </li>
+          </ul>
+
+          <h3>After the Activity</h3>
+
+          <ul>
+            <li>
+              Frame feedback around concrete writing decisions rather than
+              general quality.
+            </li>
+            <li>
+              Address recurring issues (e.g., paragraph drift, weak sentence
+              links) collectively.
+            </li>
+            <li>
+              Use patterns from one cycle to adjust emphasis in the next,
+              reinforcing the iterative nature of the practice.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="section-card">
+          <h2 id="section-7">7. Guidelines for Students</h2>
+
+          <h3>Preparation</h3>
+
+          <ul>
+            <li>
+              Produce a complete draft independently, with each paragraph
+              attempting to address a single main idea.
+            </li>
+            <li>
+              Read the draft once without revising and identify specific
+              problems, such as unclear paragraph focus, weak sentence
+              connections, or confusing wording.
+            </li>
+          </ul>
+
+          <h3>During the Activity</h3>
+
+          <ul>
+            <li>
+              Use AI-based feedback tools primarily on sentences or short
+              passages you have already identified as problematic.
+            </li>
+            <li>
+              Ask questions that help you evaluate focus, logic, or clarity
+              rather than requesting rewrites.
+            </li>
+            <li>
+              Compare AI suggestions directly with your original wording and
+              decide whether each one strengthens paragraph focus, clarifies
+              sentence relationships, or sharpens meaning.
+            </li>
+            <li>
+              Accept, adapt, or reject AI suggestions based on their effect on
+              argument and voice.
+            </li>
+          </ul>
+
+          <h3>After the Activity</h3>
+
+          <ul>
+            <li>
+              Revise the draft manually so that all changes reflect your own
+              decisions.
+            </li>
+            <li>
+              Review original and revised versions side by side to identify
+              where focus, logic, or clarity improved.
+            </li>
+            <li>
+              Write a brief revision reflection (approximately 200 words)
+              explaining why specific revisions improved the writing and why
+              certain AI suggestions were not used.
+            </li>
+            <li>
+              Document where AI feedback influenced the revision, so your
+              decision-making process is transparent.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="section-card">
+          <h2 id="section-8">8. References</h2>
+
+          <p>
+            Marzuki, M. M., Nureni, G. F., &amp; Yusuf, Y. Q. (2023). The impact
+            of AI writing tools on the content and structure of EFL student
+            writing. <em>Cogent Education, 10</em>(1), 2236469.
+            https://doi.org/10.1080/2331186X.2023.2236469
+          </p>
+          <p>
+            Mahapatra, B. P. (2024). Impact of ChatGPT on ESL students’ academic
+            writing skills: A mixed methods intervention study.
+            <em>Smart Learning Environments, 11</em>, 21.
+            https://doi.org/10.1186/s40561-024-00295-9
+          </p>
+          <p>
+            Ekizoğlu, M., &amp; Demir, A. N. (2025). The role of AI-assisted
+            writing feedback in developing writing proficiency in an EFL
+            context. <em>Discover Education, 4</em>, 454.
+            https://doi.org/10.1007/s44217-025-00919-3
+          </p>
+          <p>
+            Li, X., Zhang, M., Chen, Y., &amp; Wang, H. (2024). Exploring the
+            potential of artificial intelligence to enhance the writing of
+            English academic papers by non-native English-speaking medical
+            students. <em>BMC Medical Education, 24</em>, 573.
+            https://bmcmededuc.biomedcentral.com/articles/10.1186/s12909-024-05738-y
+          </p>
+        </div>
+      </div>
     </div>
 
     <script>
-        const HEADER_HEIGHT = 170; // global nav + fixed header
+      const HEADER_HEIGHT = 170; // global nav + fixed header
 
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
+      function toggleMenu() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+
+      function closeMobileMenu() {
+        if (window.innerWidth <= 768) {
+          const sidebar = document.getElementById("sidebar");
+          sidebar.classList.remove("active");
+        }
+      }
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      function setActiveNavLink(sectionId) {
+        const navLinks = document.querySelectorAll(
+          ".nav-menu-local a:not(.back-to-top-link)"
+        );
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          const href = link.getAttribute("href") || "";
+          if (href === "#" + sectionId) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      function setupSectionObserver() {
+        const sections = document.querySelectorAll('h2[id^="section-"]');
+        if (!("IntersectionObserver" in window) || sections.length === 0) {
+          window.addEventListener("scroll", fallbackHighlightOnScroll);
+          fallbackHighlightOnScroll();
+          return;
         }
 
-        function closeMobileMenu() {
-            if (window.innerWidth <= 768) {
-                const sidebar = document.getElementById('sidebar');
-                sidebar.classList.remove('active');
+        const observerOptions = {
+          root: null,
+          rootMargin: `-${HEADER_HEIGHT + 20}px 0px -55% 0px`,
+          threshold: 0.25,
+        };
+
+        let activeId = "";
+
+        const observer = new IntersectionObserver((entries) => {
+          let bestEntry = null;
+
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (
+                !bestEntry ||
+                entry.intersectionRatio > bestEntry.intersectionRatio
+              ) {
+                bestEntry = entry;
+              }
             }
-        }
+          });
 
-        function scrollToTop() {
+          if (
+            bestEntry &&
+            bestEntry.target &&
+            bestEntry.target.id !== activeId
+          ) {
+            activeId = bestEntry.target.id;
+            setActiveNavLink(activeId);
+          }
+        }, observerOptions);
+
+        sections.forEach((section) => observer.observe(section));
+      }
+
+      function fallbackHighlightOnScroll() {
+        const sections = document.querySelectorAll('h2[id^="section-"]');
+        let currentSection = "";
+        const scrollPosition = window.scrollY + HEADER_HEIGHT + 30;
+
+        sections.forEach((section) => {
+          const rectTop = section.offsetTop;
+          const rectHeight = section.offsetHeight;
+          if (
+            scrollPosition >= rectTop &&
+            scrollPosition < rectTop + rectHeight
+          ) {
+            currentSection = section.id;
+          }
+        });
+
+        if (currentSection) {
+          setActiveNavLink(currentSection);
+        }
+      }
+
+      function setupSmoothScroll() {
+        const navLinks = document.querySelectorAll(
+          ".nav-menu-local a:not(.back-to-top-link)"
+        );
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            const href = this.getAttribute("href");
+            if (!href || !href.startsWith("#")) return;
+
+            event.preventDefault();
+            const targetId = href.substring(1);
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            const targetTop =
+              target.getBoundingClientRect().top +
+              window.scrollY -
+              HEADER_HEIGHT -
+              10;
+
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        function setActiveNavLink(sectionId) {
-            const navLinks = document.querySelectorAll('.nav-menu-local a:not(.back-to-top-link)');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                const href = link.getAttribute('href') || '';
-                if (href === '#' + sectionId) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        function setupSectionObserver() {
-            const sections = document.querySelectorAll('h2[id^="section-"]');
-            if (!('IntersectionObserver' in window) || sections.length === 0) {
-                window.addEventListener('scroll', fallbackHighlightOnScroll);
-                fallbackHighlightOnScroll();
-                return;
-            }
-
-            const observerOptions = {
-                root: null,
-                rootMargin: `-${HEADER_HEIGHT + 20}px 0px -55% 0px`,
-                threshold: 0.25
-            };
-
-            let activeId = '';
-
-            const observer = new IntersectionObserver((entries) => {
-                let bestEntry = null;
-
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
-                            bestEntry = entry;
-                        }
-                    }
-                });
-
-                if (bestEntry && bestEntry.target && bestEntry.target.id !== activeId) {
-                    activeId = bestEntry.target.id;
-                    setActiveNavLink(activeId);
-                }
-            }, observerOptions);
-
-            sections.forEach(section => observer.observe(section));
-        }
-
-        function fallbackHighlightOnScroll() {
-            const sections = document.querySelectorAll('h2[id^="section-"]');
-            let currentSection = '';
-            const scrollPosition = window.scrollY + HEADER_HEIGHT + 30;
-
-            sections.forEach(section => {
-                const rectTop = section.offsetTop;
-                const rectHeight = section.offsetHeight;
-                if (scrollPosition >= rectTop && scrollPosition < rectTop + rectHeight) {
-                    currentSection = section.id;
-                }
+              top: targetTop,
+              behavior: "smooth",
             });
 
-            if (currentSection) {
-                setActiveNavLink(currentSection);
-            }
-        }
-
-        function setupSmoothScroll() {
-            const navLinks = document.querySelectorAll('.nav-menu-local a:not(.back-to-top-link)');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    const href = this.getAttribute('href');
-                    if (!href || !href.startsWith('#')) return;
-
-                    event.preventDefault();
-                    const targetId = href.substring(1);
-                    const target = document.getElementById(targetId);
-                    if (!target) return;
-
-                    const targetTop = target.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT - 10;
-
-                    window.scrollTo({
-                        top: targetTop,
-                        behavior: 'smooth'
-                    });
-
-                    closeMobileMenu();
-                });
-            });
-        }
-
-        window.addEventListener('load', function () {
-            setupSmoothScroll();
-            setupSectionObserver();
+            closeMobileMenu();
+          });
         });
+      }
 
-        document.addEventListener('click', function (event) {
-            const sidebar = document.getElementById('sidebar');
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
+      window.addEventListener("load", function () {
+        setupSmoothScroll();
+        setupSectionObserver();
+      });
 
-            if (window.innerWidth <= 768 &&
-                sidebar.classList.contains('active') &&
-                !sidebar.contains(event.target) &&
-                !menuToggle.contains(event.target)) {
-                sidebar.classList.remove('active');
-            }
-        });
+      document.addEventListener("click", function (event) {
+        const sidebar = document.getElementById("sidebar");
+        const menuToggle = document.querySelector(".mobile-menu-toggle");
+
+        if (
+          window.innerWidth <= 768 &&
+          sidebar.classList.contains("active") &&
+          !sidebar.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          sidebar.classList.remove("active");
+        }
+      });
     </script>
-
-</body>
+  </body>
 </html>
